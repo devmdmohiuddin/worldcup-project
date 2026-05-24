@@ -11,7 +11,7 @@
 | Sprint 3 | May 28 – May 29 | Stream Finder ("Where to Watch") | 🟡 In Progress (code complete; affiliate IDs + deploy pending) |
 | Sprint 4 | May 30 | Highlights Hub | ⏳ Not Started |
 | Sprint 5 | May 31 – Jun 1 | Browser Extension | 🟡 In Progress (code complete; CWS submission pending) |
-| Sprint 6 | Jun 2 | Telegram Bot | ⏳ Not Started |
+| Sprint 6 | Jun 2 | Telegram Bot | 🟡 In Progress (code complete; BotFather + Railway deploy pending) |
 | Sprint 7 | Jun 3 – Jun 4 | Prayer Times & Notifications | ⏳ Not Started |
 | Sprint 8 | Jun 5 | Testing & Polish | ⏳ Not Started |
 | Sprint 9 | Jun 6 | Pre-Launch Setup | ⏳ Not Started |
@@ -191,26 +191,42 @@ Extension live on Chrome Web Store, blocking popups and fake buttons on streamin
 ---
 
 ## 🤖 Sprint 6 — Telegram Bot
-**Dates:** Jun 2, 2026 · **Status:** ⏳ Not Started
+**Dates:** Jun 2, 2026 · **Status:** 🟡 In Progress (code complete; BotFather + Railway deploy pending)
 
 ### Goal
 Launch a Telegram bot for daily match updates and live alerts.
 
 ### Tasks
-- [ ] Create bot via @BotFather
-- [ ] Set up Node.js + Telegraf project
-- [ ] Deploy to Railway (free tier)
-- [ ] Implement `/start` and `/help` commands
-- [ ] Implement `/today` — today's matches + where to watch
-- [ ] Implement `/standings` — group tables
-- [ ] Implement `/team <name>` — favorite team setup
-- [ ] Set up cron job: daily 9am message
-- [ ] Set up live goal alerts (poll API during live matches)
-- [ ] Add language selector (EN, BN, UR, AR, HI)
-- [ ] Promote bot link on website
+- [ ] Create bot via @BotFather _(owner: you — register handle, drop token into `bot/.env`)_
+- [x] Set up Node.js + Telegraf project — `bot/` (TypeScript + Telegraf 4 + node-cron, runs via `tsx`)
+- [ ] Deploy to Railway (free tier) _(owner: you — see `bot/README.md` for the step-by-step; `bot/railway.toml` already wired)_
+- [x] Implement `/start` and `/help` commands — `bot/src/commands/{start,help}.ts`
+- [x] Implement `/today` — today's matches + where to watch — `bot/src/commands/today.ts`
+- [x] Implement `/standings` — group tables — `bot/src/commands/standings.ts` (live via football-data.org when key present)
+- [x] Implement `/team <name>` — favorite team setup — `bot/src/commands/team.ts` (+ `/team clear`)
+- [x] Set up cron job: daily 9am message — `bot/src/jobs/dailyDigest.ts` (timezone-configurable; skips matchless days)
+- [x] Set up live goal alerts (poll API during live matches) — `bot/src/jobs/goalAlerts.ts` (60s poll over ±3h live window)
+- [x] Add language selector (EN, BN, UR, AR, HI) — `bot/src/i18n/`, picker via `/language`
+- [x] Promote bot link on website — Footer CTA, env-driven via `NEXT_PUBLIC_TELEGRAM_BOT_URL`
 
 ### Deliverable
 Working Telegram bot with daily updates and live goal alerts.
+
+### Local verification
+```
+cd bot
+pnpm install
+cp .env.example .env          # add TELEGRAM_BOT_TOKEN; optional FOOTBALL_DATA_API_KEY
+pnpm typecheck                # passes
+pnpm dev                      # long-polling; message the bot on Telegram
+```
+
+### Notes
+- Halal scope: zero betting/gambling content in any message, no third-party ads in DMs, Where-to-Watch links only point to legal broadcasters. Multi-language prioritises Muslim-majority audiences (BN, UR, AR, HI).
+- User prefs persist to a JSON file (`bot/data/users.json`) by default — on Railway, mount a volume at `/app/data` for cross-restart persistence. The store is interface-shaped so a Redis/Postgres backend can drop in later without touching command code.
+- Goal-alert recipients: everyone with `goalAlerts` on gets all goals; users with a `/team` favourite get their team's goals even if `goalAlerts` is off (the favourite is itself an explicit opt-in).
+- Without a football-data.org key, the bot still answers `/today` and `/standings` from the static schedule; the goal poller logs a one-time warning and stays idle.
+- `bot/src/data/{fixtures,teams}.ts` mirrors the web app's `lib/fixtures.ts` and `data/teams.json` — if you update one, sync the other.
 
 ---
 

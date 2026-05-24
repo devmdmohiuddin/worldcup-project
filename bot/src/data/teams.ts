@@ -1,0 +1,39 @@
+import type { GroupLetter } from "./types.js";
+
+export const TEAMS: Record<GroupLetter, string[]> = {
+  A: ["Mexico", "TBD A2", "TBD A3", "TBD A4"],
+  B: ["Canada", "TBD B2", "TBD B3", "TBD B4"],
+  C: ["TBD C1", "TBD C2", "TBD C3", "TBD C4"],
+  D: ["USA", "TBD D2", "TBD D3", "TBD D4"],
+  E: ["TBD E1", "TBD E2", "TBD E3", "TBD E4"],
+  F: ["TBD F1", "TBD F2", "TBD F3", "TBD F4"],
+  G: ["TBD G1", "TBD G2", "TBD G3", "TBD G4"],
+  H: ["TBD H1", "TBD H2", "TBD H3", "TBD H4"],
+  I: ["TBD I1", "TBD I2", "TBD I3", "TBD I4"],
+  J: ["TBD J1", "TBD J2", "TBD J3", "TBD J4"],
+  K: ["TBD K1", "TBD K2", "TBD K3", "TBD K4"],
+  L: ["TBD L1", "TBD L2", "TBD L3", "TBD L4"],
+};
+
+export function resolveSlot(slot: string): string {
+  const group = slot[0] as GroupLetter;
+  const idx = Number(slot.slice(1)) - 1;
+  const names = TEAMS[group];
+  if (!names || idx < 0 || idx >= names.length) return slot;
+  return names[idx]!;
+}
+
+export function findTeamByName(query: string): { slot: string; team: string; group: GroupLetter } | null {
+  const norm = query.trim().toLowerCase();
+  if (!norm) return null;
+  for (const group of Object.keys(TEAMS) as GroupLetter[]) {
+    const names = TEAMS[group];
+    for (let i = 0; i < names.length; i++) {
+      const team = names[i]!;
+      if (team.toLowerCase() === norm || team.toLowerCase().includes(norm)) {
+        return { slot: `${group}${i + 1}`, team, group };
+      }
+    }
+  }
+  return null;
+}
