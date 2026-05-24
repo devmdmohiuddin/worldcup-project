@@ -37,3 +37,6 @@ coverage/
 *.tsbuildinfo
 .vercel
 .turbo
+
+# Next.js
+next-env.d.ts

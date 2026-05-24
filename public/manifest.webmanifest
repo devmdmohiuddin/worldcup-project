@@ -1,0 +1,19 @@
+{
+  "name": "FootballClean",
+  "short_name": "FootballClean",
+  "description": "The cleanest way to follow the FIFA World Cup 2026 — full schedule, live scores, and where to watch every match legally.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "icons": [
+    {
+      "src": "/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

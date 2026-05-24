@@ -6,7 +6,7 @@
 
 | Sprint | Dates | Focus | Status |
 |---|---|---|---|
-| Sprint 1 | May 24 – May 25 | Project Foundation & Schedule | ⏳ Not Started |
+| Sprint 1 | May 24 – May 25 | Project Foundation & Schedule | 🟡 In Progress |
 | Sprint 2 | May 26 – May 27 | Live Scores Integration | ⏳ Not Started |
 | Sprint 3 | May 28 – May 29 | Stream Finder ("Where to Watch") | ⏳ Not Started |
 | Sprint 4 | May 30 | Highlights Hub | ⏳ Not Started |
@@ -22,28 +22,41 @@
 ---
 
 ## 🏁 Sprint 1 — Project Foundation & Schedule
-**Dates:** May 24 – May 25, 2026 · **Status:** ⏳ Not Started
+**Dates:** May 24 – May 25, 2026 · **Status:** 🟡 In Progress (code complete, deploy pending)
 
 ### Goal
 Set up the full project skeleton and build the static match schedule page.
 
 ### Tasks
-- [ ] Initialize Next.js 15 project with TypeScript
-- [ ] Set up Tailwind CSS + dark mode default
-- [ ] Configure ESLint, Prettier, .gitignore
-- [ ] Create folder structure: `/app`, `/components`, `/lib`, `/public`
-- [ ] Deploy "Hello World" to Vercel
-- [ ] Buy domain (e.g. footballclean.com)
-- [ ] Connect domain to Vercel
-- [ ] Add World Cup 2026 fixtures data (JSON seed)
-- [ ] Build match schedule page (all 104 matches)
-- [ ] Add filters: by date, by team, by group, by stage
-- [ ] Implement auto timezone conversion for user
-- [ ] Build responsive mobile-first layout
-- [ ] Add PWA manifest + service worker (basic)
+- [x] Initialize Next.js 15 project with TypeScript
+- [x] Set up Tailwind CSS + dark mode default
+- [x] Configure ESLint, Prettier, .gitignore
+- [x] Create folder structure: `/app`, `/components`, `/lib`, `/public`
+- [ ] Deploy "Hello World" to Vercel _(owner: you — run `vercel` after `pnpm install`)_
+- [ ] Buy domain (e.g. footballclean.com) _(owner: you)_
+- [ ] Connect domain to Vercel _(owner: you)_
+- [x] Add World Cup 2026 fixtures data (JSON seed) — group stage (72 matches); knockouts deferred until draw seeds resolve in Sprint 2
+- [x] Build match schedule page (all 72 group-stage matches; knockouts to come)
+- [x] Add filters: by date, by team, by group, by stage
+- [x] Implement auto timezone conversion for user
+- [x] Build responsive mobile-first layout
+- [x] Add PWA manifest + service worker (basic)
 
 ### Deliverable
 A live URL showing the full World Cup schedule in the user's timezone, mobile-friendly.
+
+### Local verification
+```
+pnpm install
+pnpm dev      # http://localhost:3000
+pnpm build    # production build (passes)
+pnpm lint     # passes
+pnpm typecheck
+```
+
+### Notes
+- Team names in `data/teams.json` are placeholders (A1–L4) outside the three hosts. Update once the FIFA draw is finalized — no code changes needed, the resolver picks up the JSON.
+- Group stage venue/date layout in `lib/fixtures.ts` is a balanced approximation; re-check against the published FIFA chart before launch.
 
 ---
 
