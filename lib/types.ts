@@ -114,3 +114,31 @@ export interface BracketMatch {
   home: BracketSlot;
   away: BracketSlot;
 }
+
+export type BroadcastTier = "free" | "paid";
+export type BroadcastType = "tv" | "streaming" | "radio";
+
+export interface Broadcaster {
+  name: string;
+  type: BroadcastType;
+  tier: BroadcastTier;
+  url: string;
+  languages: string[];
+  note?: string;
+  /** Optional affiliate URL template; runtime swaps in env-configured codes. */
+  affiliateUrl?: string;
+}
+
+export interface CountryBroadcasters {
+  code: string;
+  name: string;
+  flag: string;
+  broadcasters: Broadcaster[];
+}
+
+export interface BroadcastersData {
+  updatedAt: string;
+  note: string;
+  fallback: Broadcaster[];
+  countries: Record<string, CountryBroadcasters>;
+}

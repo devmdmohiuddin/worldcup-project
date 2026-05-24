@@ -8,7 +8,7 @@
 |---|---|---|---|
 | Sprint 1 | May 24 – May 25 | Project Foundation & Schedule | 🟡 In Progress |
 | Sprint 2 | May 26 – May 27 | Live Scores Integration | 🟡 In Progress (code complete, key+Redis pending) |
-| Sprint 3 | May 28 – May 29 | Stream Finder ("Where to Watch") | ⏳ Not Started |
+| Sprint 3 | May 28 – May 29 | Stream Finder ("Where to Watch") | 🟡 In Progress (code complete; affiliate IDs + deploy pending) |
 | Sprint 4 | May 30 | Highlights Hub | ⏳ Not Started |
 | Sprint 5 | May 31 – Jun 1 | Browser Extension | ⏳ Not Started |
 | Sprint 6 | Jun 2 | Telegram Bot | ⏳ Not Started |
@@ -98,25 +98,37 @@ pnpm typecheck && pnpm lint && pnpm build
 ---
 
 ## 📍 Sprint 3 — Stream Finder ("Where to Watch")
-**Dates:** May 28 – May 29, 2026 · **Status:** ⏳ Not Started
+**Dates:** May 28 – May 29, 2026 · **Status:** 🟡 In Progress (code complete; affiliate IDs + deploy pending)
 
 ### Goal
 The killer feature: tell users exactly where to watch each match LEGALLY in their country.
 
 ### Tasks
-- [ ] Research free legal broadcasters per country (50+ countries)
-- [ ] Build broadcaster database (JSON): country → broadcaster → free/paid
-- [ ] Auto-detect user country (IP geolocation via Vercel)
-- [ ] Add "Change country" dropdown for manual selection
-- [ ] Build "Where to Watch" widget on every match page
-- [ ] Show free options first (BBC, Toffee, ARD, TF1, CBC Gem, etc.)
-- [ ] Show paid options second (DAZN, ESPN+, Fox)
-- [ ] One-click external link to official broadcaster
-- [ ] Add affiliate links where available (DAZN, ESPN+, VPN)
-- [ ] Add "Report broken link" feature for user updates
+- [x] Research free legal broadcasters per country (60+ countries seeded in `data/broadcasters.json`)
+- [x] Build broadcaster database (JSON): country → broadcaster → free/paid
+- [x] Auto-detect user country (IP geolocation via Vercel — `x-vercel-ip-country` + cookie override)
+- [x] Add "Change country" dropdown for manual selection (header + widget)
+- [x] Build "Where to Watch" widget on every match page
+- [x] Show free options first (BBC iPlayer, Toffee, ARD, TF1, CBC Gem, SBS, T Sports, etc.)
+- [x] Show paid options second (FOX Sports, beIN, Sony, SuperSport, etc.)
+- [x] One-click external link to official broadcaster (`rel="noopener noreferrer nofollow"`)
+- [x] Affiliate links wired via env (`NEXT_PUBLIC_AFFILIATE_*`) — no betting partners; VPN affiliate intentionally omitted for halal compliance _(owner: you — supply codes when programs are approved)_
+- [x] Add "Report broken link" feature → `/api/report-link` POST endpoint
 
 ### Deliverable
 Every match page shows exactly where to watch legally, filtered by user's country.
+
+### Local verification
+```
+pnpm install
+pnpm dev                      # /match/m1 shows Where-to-Watch widget
+pnpm typecheck && pnpm lint && pnpm build
+```
+
+### Notes
+- Country detection priority: `fc_country` cookie → `x-vercel-ip-country` → `cf-ipcountry` → null (widget falls back to FIFA+ global option).
+- All broadcaster URLs are canonical homepage URLs; verify deep links before launch. Updates only require editing `data/broadcasters.json` — no code changes.
+- Halal constraint: zero betting/gambling partners included. VPN affiliate programs deliberately omitted because most have ambiguous halal status.
 
 ---
 

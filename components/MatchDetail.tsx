@@ -7,6 +7,7 @@ import { resolveSlot } from "@/lib/teams";
 import { detectUserTimezone, formatLocalDateTime } from "@/lib/datetime";
 import { useLiveData } from "@/lib/hooks/useLiveData";
 import { LiveBadge } from "./LiveBadge";
+import { WhereToWatch } from "./WhereToWatch";
 
 interface Props {
   match: Match;
@@ -82,6 +83,8 @@ export function MatchDetail({ match }: Props) {
           </div>
         </div>
       </header>
+
+      <WhereToWatch matchId={match.id} />
 
       <EventsList events={live?.events ?? []} homeName={home} awayName={away} />
 
