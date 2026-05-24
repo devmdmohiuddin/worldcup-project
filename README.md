@@ -42,8 +42,8 @@ FootballClean solves the biggest problem football fans face: **finding a clean, 
 
 ## Project Documents
 
-- 📘 [roadmap.md](./roadmap.md) — Vision, goals, full feature list, monetization
-- 🏃 [sprint.md](./sprint.md) — Sprint-by-sprint feature tracking with task checkboxes
+- 📘 [docs/roadmap.md](./docs/roadmap.md) — Vision, goals, full feature list, monetization
+- 🏃 [docs/sprint.md](./docs/sprint.md) — Sprint-by-sprint feature tracking with task checkboxes
 
 ## Why This Project
 
