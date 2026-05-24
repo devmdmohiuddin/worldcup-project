@@ -8,9 +8,12 @@ import { useLocale } from "@/lib/hooks/useLocale";
 export function Header() {
   const { t } = useLocale();
   return (
-    <header className="sticky top-0 z-30 border-b border-ink-800/80 bg-ink-950/85 backdrop-blur">
+    <header
+      role="banner"
+      className="sticky top-0 z-30 border-b border-ink-800/80 bg-ink-950/85 backdrop-blur"
+    >
       <div className="container-page flex h-14 items-center justify-between gap-3">
-        <Link href="/" className="flex items-center gap-2">
+        <Link href="/" className="flex items-center gap-2" aria-label="FootballClean home">
           <span
             aria-hidden
             className="inline-flex h-7 w-7 items-center justify-center rounded-md bg-pitch-600 text-base font-bold text-white"
@@ -22,7 +25,7 @@ export function Header() {
           </span>
         </Link>
         <div className="flex items-center gap-2 sm:gap-3">
-          <nav className="flex items-center gap-1 text-sm">
+          <nav aria-label="Primary" className="flex items-center gap-1 text-sm">
             <Link href="/" className="rounded-md px-2 py-1 hover:text-pitch-400">
               {t("nav.schedule")}
             </Link>

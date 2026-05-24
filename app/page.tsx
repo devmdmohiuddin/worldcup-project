@@ -10,7 +10,7 @@ export default function HomePage() {
     <>
       <Header />
       <LiveTicker />
-      <main className="min-h-[calc(100vh-3.5rem)]">
+      <main id="main-content" tabIndex={-1} className="min-h-[calc(100vh-3.5rem)]">
         <ScheduleView matches={matches} />
       </main>
       <Footer />

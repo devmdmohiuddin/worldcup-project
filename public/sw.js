@@ -5,11 +5,11 @@
 //   - Cache-first for static assets (Next.js hashes filenames, so this is safe).
 //   - Never cache API responses — live data must always hit the network.
 
-const VERSION = "v1";
+const VERSION = "v2";
 const SHELL_CACHE = `shell-${VERSION}`;
 const STATIC_CACHE = `static-${VERSION}`;
 
-const SHELL_ASSETS = ["/", "/manifest.webmanifest", "/icons/icon.svg"];
+const SHELL_ASSETS = ["/", "/manifest.webmanifest", "/icons/icon.svg", "/og.svg"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(

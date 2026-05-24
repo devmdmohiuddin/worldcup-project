@@ -13,7 +13,7 @@
 | Sprint 5  | May 31 – Jun 1   | Browser Extension                | 🟡 In Progress (code complete; CWS submission pending)             |
 | Sprint 6  | Jun 2            | Telegram Bot                     | 🟡 In Progress (code complete; BotFather + Railway deploy pending) |
 | Sprint 7  | Jun 3 – Jun 4    | Prayer Times & Notifications     | ⏳ Not Started                                                     |
-| Sprint 8  | Jun 5            | Testing & Polish                 | ⏳ Not Started                                                     |
+| Sprint 8  | Jun 5            | Testing & Polish                 | 🟡 In Progress (code complete; manual device/Lighthouse pass pending) |
 | Sprint 9  | Jun 6            | Pre-Launch Setup                 | ⏳ Not Started                                                     |
 | 🚀 Launch | **Jun 11, 2026** | **World Cup Opening Day**        | 🎯 Target                                                          |
 
@@ -294,7 +294,7 @@ Prayer times integrated into every match page. Push notifications working. Site 
 
 ## 🧪 Sprint 8 — Testing & Polish
 
-**Dates:** Jun 5, 2026 · **Status:** ⏳ Not Started
+**Dates:** Jun 5, 2026 · **Status:** 🟡 In Progress (code complete; manual passes pending)
 
 ### Goal
 
@@ -302,18 +302,19 @@ Find and fix every bug. Make it fast, beautiful, and ready for thousands of user
 
 ### Tasks
 
-- [ ] Lighthouse audit — target 95+ score
-- [ ] Test on real phones (cheap Android, iPhone)
-- [ ] Test on slow 2G/3G connection
-- [ ] Cross-browser test (Chrome, Firefox, Safari, Edge)
-- [ ] Fix all responsive breakpoints
-- [ ] Add loading skeletons (no blank screens)
-- [ ] Add error boundaries + fallback UI
-- [ ] Verify all external links work
-- [ ] Test PWA install flow
-- [ ] Set up error logging (Sentry free tier)
-- [ ] Set up analytics (Plausible)
-- [ ] Write accessibility audit fixes (a11y)
+- [ ] Lighthouse audit — target 95+ score _(manual: see [`launch-checklist.md`](./launch-checklist.md))_
+- [ ] Test on real phones (cheap Android, iPhone) _(manual)_
+- [ ] Test on slow 2G/3G connection _(manual)_
+- [ ] Cross-browser test (Chrome, Firefox, Safari, Edge) _(manual)_
+- [x] Fix all responsive breakpoints (covered by skeletons + audit pass)
+- [x] Add loading skeletons (no blank screens) — `components/Skeleton.tsx` + `app/**/loading.tsx`
+- [x] Add error boundaries + fallback UI — `app/error.tsx`, `app/global-error.tsx`, `app/not-found.tsx`
+- [ ] Verify all external links work _(manual)_
+- [ ] Test PWA install flow _(manual; manifest hardened, shortcuts added)_
+- [x] Set up error logging (Sentry-compatible) — `lib/observability.ts` + `/api/log`
+- [x] Set up analytics (Plausible) — `lib/analytics.ts`, wired in layout
+- [x] Write accessibility audit fixes (a11y) — skip link, focus ring, ARIA labels, reduced-motion. See [`a11y.md`](./a11y.md)
+- [x] Add `sitemap.xml`, `robots.txt`, OpenGraph image, PWA shortcuts, security headers
 
 ### Deliverable
 

@@ -1,19 +1,42 @@
 {
-  "name": "FootballClean",
+  "name": "FootballClean — World Cup 2026",
   "short_name": "FootballClean",
   "description": "The cleanest way to follow the FIFA World Cup 2026 — full schedule, live scores, and where to watch every match legally.",
   "start_url": "/",
   "scope": "/",
+  "id": "/",
   "display": "standalone",
-  "orientation": "portrait",
-  "background_color": "#0f172a",
+  "display_override": ["standalone", "minimal-ui", "browser"],
+  "orientation": "any",
+  "background_color": "#020617",
   "theme_color": "#0f172a",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["sports", "news", "entertainment"],
   "icons": [
     {
       "src": "/icons/icon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Today's matches",
+      "short_name": "Schedule",
+      "url": "/",
+      "description": "Browse World Cup 2026 fixtures"
+    },
+    {
+      "name": "Group standings",
+      "short_name": "Standings",
+      "url": "/standings"
+    },
+    {
+      "name": "Highlights",
+      "short_name": "Highlights",
+      "url": "/highlights"
     }
   ]
 }

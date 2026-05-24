@@ -12,7 +12,7 @@ export default function StandingsPage() {
   return (
     <>
       <Header />
-      <main className="min-h-[calc(100vh-3.5rem)]">
+      <main id="main-content" tabIndex={-1} className="min-h-[calc(100vh-3.5rem)]">
         <section className="container-page py-6">
           <div className="mb-6">
             <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">Group standings</h1>

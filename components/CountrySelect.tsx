@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { COUNTRY_CHANGE_EVENT, readCountryCookie, writeCountryCookie } from "@/lib/country";
 import { listSupportedCountries } from "@/lib/broadcasters";
+import { track } from "@/lib/analytics";
 
 interface Props {
   /** Visible label, defaults to "Watching from". */
@@ -56,6 +57,7 @@ export function CountrySelect({
     const next = e.target.value;
     setCode(next);
     writeCountryCookie(next);
+    track("Country Change", { country: next });
   }
 
   const baseSelect =

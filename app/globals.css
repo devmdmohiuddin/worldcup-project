@@ -19,6 +19,23 @@
   ::selection {
     @apply bg-pitch-600 text-white;
   }
+
+  /* Visible focus ring for keyboard users on every focusable element.
+     `:focus-visible` skips ring on mouse clicks so the UI stays clean. */
+  :focus-visible {
+    @apply outline-none ring-2 ring-pitch-400 ring-offset-2 ring-offset-ink-950;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
 }
 
 @layer components {
@@ -44,5 +61,13 @@
 
   .select {
     @apply rounded-md border border-ink-700 bg-ink-900 px-2 py-1.5 text-sm text-ink-100 focus:border-pitch-500 focus:outline-none focus:ring-2 focus:ring-pitch-500/40;
+  }
+
+  .skip-link {
+    @apply sr-only;
+  }
+  .skip-link:focus,
+  .skip-link:focus-visible {
+    @apply not-sr-only fixed left-2 top-2 z-50 inline-flex items-center rounded-md bg-pitch-600 px-3 py-2 text-sm font-semibold text-white shadow-lg;
   }
 }

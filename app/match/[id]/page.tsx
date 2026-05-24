@@ -33,7 +33,7 @@ export default async function MatchPage({ params }: PageProps) {
   return (
     <>
       <Header />
-      <main className="min-h-[calc(100vh-3.5rem)]">
+      <main id="main-content" tabIndex={-1} className="min-h-[calc(100vh-3.5rem)]">
         <MatchDetail match={match} />
       </main>
       <Footer />

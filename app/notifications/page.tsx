@@ -12,7 +12,11 @@ export default function NotificationsPage() {
   return (
     <>
       <Header />
-      <main className="container-page min-h-[calc(100vh-3.5rem)] py-6">
+      <main
+        id="main-content"
+        tabIndex={-1}
+        className="container-page min-h-[calc(100vh-3.5rem)] py-6"
+      >
         <NotificationPreferences />
       </main>
       <Footer />

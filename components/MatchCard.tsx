@@ -21,10 +21,15 @@ export function MatchCard({ match, tz, live, conflict }: Props) {
   const showScore =
     live && (live.status === "live" || live.status === "half-time" || live.status === "finished");
 
+  const ariaLabel = showScore
+    ? `${home} ${live?.homeScore ?? 0}–${live?.awayScore ?? 0} ${away}, ${live?.status === "finished" ? "full time" : `${live?.minute ?? 0} minute`}`
+    : `${home} versus ${away}, kick-off at ${formatLocalTime(match.kickoffUTC, tz)}`;
+
   return (
     <Link
       href={`/match/${match.id}`}
-      className="group block rounded-xl border border-ink-800 bg-ink-900/60 p-4 transition-colors hover:border-pitch-600/60"
+      aria-label={ariaLabel}
+      className="group block rounded-xl border border-ink-800 bg-ink-900/60 p-4 transition-colors hover:border-pitch-600/60 focus-visible:border-pitch-500"
     >
       <div className="mb-3 flex items-center justify-between text-xs text-ink-400">
         <div className="flex items-center gap-2">

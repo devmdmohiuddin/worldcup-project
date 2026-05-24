@@ -2,6 +2,7 @@
 
 import { LOCALES, type Locale } from "@/lib/i18n";
 import { useLocale } from "@/lib/hooks/useLocale";
+import { track } from "@/lib/analytics";
 
 export function LanguageSelect() {
   const { locale, setLocale } = useLocale();
@@ -12,7 +13,11 @@ export function LanguageSelect() {
       <select
         aria-label="Language"
         value={locale}
-        onChange={(e) => setLocale(e.target.value as Locale)}
+        onChange={(e) => {
+          const next = e.target.value as Locale;
+          setLocale(next);
+          track("Locale Change", { locale: next });
+        }}
         className="rounded-md border border-ink-700 bg-ink-900 px-2 py-1 text-sm text-ink-100 focus:border-pitch-500 focus:outline-none"
       >
         {LOCALES.map((l) => (

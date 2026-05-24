@@ -2,6 +2,7 @@
 
 import { useLiveData } from "@/lib/hooks/useLiveData";
 import type { GroupStanding } from "@/lib/types";
+import { StandingsSkeleton } from "./Skeleton";
 
 interface ApiResponse {
   standings: GroupStanding[];
@@ -14,7 +15,7 @@ export function StandingsTable() {
   });
 
   if (loading && !data) {
-    return <div className="text-sm text-ink-400">Loading standings…</div>;
+    return <StandingsSkeleton />;
   }
 
   const standings = data?.standings ?? [];
