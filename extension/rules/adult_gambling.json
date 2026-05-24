@@ -1,0 +1,155 @@
+[
+  {
+    "id": 1001,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||juicyads.com^",
+      "resourceTypes": ["script", "image", "sub_frame", "xmlhttprequest", "media", "object"]
+    }
+  },
+  {
+    "id": 1002,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||trafficjunky.net^",
+      "resourceTypes": ["script", "image", "sub_frame", "xmlhttprequest", "media", "object"]
+    }
+  },
+  {
+    "id": 1003,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||trafficstars.com^",
+      "resourceTypes": ["script", "image", "sub_frame", "xmlhttprequest", "media", "object"]
+    }
+  },
+  {
+    "id": 1004,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||exoclick.com^",
+      "resourceTypes": ["script", "image", "sub_frame", "xmlhttprequest", "media", "object"]
+    }
+  },
+  {
+    "id": 1005,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||ero-advertising.com^",
+      "resourceTypes": ["script", "image", "sub_frame", "xmlhttprequest", "media", "object"]
+    }
+  },
+  {
+    "id": 1006,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||plugrush.com^",
+      "resourceTypes": ["script", "image", "sub_frame", "xmlhttprequest", "media", "object"]
+    }
+  },
+  {
+    "id": 1007,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||adsterra.com^",
+      "resourceTypes": ["script", "image", "sub_frame", "xmlhttprequest", "media", "object"]
+    }
+  },
+  {
+    "id": 1101,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||1xbet.com^",
+      "resourceTypes": ["script", "image", "sub_frame", "xmlhttprequest", "media", "object"]
+    }
+  },
+  {
+    "id": 1102,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||betway.com^",
+      "resourceTypes": ["script", "image", "sub_frame", "xmlhttprequest", "media", "object"]
+    }
+  },
+  {
+    "id": 1103,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||bet365.com^",
+      "resourceTypes": ["script", "image", "sub_frame", "xmlhttprequest", "media", "object"]
+    }
+  },
+  {
+    "id": 1104,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||stake.com^",
+      "resourceTypes": ["script", "image", "sub_frame", "xmlhttprequest", "media", "object"]
+    }
+  },
+  {
+    "id": 1105,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||draftkings.com^",
+      "resourceTypes": ["script", "image", "sub_frame", "xmlhttprequest", "media", "object"]
+    }
+  },
+  {
+    "id": 1106,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||fanduel.com^",
+      "resourceTypes": ["script", "image", "sub_frame", "xmlhttprequest", "media", "object"]
+    }
+  },
+  {
+    "id": 1107,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||williamhill.com^",
+      "resourceTypes": ["script", "image", "sub_frame", "xmlhttprequest", "media", "object"]
+    }
+  },
+  {
+    "id": 1108,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||paddypower.com^",
+      "resourceTypes": ["script", "image", "sub_frame", "xmlhttprequest", "media", "object"]
+    }
+  },
+  {
+    "id": 1109,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||melbet.com^",
+      "resourceTypes": ["script", "image", "sub_frame", "xmlhttprequest", "media", "object"]
+    }
+  },
+  {
+    "id": 1110,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||parimatch.com^",
+      "resourceTypes": ["script", "image", "sub_frame", "xmlhttprequest", "media", "object"]
+    }
+  }
+]

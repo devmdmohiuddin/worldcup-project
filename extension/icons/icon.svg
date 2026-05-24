@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a7c2f"/>
+      <stop offset="100%" stop-color="#054b1c"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="24" fill="url(#bg)"/>
+  <!-- Shield -->
+  <path d="M64 18 L100 30 L100 64 C100 86 86 102 64 112 C42 102 28 86 28 64 L28 30 Z"
+        fill="#0b1220" stroke="#2bd97f" stroke-width="3"/>
+  <!-- Football -->
+  <circle cx="64" cy="62" r="20" fill="#fff"/>
+  <path d="M64 42 L72 52 L68 64 L60 64 L56 52 Z" fill="#0b1220"/>
+  <path d="M64 42 L72 52 M64 42 L56 52 M72 52 L68 64 M56 52 L60 64 M68 64 L60 64"
+        stroke="#0b1220" stroke-width="2" fill="none"/>
+  <!-- Check tick -->
+  <path d="M48 86 L60 96 L84 72" stroke="#2bd97f" stroke-width="6" fill="none"
+        stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

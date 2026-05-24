@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Clean Stream — Settings</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <main class="cs-shell">
+      <header>
+        <img src="../icons/icon-48.png" width="40" height="40" alt="" />
+        <div>
+          <h1>Clean Stream</h1>
+          <p>Halal-friendly ad cleanup for football streams.</p>
+        </div>
+      </header>
+
+      <section class="cs-section">
+        <h2>Master switch</h2>
+        <label class="cs-row">
+          <span>Enable Clean Stream</span>
+          <input id="enabled" type="checkbox" />
+        </label>
+      </section>
+
+      <section class="cs-section">
+        <h2>Block categories</h2>
+        <label class="cs-row"
+          ><span>Adult ad networks</span><input data-key="blockAdult" type="checkbox"
+        /></label>
+        <label class="cs-row"
+          ><span>Gambling / betting ads</span><input data-key="blockGambling" type="checkbox"
+        /></label>
+        <label class="cs-row"
+          ><span>Malware / scam domains</span><input data-key="blockMalware" type="checkbox"
+        /></label>
+        <label class="cs-row"
+          ><span>Popup &amp; popunder windows</span><input data-key="blockPopups" type="checkbox"
+        /></label>
+        <label class="cs-row"
+          ><span>Fake play buttons</span><input data-key="blockFakeButtons" type="checkbox"
+        /></label>
+        <label class="cs-row"
+          ><span>Malicious overlays</span><input data-key="blockOverlays" type="checkbox"
+        /></label>
+      </section>
+
+      <section class="cs-section">
+        <h2>Per-site overrides</h2>
+        <p class="cs-help">
+          Force Clean Stream on for a site you trust, or off for one where it interferes.
+        </p>
+        <div class="cs-override-row">
+          <input id="host" type="text" placeholder="example.com" />
+          <select id="mode">
+            <option value="block">Force block</option>
+            <option value="allow">Force allow</option>
+          </select>
+          <button id="add">Add</button>
+        </div>
+        <ul id="overrides" class="cs-overrides"></ul>
+      </section>
+
+      <section class="cs-section cs-premium">
+        <h2>Premium <span class="cs-premium-badge">SOON</span></h2>
+        <p>
+          Premium will unlock prayer-aware muting (auto-silence ads during Adhan), custom filter
+          lists, and multi-device dashboards. Free features stay free, forever.
+        </p>
+        <button id="learn" type="button">Notify me when Premium launches</button>
+      </section>
+
+      <section class="cs-section">
+        <h2>Lifetime statistics</h2>
+        <p id="lifetime" class="cs-help">—</p>
+        <button id="reset" type="button">Reset counters</button>
+      </section>
+
+      <footer>
+        <a href="../PRIVACY.md" target="_blank">Privacy policy</a> ·
+        <a href="https://footballclean.com" target="_blank" rel="noopener noreferrer"
+          >FootballClean.com</a
+        >
+      </footer>
+    </main>
+    <script src="options.js" type="module"></script>
+  </body>
+</html>

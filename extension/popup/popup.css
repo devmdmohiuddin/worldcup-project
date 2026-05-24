@@ -1,0 +1,206 @@
+* {
+  box-sizing: border-box;
+}
+:root {
+  --bg: #0b1220;
+  --panel: #111b2e;
+  --panel-2: #16223a;
+  --text: #e6ecf5;
+  --muted: #98a4b8;
+  --accent: #2bd97f;
+  --accent-dim: #1e7a47;
+  --danger: #f4544f;
+}
+html,
+body {
+  margin: 0;
+  width: 340px;
+  background: var(--bg);
+  color: var(--text);
+  font: 13px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+.cs-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 14px 10px;
+}
+.cs-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.cs-brand h1 {
+  margin: 0;
+  font-size: 15px;
+}
+.cs-tagline {
+  margin: 0;
+  color: var(--muted);
+  font-size: 11px;
+}
+.cs-card {
+  background: var(--panel);
+  margin: 8px 12px;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #1d2a47;
+}
+.cs-card h2 {
+  margin: 0 0 8px;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.cs-site {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  word-break: break-all;
+}
+.cs-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--muted);
+  flex-shrink: 0;
+}
+.cs-dot.on {
+  background: var(--accent);
+  box-shadow: 0 0 0 3px rgba(43, 217, 127, 0.18);
+}
+.cs-dot.strict {
+  background: var(--danger);
+  box-shadow: 0 0 0 3px rgba(244, 84, 79, 0.18);
+}
+.cs-mode-tag {
+  margin-left: auto;
+  font-size: 10px;
+  background: var(--panel-2);
+  padding: 2px 8px;
+  border-radius: 999px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.cs-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.cs-stat {
+  background: var(--panel-2);
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+}
+.cs-num {
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--accent);
+}
+.cs-label {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 2px;
+}
+.cs-toggles {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.cs-toggles li {
+  margin: 6px 0;
+}
+.cs-toggles label {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  cursor: pointer;
+}
+.cs-toggles input {
+  accent-color: var(--accent);
+}
+.cs-lifetime p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+.cs-premium {
+  background: linear-gradient(135deg, #1c2a4a, #122036);
+  border-color: #2c3d65;
+}
+.cs-premium-row {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 12px;
+  color: var(--muted);
+}
+.cs-premium-badge {
+  background: var(--accent);
+  color: #04221a;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-weight: 700;
+}
+.cs-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 16px 14px;
+  font-size: 11px;
+}
+.cs-footer a {
+  color: var(--muted);
+  text-decoration: none;
+}
+.cs-footer a:hover {
+  color: var(--text);
+}
+
+/* Master switch */
+.cs-switch {
+  position: relative;
+  display: inline-block;
+  width: 38px;
+  height: 22px;
+}
+.cs-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.cs-slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background: #2a3650;
+  border-radius: 22px;
+  transition: 0.18s;
+}
+.cs-slider::before {
+  content: "";
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  left: 3px;
+  top: 3px;
+  background: white;
+  border-radius: 50%;
+  transition: 0.18s;
+}
+.cs-switch input:checked + .cs-slider {
+  background: var(--accent);
+}
+.cs-switch input:checked + .cs-slider::before {
+  transform: translateX(16px);
+}

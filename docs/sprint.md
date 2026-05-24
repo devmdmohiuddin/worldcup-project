@@ -10,7 +10,7 @@
 | Sprint 2 | May 26 – May 27 | Live Scores Integration | 🟡 In Progress (code complete, key+Redis pending) |
 | Sprint 3 | May 28 – May 29 | Stream Finder ("Where to Watch") | 🟡 In Progress (code complete; affiliate IDs + deploy pending) |
 | Sprint 4 | May 30 | Highlights Hub | ⏳ Not Started |
-| Sprint 5 | May 31 – Jun 1 | Browser Extension | ⏳ Not Started |
+| Sprint 5 | May 31 – Jun 1 | Browser Extension | 🟡 In Progress (code complete; CWS submission pending) |
 | Sprint 6 | Jun 2 | Telegram Bot | ⏳ Not Started |
 | Sprint 7 | Jun 3 – Jun 4 | Prayer Times & Notifications | ⏳ Not Started |
 | Sprint 8 | Jun 5 | Testing & Polish | ⏳ Not Started |
@@ -154,27 +154,39 @@ Users can watch official highlights on the site immediately after each match end
 ---
 
 ## 🧩 Sprint 5 — Browser Extension
-**Dates:** May 31 – Jun 1, 2026 · **Status:** ⏳ Not Started
+**Dates:** May 31 – Jun 1, 2026 · **Status:** 🟡 In Progress (code complete; CWS submission pending)
 
 ### Goal
 Build the "Clean Stream" Chrome extension to block ads on streaming sites.
 
 ### Tasks
-- [ ] Set up Chrome extension project (Manifest V3)
-- [ ] Build content script: detect streaming sites
-- [ ] Block popup ads (window.open overrides)
-- [ ] Hide fake play buttons (CSS heuristics)
-- [ ] Remove malicious overlays
-- [ ] Block adult/gambling ad domains (filter list)
-- [ ] Build extension popup UI (toggle, stats, settings)
-- [ ] Add "blocked count" badge on icon
-- [ ] Pay Chrome Web Store fee ($5)
-- [ ] Submit extension for review
-- [ ] Write privacy policy + listing description
-- [ ] Add free vs Premium tier logic (Premium = future)
+- [x] Set up Chrome extension project (Manifest V3) — see `extension/manifest.json`
+- [x] Build content script: detect streaming sites — `extension/content/detector.js` (off / light / strict heuristic)
+- [x] Block popup ads (window.open overrides) — page-world hook in `extension/content/injected.js`
+- [x] Hide fake play buttons (CSS heuristics) — `extension/content/blocker.js`
+- [x] Remove malicious overlays — fixed-position + ad-anchor scrub in `extension/content/blocker.js`
+- [x] Block adult/gambling ad domains (filter list) — `extension/rules/adult_gambling.json`, `malware.json`, `popup_trackers.json`
+- [x] Build extension popup UI (toggle, stats, settings) — `extension/popup/`
+- [x] Add "blocked count" badge on icon — `extension/background/service-worker.js`
+- [ ] Pay Chrome Web Store fee ($5) _(owner: you)_
+- [ ] Submit extension for review _(owner: you — zip `extension/`, upload via dashboard)_
+- [x] Write privacy policy + listing description — `extension/PRIVACY.md`, `extension/LISTING.md`
+- [x] Add free vs Premium tier logic (Premium = future) — `tier` field + `isPremium()` in `extension/background/settings.js`; popup card adapts
 
 ### Deliverable
 Extension live on Chrome Web Store, blocking popups and fake buttons on streaming sites.
+
+### Local verification
+```
+# Open chrome://extensions → enable Developer mode → Load unpacked → select extension/
+# Visit a streaming aggregator → toolbar badge ticks; popups/fake buttons removed.
+```
+
+### Notes
+- Halal scope: extension cleans up sites the user already chose to visit. It does **not** enable piracy, does **not** include any gambling/betting affiliate codes, and does **not** whitelist adult ad networks. See `extension/PRIVACY.md`.
+- Static rule IDs are namespaced: `1xxx` adult/gambling, `2xxx` malware/popup networks, `3xxx` popup trackers. Expand the JSON lists without code changes.
+- Sensitive hosts (Google, GitHub, banks, PayPal, Stripe) are excluded via `exclude_matches` in `manifest.json` to prevent collateral damage.
+- Premium tier currently gates UI affordances only (popup card copy). Real Premium features (prayer-aware muting, custom filter lists, multi-device dashboards) land in a later sprint.
 
 ---
 

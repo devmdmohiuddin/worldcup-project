@@ -1,0 +1,56 @@
+[
+  {
+    "id": 3001,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||doubleclick.net^",
+      "resourceTypes": ["sub_frame", "script", "xmlhttprequest"]
+    }
+  },
+  {
+    "id": 3002,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||googlesyndication.com^",
+      "resourceTypes": ["sub_frame", "script", "xmlhttprequest"]
+    }
+  },
+  {
+    "id": 3003,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||adservice.google.com^",
+      "resourceTypes": ["sub_frame", "script", "xmlhttprequest"]
+    }
+  },
+  {
+    "id": 3004,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "popunder",
+      "resourceTypes": ["script", "sub_frame"]
+    }
+  },
+  {
+    "id": 3005,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||histats.com^",
+      "resourceTypes": ["script", "xmlhttprequest", "image"]
+    }
+  },
+  {
+    "id": 3006,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "||statcounter.com^",
+      "resourceTypes": ["script", "xmlhttprequest", "image"]
+    }
+  }
+]

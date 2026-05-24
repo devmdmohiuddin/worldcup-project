@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Clean Stream</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header class="cs-header">
+      <div class="cs-brand">
+        <img src="../icons/icon-32.png" alt="" width="28" height="28" />
+        <div>
+          <h1>Clean Stream</h1>
+          <p class="cs-tagline">Halal-friendly ad cleanup</p>
+        </div>
+      </div>
+      <label class="cs-switch" title="Master on/off">
+        <input id="cs-enabled" type="checkbox" />
+        <span class="cs-slider"></span>
+      </label>
+    </header>
+
+    <section class="cs-card" id="cs-site-card">
+      <div class="cs-site">
+        <span class="cs-dot" id="cs-mode-dot"></span>
+        <span id="cs-host">—</span>
+        <span class="cs-mode-tag" id="cs-mode-tag">off</span>
+      </div>
+      <div class="cs-stats">
+        <div class="cs-stat">
+          <span class="cs-num" id="cs-popups">0</span>
+          <span class="cs-label">Popups</span>
+        </div>
+        <div class="cs-stat">
+          <span class="cs-num" id="cs-fakebtns">0</span>
+          <span class="cs-label">Fake buttons</span>
+        </div>
+        <div class="cs-stat">
+          <span class="cs-num" id="cs-overlays">0</span>
+          <span class="cs-label">Overlays</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-card">
+      <h2>Block on this device</h2>
+      <ul class="cs-toggles">
+        <li>
+          <label><input type="checkbox" data-key="blockAdult" /> Adult ad networks</label>
+        </li>
+        <li>
+          <label><input type="checkbox" data-key="blockGambling" /> Gambling / betting ads</label>
+        </li>
+        <li>
+          <label><input type="checkbox" data-key="blockMalware" /> Malware / scam domains</label>
+        </li>
+        <li>
+          <label><input type="checkbox" data-key="blockPopups" /> Popup &amp; popunder windows</label>
+        </li>
+        <li>
+          <label><input type="checkbox" data-key="blockFakeButtons" /> Fake play buttons</label>
+        </li>
+        <li>
+          <label><input type="checkbox" data-key="blockOverlays" /> Malicious overlays</label>
+        </li>
+      </ul>
+    </section>
+
+    <section class="cs-card cs-lifetime">
+      <h2>Lifetime blocked</h2>
+      <p id="cs-lifetime">0 popups · 0 fake buttons · 0 overlays</p>
+    </section>
+
+    <section class="cs-card cs-premium" id="cs-premium-card">
+      <div class="cs-premium-row">
+        <span class="cs-premium-badge">PREMIUM</span>
+        <span>Coming soon — custom filter lists, prayer-aware silence, multi-device sync.</span>
+      </div>
+    </section>
+
+    <footer class="cs-footer">
+      <a id="cs-options" href="#">Advanced settings</a>
+      <a href="https://footballclean.com" target="_blank" rel="noopener noreferrer">FootballClean.com</a>
+    </footer>
+
+    <script src="popup.js" type="module"></script>
+  </body>
+</html>
