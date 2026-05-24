@@ -7,7 +7,7 @@
 | Sprint | Dates | Focus | Status |
 |---|---|---|---|
 | Sprint 1 | May 24 – May 25 | Project Foundation & Schedule | 🟡 In Progress |
-| Sprint 2 | May 26 – May 27 | Live Scores Integration | ⏳ Not Started |
+| Sprint 2 | May 26 – May 27 | Live Scores Integration | 🟡 In Progress (code complete, key+Redis pending) |
 | Sprint 3 | May 28 – May 29 | Stream Finder ("Where to Watch") | ⏳ Not Started |
 | Sprint 4 | May 30 | Highlights Hub | ⏳ Not Started |
 | Sprint 5 | May 31 – Jun 1 | Browser Extension | ⏳ Not Started |
@@ -61,26 +61,39 @@ pnpm typecheck
 ---
 
 ## ⚽ Sprint 2 — Live Scores Integration
-**Dates:** May 26 – May 27, 2026 · **Status:** ⏳ Not Started
+**Dates:** May 26 – May 27, 2026 · **Status:** 🟡 In Progress (code complete; key + Redis pending)
 
 ### Goal
 Wire up real-time live scores from football-data.org API.
 
 ### Tasks
-- [ ] Sign up for football-data.org API key (free tier)
-- [ ] Create `/lib/api/footballData.ts` wrapper
-- [ ] Set up Upstash Redis for caching API responses
-- [ ] Build live score ticker component (top of homepage)
-- [ ] Build individual match detail page
-- [ ] Show: live score, minute, goal scorers, cards, stats
-- [ ] Add auto-refresh (every 30s during live matches)
-- [ ] Build group standings page (live updating)
-- [ ] Build knockout bracket visualizer
-- [ ] Add "LIVE" badge with pulsing animation
-- [ ] Handle API rate limits gracefully (cache + fallback)
+- [ ] Sign up for football-data.org API key (free tier) _(owner: you — drop into `.env.local` as `FOOTBALL_DATA_API_KEY`)_
+- [x] Create `/lib/api/footballData.ts` wrapper
+- [x] Set up cache layer — pluggable `Cache` interface in `lib/cache.ts`, in-memory default. Swap to Upstash by implementing the interface against `@upstash/redis` and calling `setCache()` at boot. _(owner: you — provision Upstash project + swap impl when ready)_
+- [x] Build live score ticker component (top of homepage)
+- [x] Build individual match detail page
+- [x] Show: live score, minute, goal scorers, cards, stats
+- [x] Add auto-refresh (every 30s during live matches; throttles to 120s when tab hidden)
+- [x] Build group standings page (live updating)
+- [x] Build knockout bracket visualizer
+- [x] Add "LIVE" badge with pulsing animation
+- [x] Handle API rate limits gracefully (cache + 10-min stale fallback on 429/5xx)
 
 ### Deliverable
 Real-time scores visible on homepage and each match page, updating automatically.
+
+### Local verification
+```
+pnpm install
+cp .env.example .env.local   # add FOOTBALL_DATA_API_KEY when you have one
+pnpm dev                      # / , /standings, /bracket, /match/m1 all render
+pnpm typecheck && pnpm lint && pnpm build
+```
+
+### Notes
+- The football-data.org wrapper is cache-first: every endpoint hit goes through `lib/cache.ts` with a 30s TTL for live data and a 10-minute stale fallback used on rate-limit (429) or upstream errors. With no key configured, the wrapper returns `null` and the UI falls back to scheduled-only placeholders — pages still render.
+- The API key never reaches the browser. The home/match/standings/bracket pages call `/api/live*` and `/api/standings` Next routes, which call upstream server-side.
+- `lib/bracket.ts` builds the full Round of 32 → Final structure with placeholders; once all 72 group-stage results are in, the top-2 slots resolve to real team names. The 8 best-third-placed seeds need post-group-stage logic and are tracked as a follow-up.
 
 ---
 

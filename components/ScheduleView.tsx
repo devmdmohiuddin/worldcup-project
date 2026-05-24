@@ -1,9 +1,10 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import type { GroupLetter, Match } from "@/lib/types";
+import type { GroupLetter, LiveMatch, Match } from "@/lib/types";
 import { allTeams } from "@/lib/teams";
 import { detectUserTimezone, formatLocalDate, localDayKey } from "@/lib/datetime";
+import { useLiveData } from "@/lib/hooks/useLiveData";
 import { MatchCard } from "./MatchCard";
 
 interface Props {
@@ -40,6 +41,16 @@ export function ScheduleView({ matches }: Props) {
     setTz(detectUserTimezone());
     setMounted(true);
   }, []);
+
+  const { data: liveData } = useLiveData<{ matches: LiveMatch[] }>({
+    url: "/api/live",
+    intervalMs: 30_000,
+  });
+  const liveByMatchId = useMemo(() => {
+    const m = new Map<string, LiveMatch>();
+    for (const lm of liveData?.matches ?? []) m.set(lm.matchId, lm);
+    return m;
+  }, [liveData]);
 
   const teams = useMemo(() => {
     const seen = new Set<string>();
@@ -184,7 +195,7 @@ export function ScheduleView({ matches }: Props) {
               </h2>
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 {ms.map((m) => (
-                  <MatchCard key={m.id} match={m} tz={tz} />
+                  <MatchCard key={m.id} match={m} tz={tz} live={liveByMatchId.get(m.id)} />
                 ))}
               </div>
             </div>

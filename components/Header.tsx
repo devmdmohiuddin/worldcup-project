@@ -19,14 +19,18 @@ export function Header() {
           <Link href="/" className="rounded-md px-2 py-1 hover:text-pitch-400">
             Schedule
           </Link>
-          <a
-            href="https://github.com"
-            target="_blank"
-            rel="noreferrer noopener"
-            className="rounded-md px-2 py-1 text-ink-400 hover:text-pitch-400"
+          <Link
+            href="/standings"
+            className="rounded-md px-2 py-1 text-ink-300 hover:text-pitch-400"
           >
-            About
-          </a>
+            Standings
+          </Link>
+          <Link
+            href="/bracket"
+            className="rounded-md px-2 py-1 text-ink-300 hover:text-pitch-400"
+          >
+            Bracket
+          </Link>
         </nav>
       </div>
     </header>
