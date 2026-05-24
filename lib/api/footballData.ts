@@ -78,7 +78,11 @@ export async function fdGet<T>(path: string, opts: FetchOptions = {}): Promise<T
 
     const data = (await res.json()) as T;
     await cache.set(cacheKey, data, ttl);
-    await cache.set<StaleEntry<T>>(staleKey, { data, storedAt: new Date().toISOString() }, STALE_TTL);
+    await cache.set<StaleEntry<T>>(
+      staleKey,
+      { data, storedAt: new Date().toISOString() },
+      STALE_TTL,
+    );
     return data;
   } catch (err) {
     if (err instanceof FootballDataError) throw err;

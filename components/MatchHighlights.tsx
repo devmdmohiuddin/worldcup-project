@@ -45,12 +45,8 @@ export function MatchHighlights({ matchId, isFinished }: Props) {
   return (
     <section className="overflow-hidden rounded-2xl border border-ink-800 bg-ink-900/60">
       <header className="border-b border-ink-800 px-5 py-3">
-        <h2 className="text-sm font-semibold uppercase tracking-wider text-ink-200">
-          Highlights
-        </h2>
-        <p className="mt-0.5 text-xs text-ink-500">
-          Official video from licensed broadcasters.
-        </p>
+        <h2 className="text-sm font-semibold uppercase tracking-wider text-ink-200">Highlights</h2>
+        <p className="mt-0.5 text-xs text-ink-500">Official video from licensed broadcasters.</p>
       </header>
       <div className="px-5 py-4">
         {loading && highlights === null && (
@@ -58,8 +54,8 @@ export function MatchHighlights({ matchId, isFinished }: Props) {
         )}
         {highlights !== null && highlights.length === 0 && (
           <div className="text-sm text-ink-400">
-            No official highlights uploaded yet — broadcasters typically post
-            within an hour of full time.
+            No official highlights uploaded yet — broadcasters typically post within an hour of full
+            time.
           </div>
         )}
         {highlights && highlights.length > 0 && (

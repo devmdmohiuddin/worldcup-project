@@ -25,7 +25,8 @@ function hostFromUrl(url) {
 function renderMode(host) {
   // Mirror detector.js heuristic for popup display only — the actual
   // runtime decision is made by the content script.
-  const LEGIT = /(bbc|itv|tf1|francetv|ard|zdf|rai|rtve|cbc|sbs|tsports|toffeelive|foxsports|fubo|dazn|espn|sonyliv|beinsports|supersport|fifa)\./i;
+  const LEGIT =
+    /(bbc|itv|tf1|francetv|ard|zdf|rai|rtve|cbc|sbs|tsports|toffeelive|foxsports|fubo|dazn|espn|sonyliv|beinsports|supersport|fifa)\./i;
   const STREAM = /(stream|watch|live|soccer|football|sport)/i;
   if (!host) return "off";
   if (LEGIT.test(host)) return "light";

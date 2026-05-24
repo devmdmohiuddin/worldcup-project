@@ -4,17 +4,17 @@ Daily World Cup 2026 digests and live goal alerts, in 5 languages. Halal by desi
 
 ## Commands
 
-| Command | Description |
-|---|---|
-| `/start` | Welcome message + language picker |
-| `/help` | Show all commands |
-| `/today` | Today's matches (kickoff times in the configured timezone) |
-| `/standings` | Live group standings, all 12 groups |
+| Command        | Description                                                      |
+| -------------- | ---------------------------------------------------------------- |
+| `/start`       | Welcome message + language picker                                |
+| `/help`        | Show all commands                                                |
+| `/today`       | Today's matches (kickoff times in the configured timezone)       |
+| `/standings`   | Live group standings, all 12 groups                              |
 | `/team <name>` | Set favourite team (e.g. `/team Mexico`); `/team clear` to unset |
-| `/language` | Pick language: English, বাংলা, اردو, العربية, हिन्दी |
-| `/alerts` | Toggle live goal alerts for every match |
-| `/digest` | Toggle the daily 9am digest |
-| `/website` | Link to footballclean.com |
+| `/language`    | Pick language: English, বাংলা, اردو, العربية, हिन्दी             |
+| `/alerts`      | Toggle live goal alerts for every match                          |
+| `/digest`      | Toggle the daily 9am digest                                      |
+| `/website`     | Link to footballclean.com                                        |
 
 Users with `goalAlerts: false` still receive goals for their `/team` favourite — opting in to a team is itself an opt-in for that team's notifications.
 

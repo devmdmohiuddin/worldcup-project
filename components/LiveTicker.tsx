@@ -20,9 +20,7 @@ export function LiveTicker() {
     return map;
   }, []);
 
-  const live = (data?.matches ?? []).filter(
-    (m) => m.status === "live" || m.status === "half-time",
-  );
+  const live = (data?.matches ?? []).filter((m) => m.status === "live" || m.status === "half-time");
 
   if (live.length === 0) return null;
 
@@ -46,7 +44,7 @@ export function LiveTicker() {
               >
                 <LiveBadge status={m.status} minute={m.minute} />
                 <span className="font-medium text-ink-100">{home}</span>
-                <span className="font-mono text-sm text-ink-100 tabular-nums">
+                <span className="font-mono text-sm tabular-nums text-ink-100">
                   {m.homeScore ?? 0}–{m.awayScore ?? 0}
                 </span>
                 <span className="font-medium text-ink-100">{away}</span>

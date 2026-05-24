@@ -21,7 +21,11 @@ export default async function HighlightsPage() {
 
   const channels = getOfficialChannels();
   const teamOptions = Array.from(
-    new Set(allTeams().map((t) => t.name).filter((n) => !n.startsWith("TBD"))),
+    new Set(
+      allTeams()
+        .map((t) => t.name)
+        .filter((n) => !n.startsWith("TBD")),
+    ),
   ).sort();
 
   return (
@@ -32,8 +36,7 @@ export default async function HighlightsPage() {
           <header>
             <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">Highlights</h1>
             <p className="mt-1 max-w-2xl text-sm text-ink-400">
-              Official video from licensed broadcasters only — uploaded post-match
-              by{" "}
+              Official video from licensed broadcasters only — uploaded post-match by{" "}
               {channels.map((c, i) => (
                 <span key={c.channelId}>
                   <span className="text-ink-200">{c.name}</span>

@@ -1,7 +1,12 @@
+"use client";
+
 import Link from "next/link";
 import { CountrySelect } from "./CountrySelect";
+import { LanguageSelect } from "./LanguageSelect";
+import { useLocale } from "@/lib/hooks/useLocale";
 
 export function Header() {
+  const { t } = useLocale();
   return (
     <header className="sticky top-0 z-30 border-b border-ink-800/80 bg-ink-950/85 backdrop-blur">
       <div className="container-page flex h-14 items-center justify-between gap-3">
@@ -16,30 +21,37 @@ export function Header() {
             Football<span className="text-pitch-400">Clean</span>
           </span>
         </Link>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
           <nav className="flex items-center gap-1 text-sm">
             <Link href="/" className="rounded-md px-2 py-1 hover:text-pitch-400">
-              Schedule
+              {t("nav.schedule")}
             </Link>
             <Link
               href="/standings"
-              className="hidden rounded-md px-2 py-1 text-ink-300 hover:text-pitch-400 sm:inline"
+              className="text-ink-300 hidden rounded-md px-2 py-1 hover:text-pitch-400 sm:inline"
             >
-              Standings
+              {t("nav.standings")}
             </Link>
             <Link
               href="/bracket"
-              className="hidden rounded-md px-2 py-1 text-ink-300 hover:text-pitch-400 sm:inline"
+              className="text-ink-300 hidden rounded-md px-2 py-1 hover:text-pitch-400 sm:inline"
             >
-              Bracket
+              {t("nav.bracket")}
             </Link>
             <Link
               href="/highlights"
-              className="hidden rounded-md px-2 py-1 text-ink-300 hover:text-pitch-400 sm:inline"
+              className="text-ink-300 hidden rounded-md px-2 py-1 hover:text-pitch-400 sm:inline"
             >
-              Highlights
+              {t("nav.highlights")}
+            </Link>
+            <Link
+              href="/notifications"
+              className="text-ink-300 hidden rounded-md px-2 py-1 hover:text-pitch-400 sm:inline"
+            >
+              {t("nav.notifications")}
             </Link>
           </nav>
+          <LanguageSelect />
           <CountrySelect variant="compact" />
         </div>
       </div>

@@ -7,19 +7,20 @@ To become the **most trusted, distraction-free destination** for football fans w
 ## 🌟 Mission
 
 Solve the broken football streaming experience by:
+
 1. Guiding users to **legal streams** (free + paid) instead of pirate sites
 2. **Cleaning up** the ad mess on existing legitimate sites via browser extension
 3. Providing **clean, fast, multilingual** match info, scores, and highlights
 
 ## 👥 Target Audience
 
-| Audience | Why They Need Us |
-|---|---|
-| 🕌 **Muslim football fans** | Prayer time conflict alerts, no haram ads, halal-friendly |
+| Audience                             | Why They Need Us                                                     |
+| ------------------------------------ | -------------------------------------------------------------------- |
+| 🕌 **Muslim football fans**          | Prayer time conflict alerts, no haram ads, halal-friendly            |
 | 🌏 **South Asian fans** (BD, IN, PK) | Bangla/Urdu/Hindi support, free legal stream guides for their region |
-| 💼 **Office workers** | Quick scores, Telegram bot for updates while at work |
-| 📱 **Mobile-first users** | Lightweight PWA, works on 2G internet |
-| 🎓 **Young fans** | Free, clean, mobile-friendly, no credit card needed |
+| 💼 **Office workers**                | Quick scores, Telegram bot for updates while at work                 |
+| 📱 **Mobile-first users**            | Lightweight PWA, works on 2G internet                                |
+| 🎓 **Young fans**                    | Free, clean, mobile-friendly, no credit card needed                  |
 
 ## 🚨 Problem Statement
 
@@ -48,6 +49,7 @@ User → FootballClean → Instantly shown:
 ### 🌐 Website Features
 
 #### MVP (Launch Day)
+
 - [ ] Full match schedule (104 matches, all 32 teams)
 - [ ] Timezone auto-conversion
 - [ ] Live scores (real-time via API)
@@ -59,6 +61,7 @@ User → FootballClean → Instantly shown:
 - [ ] No login required
 
 #### Phase 2 (Week 1 after launch)
+
 - [ ] Team pages (squad, history, stats)
 - [ ] Player pages (stats, goals, cards)
 - [ ] Highlights hub (embedded FIFA YouTube)
@@ -67,6 +70,7 @@ User → FootballClean → Instantly shown:
 - [ ] Browser push notifications
 
 #### Phase 3 (Bonus)
+
 - [ ] Halal prediction league (friends, no money, no betting)
 - [ ] Match discussion rooms (moderated)
 - [ ] AI match insights / summaries
@@ -94,34 +98,35 @@ User → FootballClean → Instantly shown:
 
 ## 🛠️ Tech Stack
 
-| Layer | Technology | Reason |
-|---|---|---|
-| Frontend | Next.js 15 + Tailwind CSS | Fast SSR, great SEO, easy styling |
-| State | React Query | Cache live score data efficiently |
-| Backend | Next.js API Routes | No separate backend needed |
-| Database | Supabase (Postgres) | Free tier, auth-ready |
-| Cache | Redis (Upstash free) | Cache live scores, reduce API calls |
-| Live Scores | football-data.org API | Free, reliable, World Cup support |
-| Highlights | YouTube embed API | Free, legal |
-| Prayer Times | Aladhan API | Free, accurate |
-| Extension | Chrome Manifest V3 | Modern standard |
-| Bot | Node.js + Telegraf | Industry standard |
-| Web Hosting | Vercel | Free tier, auto-deploy |
-| Bot Hosting | Railway | Free tier, easy cron |
-| Analytics | Plausible / Umami | Privacy-friendly, halal |
+| Layer        | Technology                | Reason                              |
+| ------------ | ------------------------- | ----------------------------------- |
+| Frontend     | Next.js 15 + Tailwind CSS | Fast SSR, great SEO, easy styling   |
+| State        | React Query               | Cache live score data efficiently   |
+| Backend      | Next.js API Routes        | No separate backend needed          |
+| Database     | Supabase (Postgres)       | Free tier, auth-ready               |
+| Cache        | Redis (Upstash free)      | Cache live scores, reduce API calls |
+| Live Scores  | football-data.org API     | Free, reliable, World Cup support   |
+| Highlights   | YouTube embed API         | Free, legal                         |
+| Prayer Times | Aladhan API               | Free, accurate                      |
+| Extension    | Chrome Manifest V3        | Modern standard                     |
+| Bot          | Node.js + Telegraf        | Industry standard                   |
+| Web Hosting  | Vercel                    | Free tier, auto-deploy              |
+| Bot Hosting  | Railway                   | Free tier, easy cron                |
+| Analytics    | Plausible / Umami         | Privacy-friendly, halal             |
 
 ## 💰 Monetization Strategy
 
-| Stream | Type | Estimated Monthly |
-|---|---|---|
-| Google AdSense (filtered halal categories) | Display ads | $100 – $500 |
-| Affiliate (DAZN, ESPN+, VPN services) | Commission | $100 – $500 |
-| YouTube embed revenue share | Passive | $20 – $100 |
-| Browser extension Premium ($2/mo) | SaaS | $50 – $2,000 |
-| Telegram bot Premium tier | SaaS | $30 – $200 |
-| **Total Potential** | — | **$300 – $3,300/mo** |
+| Stream                                     | Type        | Estimated Monthly    |
+| ------------------------------------------ | ----------- | -------------------- |
+| Google AdSense (filtered halal categories) | Display ads | $100 – $500          |
+| Affiliate (DAZN, ESPN+, VPN services)      | Commission  | $100 – $500          |
+| YouTube embed revenue share                | Passive     | $20 – $100           |
+| Browser extension Premium ($2/mo)          | SaaS        | $50 – $2,000         |
+| Telegram bot Premium tier                  | SaaS        | $30 – $200           |
+| **Total Potential**                        | —           | **$300 – $3,300/mo** |
 
 ### Halal Filters
+
 - ❌ No gambling/betting ads
 - ❌ No adult content ads
 - ❌ No interest-based (riba) financial product ads
@@ -131,22 +136,22 @@ User → FootballClean → Instantly shown:
 
 ### Launch Month Targets (June 11 – July 19, 2026)
 
-| Metric | Target |
-|---|---|
-| Total visitors | 50,000+ |
-| Returning users | 30%+ |
-| Extension installs | 1,000+ |
-| Telegram bot subscribers | 500+ |
-| Page load speed | < 1.5s |
-| Total earnings | $300+ |
+| Metric                   | Target  |
+| ------------------------ | ------- |
+| Total visitors           | 50,000+ |
+| Returning users          | 30%+    |
+| Extension installs       | 1,000+  |
+| Telegram bot subscribers | 500+    |
+| Page load speed          | < 1.5s  |
+| Total earnings           | $300+   |
 
 ### 6-Month Targets
 
-| Metric | Target |
-|---|---|
-| Monthly active users | 20,000+ |
-| Premium extension users | 200+ |
-| Monthly recurring revenue | $500+ |
+| Metric                    | Target  |
+| ------------------------- | ------- |
+| Monthly active users      | 20,000+ |
+| Premium extension users   | 200+    |
+| Monthly recurring revenue | $500+   |
 
 ## 🚀 Long-Term Vision
 
@@ -160,12 +165,12 @@ FootballClean isn't just for World Cup 2026 — it's the foundation for a **year
 
 ## 🎯 Competitive Edge
 
-| Competitor | They Do | We Do |
-|---|---|---|
-| LiveSoccerTV | Schedule + stream links | + Browser ad blocker + Telegram bot + Prayer times |
-| ESPN | Scores + news | + Multilingual + Mobile-first + Halal-friendly |
-| FlashScore | Live scores only | + Stream finder + Highlights + Community |
-| Pirate sites | Free streams (illegal, full of ads) | Clean experience around LEGAL streams |
+| Competitor   | They Do                             | We Do                                              |
+| ------------ | ----------------------------------- | -------------------------------------------------- |
+| LiveSoccerTV | Schedule + stream links             | + Browser ad blocker + Telegram bot + Prayer times |
+| ESPN         | Scores + news                       | + Multilingual + Mobile-first + Halal-friendly     |
+| FlashScore   | Live scores only                    | + Stream finder + Highlights + Community           |
+| Pirate sites | Free streams (illegal, full of ads) | Clean experience around LEGAL streams              |
 
 ## 📅 Roadmap Phases
 

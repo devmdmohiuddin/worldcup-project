@@ -8,11 +8,11 @@ FootballClean solves the biggest problem football fans face: **finding a clean, 
 
 ## Three Products, One Mission
 
-| Product | What It Does |
-|---|---|
-| 🌐 **Website** | Tells you where to watch every match legally (free + paid) in your country |
+| Product                  | What It Does                                                                   |
+| ------------------------ | ------------------------------------------------------------------------------ |
+| 🌐 **Website**           | Tells you where to watch every match legally (free + paid) in your country     |
 | 🧩 **Browser Extension** | Blocks popup ads, fake play buttons, and adult/gambling ads on streaming sites |
-| 🤖 **Telegram Bot** | Daily updates on today's matches, live goal alerts, and reminders |
+| 🤖 **Telegram Bot**      | Daily updates on today's matches, live goal alerts, and reminders              |
 
 ## Core Features
 

@@ -7,7 +7,10 @@ const COMPETITION = "WC";
 const COMPETITION_TTL_MS = 5 * 60 * 1000;
 const MATCH_TTL_MS = 30 * 1000;
 
-interface CacheEntry<T> { data: T; expires: number }
+interface CacheEntry<T> {
+  data: T;
+  expires: number;
+}
 
 interface FdMatch {
   id: number;
@@ -41,7 +44,9 @@ export class FootballDataClient {
 
   constructor(private apiKey: string | null) {}
 
-  get enabled(): boolean { return this.apiKey !== null; }
+  get enabled(): boolean {
+    return this.apiKey !== null;
+  }
 
   private async fetchJson<T>(path: string): Promise<T | null> {
     if (!this.apiKey) return null;
@@ -88,13 +93,19 @@ export class FootballDataClient {
   private mapStatus(raw: string): MatchStatus {
     switch (raw) {
       case "IN_PLAY":
-      case "LIVE": return "live";
-      case "PAUSED": return "half-time";
-      case "FINISHED": return "finished";
-      case "POSTPONED": return "postponed";
+      case "LIVE":
+        return "live";
+      case "PAUSED":
+        return "half-time";
+      case "FINISHED":
+        return "finished";
+      case "POSTPONED":
+        return "postponed";
       case "CANCELLED":
-      case "SUSPENDED": return "cancelled";
-      default: return "scheduled";
+      case "SUSPENDED":
+        return "cancelled";
+      default:
+        return "scheduled";
     }
   }
 
@@ -152,11 +163,13 @@ export class FootballDataClient {
     const map = await this.loadCompetitionMap();
     if (!map) return this.placeholder(matchId);
 
-    const upstreamId = map.get(this.upstreamKey(
-      resolveSlot(scheduled.homeSlot),
-      resolveSlot(scheduled.awaySlot),
-      scheduled.kickoffUTC,
-    ));
+    const upstreamId = map.get(
+      this.upstreamKey(
+        resolveSlot(scheduled.homeSlot),
+        resolveSlot(scheduled.awaySlot),
+        scheduled.kickoffUTC,
+      ),
+    );
     if (!upstreamId) return this.placeholder(matchId);
 
     const now = Date.now();

@@ -22,8 +22,7 @@ export const en: Strings = {
   standingsTitle: "📊 Group Standings",
   standingsHeader: "Group {group}",
   teamPromptMissing:
-    "Tell me a team name. Example: /team Mexico\n" +
-    "Use /team clear to remove your favourite.",
+    "Tell me a team name. Example: /team Mexico\n" + "Use /team clear to remove your favourite.",
   teamNotFound: "I couldn't find that team. Try the full English name, e.g. /team Mexico.",
   teamSaved: "⭐ Favourite team saved: {team}. You'll get alerts for their matches.",
   teamCleared: "Favourite team cleared.",

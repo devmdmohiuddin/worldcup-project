@@ -25,7 +25,10 @@ export function StandingsTable() {
   return (
     <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {standings.map((g) => (
-        <div key={g.group} className="overflow-hidden rounded-xl border border-ink-800 bg-ink-900/40">
+        <div
+          key={g.group}
+          className="overflow-hidden rounded-xl border border-ink-800 bg-ink-900/40"
+        >
           <div className="border-b border-ink-800 bg-ink-900/60 px-3 py-2 text-sm font-semibold uppercase tracking-wider text-ink-200">
             Group {g.group}
           </div>
@@ -47,7 +50,7 @@ export function StandingsTable() {
                 return (
                   <tr key={r.slot} className={idx < 2 ? "bg-pitch-600/5" : ""}>
                     <td className="px-3 py-2">
-                      <span className="mr-2 text-xs text-ink-500 tabular-nums">{idx + 1}</span>
+                      <span className="mr-2 text-xs tabular-nums text-ink-500">{idx + 1}</span>
                       <span className={placeholder ? "text-ink-400" : "text-ink-100"}>
                         {placeholder ? r.slot : r.team}
                       </span>

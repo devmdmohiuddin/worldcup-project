@@ -5,7 +5,12 @@ body {
   margin: 0;
   background: #0b1220;
   color: #e6ecf5;
-  font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font:
+    14px/1.5 -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
 }
 .cs-shell {
   max-width: 720px;

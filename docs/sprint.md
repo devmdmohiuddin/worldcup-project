@@ -4,30 +4,33 @@
 
 ## 📊 Sprint Overview
 
-| Sprint | Dates | Focus | Status |
-|---|---|---|---|
-| Sprint 1 | May 24 – May 25 | Project Foundation & Schedule | 🟡 In Progress |
-| Sprint 2 | May 26 – May 27 | Live Scores Integration | 🟡 In Progress (code complete, key+Redis pending) |
-| Sprint 3 | May 28 – May 29 | Stream Finder ("Where to Watch") | 🟡 In Progress (code complete; affiliate IDs + deploy pending) |
-| Sprint 4 | May 30 | Highlights Hub | ⏳ Not Started |
-| Sprint 5 | May 31 – Jun 1 | Browser Extension | 🟡 In Progress (code complete; CWS submission pending) |
-| Sprint 6 | Jun 2 | Telegram Bot | 🟡 In Progress (code complete; BotFather + Railway deploy pending) |
-| Sprint 7 | Jun 3 – Jun 4 | Prayer Times & Notifications | ⏳ Not Started |
-| Sprint 8 | Jun 5 | Testing & Polish | ⏳ Not Started |
-| Sprint 9 | Jun 6 | Pre-Launch Setup | ⏳ Not Started |
-| 🚀 Launch | **Jun 11, 2026** | **World Cup Opening Day** | 🎯 Target |
+| Sprint    | Dates            | Focus                            | Status                                                             |
+| --------- | ---------------- | -------------------------------- | ------------------------------------------------------------------ |
+| Sprint 1  | May 24 – May 25  | Project Foundation & Schedule    | 🟡 In Progress                                                     |
+| Sprint 2  | May 26 – May 27  | Live Scores Integration          | 🟡 In Progress (code complete, key+Redis pending)                  |
+| Sprint 3  | May 28 – May 29  | Stream Finder ("Where to Watch") | 🟡 In Progress (code complete; affiliate IDs + deploy pending)     |
+| Sprint 4  | May 30           | Highlights Hub                   | ⏳ Not Started                                                     |
+| Sprint 5  | May 31 – Jun 1   | Browser Extension                | 🟡 In Progress (code complete; CWS submission pending)             |
+| Sprint 6  | Jun 2            | Telegram Bot                     | 🟡 In Progress (code complete; BotFather + Railway deploy pending) |
+| Sprint 7  | Jun 3 – Jun 4    | Prayer Times & Notifications     | ⏳ Not Started                                                     |
+| Sprint 8  | Jun 5            | Testing & Polish                 | ⏳ Not Started                                                     |
+| Sprint 9  | Jun 6            | Pre-Launch Setup                 | ⏳ Not Started                                                     |
+| 🚀 Launch | **Jun 11, 2026** | **World Cup Opening Day**        | 🎯 Target                                                          |
 
 **Status Legend:** ⏳ Not Started · 🟡 In Progress · ✅ Done · 🔴 Blocked
 
 ---
 
 ## 🏁 Sprint 1 — Project Foundation & Schedule
+
 **Dates:** May 24 – May 25, 2026 · **Status:** 🟡 In Progress (code complete, deploy pending)
 
 ### Goal
+
 Set up the full project skeleton and build the static match schedule page.
 
 ### Tasks
+
 - [x] Initialize Next.js 15 project with TypeScript
 - [x] Set up Tailwind CSS + dark mode default
 - [x] Configure ESLint, Prettier, .gitignore
@@ -43,9 +46,11 @@ Set up the full project skeleton and build the static match schedule page.
 - [x] Add PWA manifest + service worker (basic)
 
 ### Deliverable
+
 A live URL showing the full World Cup schedule in the user's timezone, mobile-friendly.
 
 ### Local verification
+
 ```
 pnpm install
 pnpm dev      # http://localhost:3000
@@ -55,18 +60,22 @@ pnpm typecheck
 ```
 
 ### Notes
+
 - Team names in `data/teams.json` are placeholders (A1–L4) outside the three hosts. Update once the FIFA draw is finalized — no code changes needed, the resolver picks up the JSON.
 - Group stage venue/date layout in `lib/fixtures.ts` is a balanced approximation; re-check against the published FIFA chart before launch.
 
 ---
 
 ## ⚽ Sprint 2 — Live Scores Integration
+
 **Dates:** May 26 – May 27, 2026 · **Status:** 🟡 In Progress (code complete; key + Redis pending)
 
 ### Goal
+
 Wire up real-time live scores from football-data.org API.
 
 ### Tasks
+
 - [ ] Sign up for football-data.org API key (free tier) _(owner: you — drop into `.env.local` as `FOOTBALL_DATA_API_KEY`)_
 - [x] Create `/lib/api/footballData.ts` wrapper
 - [x] Set up cache layer — pluggable `Cache` interface in `lib/cache.ts`, in-memory default. Swap to Upstash by implementing the interface against `@upstash/redis` and calling `setCache()` at boot. _(owner: you — provision Upstash project + swap impl when ready)_
@@ -80,9 +89,11 @@ Wire up real-time live scores from football-data.org API.
 - [x] Handle API rate limits gracefully (cache + 10-min stale fallback on 429/5xx)
 
 ### Deliverable
+
 Real-time scores visible on homepage and each match page, updating automatically.
 
 ### Local verification
+
 ```
 pnpm install
 cp .env.example .env.local   # add FOOTBALL_DATA_API_KEY when you have one
@@ -91,6 +102,7 @@ pnpm typecheck && pnpm lint && pnpm build
 ```
 
 ### Notes
+
 - The football-data.org wrapper is cache-first: every endpoint hit goes through `lib/cache.ts` with a 30s TTL for live data and a 10-minute stale fallback used on rate-limit (429) or upstream errors. With no key configured, the wrapper returns `null` and the UI falls back to scheduled-only placeholders — pages still render.
 - The API key never reaches the browser. The home/match/standings/bracket pages call `/api/live*` and `/api/standings` Next routes, which call upstream server-side.
 - `lib/bracket.ts` builds the full Round of 32 → Final structure with placeholders; once all 72 group-stage results are in, the top-2 slots resolve to real team names. The 8 best-third-placed seeds need post-group-stage logic and are tracked as a follow-up.
@@ -98,12 +110,15 @@ pnpm typecheck && pnpm lint && pnpm build
 ---
 
 ## 📍 Sprint 3 — Stream Finder ("Where to Watch")
+
 **Dates:** May 28 – May 29, 2026 · **Status:** 🟡 In Progress (code complete; affiliate IDs + deploy pending)
 
 ### Goal
+
 The killer feature: tell users exactly where to watch each match LEGALLY in their country.
 
 ### Tasks
+
 - [x] Research free legal broadcasters per country (60+ countries seeded in `data/broadcasters.json`)
 - [x] Build broadcaster database (JSON): country → broadcaster → free/paid
 - [x] Auto-detect user country (IP geolocation via Vercel — `x-vercel-ip-country` + cookie override)
@@ -116,9 +131,11 @@ The killer feature: tell users exactly where to watch each match LEGALLY in thei
 - [x] Add "Report broken link" feature → `/api/report-link` POST endpoint
 
 ### Deliverable
+
 Every match page shows exactly where to watch legally, filtered by user's country.
 
 ### Local verification
+
 ```
 pnpm install
 pnpm dev                      # /match/m1 shows Where-to-Watch widget
@@ -126,6 +143,7 @@ pnpm typecheck && pnpm lint && pnpm build
 ```
 
 ### Notes
+
 - Country detection priority: `fc_country` cookie → `x-vercel-ip-country` → `cf-ipcountry` → null (widget falls back to FIFA+ global option).
 - All broadcaster URLs are canonical homepage URLs; verify deep links before launch. Updates only require editing `data/broadcasters.json` — no code changes.
 - Halal constraint: zero betting/gambling partners included. VPN affiliate programs deliberately omitted because most have ambiguous halal status.
@@ -133,12 +151,15 @@ pnpm typecheck && pnpm lint && pnpm build
 ---
 
 ## 🎬 Sprint 4 — Highlights Hub
+
 **Dates:** May 30, 2026 · **Status:** ⏳ Not Started
 
 ### Goal
+
 Embed official YouTube highlights from FIFA/broadcasters for every completed match.
 
 ### Tasks
+
 - [ ] Set up YouTube Data API v3 key
 - [ ] Identify official channels (FIFA, FOX Soccer, BBC Sport, DAZN)
 - [ ] Build automated fetcher: post-match, search for highlight video
@@ -149,17 +170,21 @@ Embed official YouTube highlights from FIFA/broadcasters for every completed mat
 - [ ] "Best goals of tournament" curated section
 
 ### Deliverable
+
 Users can watch official highlights on the site immediately after each match ends.
 
 ---
 
 ## 🧩 Sprint 5 — Browser Extension
+
 **Dates:** May 31 – Jun 1, 2026 · **Status:** 🟡 In Progress (code complete; CWS submission pending)
 
 ### Goal
+
 Build the "Clean Stream" Chrome extension to block ads on streaming sites.
 
 ### Tasks
+
 - [x] Set up Chrome extension project (Manifest V3) — see `extension/manifest.json`
 - [x] Build content script: detect streaming sites — `extension/content/detector.js` (off / light / strict heuristic)
 - [x] Block popup ads (window.open overrides) — page-world hook in `extension/content/injected.js`
@@ -174,15 +199,18 @@ Build the "Clean Stream" Chrome extension to block ads on streaming sites.
 - [x] Add free vs Premium tier logic (Premium = future) — `tier` field + `isPremium()` in `extension/background/settings.js`; popup card adapts
 
 ### Deliverable
+
 Extension live on Chrome Web Store, blocking popups and fake buttons on streaming sites.
 
 ### Local verification
+
 ```
 # Open chrome://extensions → enable Developer mode → Load unpacked → select extension/
 # Visit a streaming aggregator → toolbar badge ticks; popups/fake buttons removed.
 ```
 
 ### Notes
+
 - Halal scope: extension cleans up sites the user already chose to visit. It does **not** enable piracy, does **not** include any gambling/betting affiliate codes, and does **not** whitelist adult ad networks. See `extension/PRIVACY.md`.
 - Static rule IDs are namespaced: `1xxx` adult/gambling, `2xxx` malware/popup networks, `3xxx` popup trackers. Expand the JSON lists without code changes.
 - Sensitive hosts (Google, GitHub, banks, PayPal, Stripe) are excluded via `exclude_matches` in `manifest.json` to prevent collateral damage.
@@ -191,12 +219,15 @@ Extension live on Chrome Web Store, blocking popups and fake buttons on streamin
 ---
 
 ## 🤖 Sprint 6 — Telegram Bot
+
 **Dates:** Jun 2, 2026 · **Status:** 🟡 In Progress (code complete; BotFather + Railway deploy pending)
 
 ### Goal
+
 Launch a Telegram bot for daily match updates and live alerts.
 
 ### Tasks
+
 - [ ] Create bot via @BotFather _(owner: you — register handle, drop token into `bot/.env`)_
 - [x] Set up Node.js + Telegraf project — `bot/` (TypeScript + Telegraf 4 + node-cron, runs via `tsx`)
 - [ ] Deploy to Railway (free tier) _(owner: you — see `bot/README.md` for the step-by-step; `bot/railway.toml` already wired)_
@@ -210,9 +241,11 @@ Launch a Telegram bot for daily match updates and live alerts.
 - [x] Promote bot link on website — Footer CTA, env-driven via `NEXT_PUBLIC_TELEGRAM_BOT_URL`
 
 ### Deliverable
+
 Working Telegram bot with daily updates and live goal alerts.
 
 ### Local verification
+
 ```
 cd bot
 pnpm install
@@ -222,6 +255,7 @@ pnpm dev                      # long-polling; message the bot on Telegram
 ```
 
 ### Notes
+
 - Halal scope: zero betting/gambling content in any message, no third-party ads in DMs, Where-to-Watch links only point to legal broadcasters. Multi-language prioritises Muslim-majority audiences (BN, UR, AR, HI).
 - User prefs persist to a JSON file (`bot/data/users.json`) by default — on Railway, mount a volume at `/app/data` for cross-restart persistence. The store is interface-shaped so a Redis/Postgres backend can drop in later without touching command code.
 - Goal-alert recipients: everyone with `goalAlerts` on gets all goals; users with a `/team` favourite get their team's goals even if `goalAlerts` is off (the favourite is itself an explicit opt-in).
@@ -231,12 +265,15 @@ pnpm dev                      # long-polling; message the bot on Telegram
 ---
 
 ## 🕌 Sprint 7 — Prayer Times & Notifications
+
 **Dates:** Jun 3 – Jun 4, 2026 · **Status:** ⏳ Not Started
 
 ### Goal
+
 Add the unique Muslim-friendly features that set us apart from all competitors.
 
 ### Tasks
+
 - [ ] Integrate Aladhan prayer times API
 - [ ] Detect user location for accurate prayer times
 - [ ] Show prayer times widget on homepage
@@ -250,17 +287,21 @@ Add the unique Muslim-friendly features that set us apart from all competitors.
 - [ ] Add multi-language support (i18n setup): EN, BN, UR, AR, HI
 
 ### Deliverable
+
 Prayer times integrated into every match page. Push notifications working. Site available in 5 languages.
 
 ---
 
 ## 🧪 Sprint 8 — Testing & Polish
+
 **Dates:** Jun 5, 2026 · **Status:** ⏳ Not Started
 
 ### Goal
+
 Find and fix every bug. Make it fast, beautiful, and ready for thousands of users.
 
 ### Tasks
+
 - [ ] Lighthouse audit — target 95+ score
 - [ ] Test on real phones (cheap Android, iPhone)
 - [ ] Test on slow 2G/3G connection
@@ -275,17 +316,21 @@ Find and fix every bug. Make it fast, beautiful, and ready for thousands of user
 - [ ] Write accessibility audit fixes (a11y)
 
 ### Deliverable
+
 Fast, accessible, bug-free site ready for launch. Lighthouse 95+.
 
 ---
 
 ## 🚀 Sprint 9 — Pre-Launch Setup
+
 **Dates:** Jun 6, 2026 · **Status:** ⏳ Not Started
 
 ### Goal
+
 Marketing, SEO, monetization wiring, and final launch prep.
 
 ### Tasks
+
 - [ ] Apply for Google AdSense
 - [ ] Set up halal ad category filters
 - [ ] Add affiliate links (DAZN, ESPN+, VPN)
@@ -300,6 +345,7 @@ Marketing, SEO, monetization wiring, and final launch prep.
 - [ ] Final security review
 
 ### Deliverable
+
 Everything ready. Domain live. Ads approved. Social posts queued.
 
 ---
@@ -307,6 +353,7 @@ Everything ready. Domain live. Ads approved. Social posts queued.
 ## 🎯 Launch Day — June 11, 2026
 
 ### Launch Tasks
+
 - [ ] Final smoke test: all features working
 - [ ] Post launch on Reddit (r/soccer, r/worldcup, r/bangladesh)
 - [ ] Post on Twitter/X with hashtags
@@ -317,6 +364,7 @@ Everything ready. Domain live. Ads approved. Social posts queued.
 - [ ] Respond to user feedback fast
 
 ### Success Criteria for Launch Day
+
 - ✅ Site stays up under load
 - ✅ Live scores update in real-time
 - ✅ At least 1,000 visitors
@@ -328,6 +376,7 @@ Everything ready. Domain live. Ads approved. Social posts queued.
 ## 📈 Post-Launch (Jun 11 – Jul 19, 2026)
 
 ### Daily Tasks During World Cup
+
 - [ ] Monitor uptime and errors
 - [ ] Respond to user feedback
 - [ ] Post one social media update per match day
@@ -336,6 +385,7 @@ Everything ready. Domain live. Ads approved. Social posts queued.
 - [ ] Track earnings + analytics
 
 ### Weekly Reviews
+
 - [ ] Week 1 retrospective (Jun 18)
 - [ ] Week 2 retrospective (Jun 25)
 - [ ] Week 3 retrospective (Jul 2)
@@ -362,6 +412,7 @@ Next: [next 1-2 tasks]
 ## 🎉 Definition of Done
 
 A sprint task is **DONE** when:
+
 1. ✅ Code is written and works locally
 2. ✅ Deployed to production (Vercel)
 3. ✅ Tested on real mobile device

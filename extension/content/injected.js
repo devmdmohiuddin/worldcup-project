@@ -4,10 +4,7 @@
   if (window.__cleanStreamInjected) return;
   window.__cleanStreamInjected = true;
 
-  const mode =
-    document.currentScript?.dataset?.csMode ||
-    window.__cleanStreamMode ||
-    "off";
+  const mode = document.currentScript?.dataset?.csMode || window.__cleanStreamMode || "off";
 
   if (mode === "off") return;
 
@@ -46,7 +43,11 @@
         return null;
       }
       if (mode === "strict" && typeof url === "string") {
-        if (/(\.top|\.click|\.xyz|\.live|\.bid|\.win|\.loan|popads|propellerads|adsterra|hilltopads|exoclick)/i.test(url)) {
+        if (
+          /(\.top|\.click|\.xyz|\.live|\.bid|\.win|\.loan|popads|propellerads|adsterra|hilltopads|exoclick)/i.test(
+            url,
+          )
+        ) {
           notifyBlocked();
           return null;
         }

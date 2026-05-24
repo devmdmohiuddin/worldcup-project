@@ -7,11 +7,7 @@ export function registerStart(app: BotApp): void {
     const strings = getStrings(ctx.user.language);
     await ctx.reply(
       strings.welcome,
-      Markup.keyboard([
-        ["/today", "/standings"],
-        ["/team", "/language"],
-        ["/help"],
-      ]).resize(),
+      Markup.keyboard([["/today", "/standings"], ["/team", "/language"], ["/help"]]).resize(),
     );
     if (!ctx.user.language || ctx.user.language === "en") {
       await ctx.reply(

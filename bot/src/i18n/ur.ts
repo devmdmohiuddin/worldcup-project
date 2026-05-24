@@ -22,8 +22,7 @@ export const ur: Strings = {
   standingsTitle: "📊 گروپ پوائنٹس ٹیبل",
   standingsHeader: "گروپ {group}",
   teamPromptMissing:
-    "ایک ٹیم کا نام دیں۔ مثال: /team Mexico\n" +
-    "پسندیدہ ٹیم ہٹانے کے لیے /team clear۔",
+    "ایک ٹیم کا نام دیں۔ مثال: /team Mexico\n" + "پسندیدہ ٹیم ہٹانے کے لیے /team clear۔",
   teamNotFound: "یہ ٹیم نہیں ملی۔ انگریزی میں مکمل نام لکھیں، جیسے /team Mexico۔",
   teamSaved: "⭐ پسندیدہ ٹیم محفوظ: {team}۔ ان کے میچ کے الرٹس ملیں گے۔",
   teamCleared: "پسندیدہ ٹیم ہٹا دی گئی۔",

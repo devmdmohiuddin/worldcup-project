@@ -35,9 +35,11 @@ export function Bracket() {
         const list = byRound.get(round) ?? [];
         return (
           <section key={round}>
-            <h2 className="mb-3 text-sm font-semibold uppercase tracking-wider text-ink-300">
+            <h2 className="text-ink-300 mb-3 text-sm font-semibold uppercase tracking-wider">
               {round}
-              <span className="ml-2 text-ink-500">· {list.length} match{list.length === 1 ? "" : "es"}</span>
+              <span className="ml-2 text-ink-500">
+                · {list.length} match{list.length === 1 ? "" : "es"}
+              </span>
             </h2>
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
               {list.map((m) => (

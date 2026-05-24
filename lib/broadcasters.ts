@@ -1,9 +1,5 @@
 import broadcastersJson from "@/data/broadcasters.json";
-import type {
-  Broadcaster,
-  BroadcastersData,
-  CountryBroadcasters,
-} from "./types";
+import type { Broadcaster, BroadcastersData, CountryBroadcasters } from "./types";
 
 const DATA: BroadcastersData = broadcastersJson as BroadcastersData;
 

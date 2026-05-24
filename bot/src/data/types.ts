@@ -1,10 +1,12 @@
-export type GroupLetter =
-  | "A" | "B" | "C" | "D" | "E" | "F"
-  | "G" | "H" | "I" | "J" | "K" | "L";
+export type GroupLetter = "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L";
 
 export type MatchStatus =
-  | "scheduled" | "live" | "half-time"
-  | "finished" | "postponed" | "cancelled";
+  | "scheduled"
+  | "live"
+  | "half-time"
+  | "finished"
+  | "postponed"
+  | "cancelled";
 
 export interface Match {
   id: string;

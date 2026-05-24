@@ -43,7 +43,5 @@ export function writeCountryCookie(code: string): void {
   if (typeof document === "undefined") return;
   const maxAge = 60 * 60 * 24 * 180;
   document.cookie = `${COUNTRY_COOKIE}=${encodeURIComponent(code)}; path=/; max-age=${maxAge}; SameSite=Lax`;
-  window.dispatchEvent(
-    new CustomEvent(COUNTRY_CHANGE_EVENT, { detail: code }),
-  );
+  window.dispatchEvent(new CustomEvent(COUNTRY_CHANGE_EVENT, { detail: code }));
 }

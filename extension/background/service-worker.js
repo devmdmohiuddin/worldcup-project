@@ -142,11 +142,13 @@ chrome.runtime.onConnect.addListener((port) => {
       port.postMessage({
         type: "active",
         tab: tab ? { id: tab.id, url: tab.url, title: tab.title } : null,
-        counters: tab ? tabCounts.get(tab.id) || {
-          popups: 0,
-          fakeButtons: 0,
-          overlays: 0,
-        } : null,
+        counters: tab
+          ? tabCounts.get(tab.id) || {
+              popups: 0,
+              fakeButtons: 0,
+              overlays: 0,
+            }
+          : null,
         settings,
       });
     }

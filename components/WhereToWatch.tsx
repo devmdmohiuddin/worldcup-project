@@ -8,10 +8,7 @@ import {
   resolveBroadcasterUrl,
   sortBroadcasters,
 } from "@/lib/broadcasters";
-import {
-  COUNTRY_CHANGE_EVENT,
-  readCountryCookie,
-} from "@/lib/country";
+import { COUNTRY_CHANGE_EVENT, readCountryCookie } from "@/lib/country";
 import { CountrySelect } from "./CountrySelect";
 
 interface Props {
@@ -67,7 +64,10 @@ export function WhereToWatch({ matchId }: Props) {
           <p className="mt-0.5 text-xs text-ink-500">
             {country ? (
               <>
-                Showing options for <span className="text-ink-300">{country.flag} {country.name}</span>
+                Showing options for{" "}
+                <span className="text-ink-300">
+                  {country.flag} {country.name}
+                </span>
               </>
             ) : resolved ? (
               "We don't have listings for your country yet — showing global options."
@@ -106,8 +106,8 @@ export function WhereToWatch({ matchId }: Props) {
       </div>
 
       <footer className="border-t border-ink-800 px-5 py-3 text-xs text-ink-500">
-        Listings curated for halal viewing — no betting partners. Some links may
-        be affiliate links that help fund the site at no cost to you.
+        Listings curated for halal viewing — no betting partners. Some links may be affiliate links
+        that help fund the site at no cost to you.
       </footer>
     </section>
   );
@@ -177,15 +177,9 @@ function BroadcasterCard({
             </span>
           ))}
         </div>
-        {broadcaster.note && (
-          <p className="mt-1.5 text-xs text-ink-400">{broadcaster.note}</p>
-        )}
+        {broadcaster.note && <p className="mt-1.5 text-xs text-ink-400">{broadcaster.note}</p>}
       </div>
-      <ReportLinkButton
-        matchId={matchId}
-        country={country}
-        broadcaster={broadcaster.name}
-      />
+      <ReportLinkButton matchId={matchId} country={country} broadcaster={broadcaster.name} />
     </li>
   );
 }
@@ -222,7 +216,13 @@ function ReportLinkButton({
   }
 
   const label =
-    status === "sent" ? "Thanks" : status === "error" ? "Retry" : status === "sending" ? "…" : "Report";
+    status === "sent"
+      ? "Thanks"
+      : status === "error"
+        ? "Retry"
+        : status === "sending"
+          ? "…"
+          : "Report";
   return (
     <button
       type="button"

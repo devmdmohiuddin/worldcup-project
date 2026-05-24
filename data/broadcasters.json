@@ -17,10 +17,38 @@
       "name": "United States",
       "flag": "🇺🇸",
       "broadcasters": [
-        { "name": "Telemundo (over-the-air)", "type": "tv", "tier": "free", "url": "https://www.telemundo.com/deportes", "languages": ["es"], "note": "Free with antenna" },
-        { "name": "Tubi", "type": "streaming", "tier": "free", "url": "https://tubitv.com/", "languages": ["es"], "note": "Free ad-supported, Spanish-language coverage" },
-        { "name": "FOX Sports", "type": "tv", "tier": "paid", "url": "https://www.foxsports.com/soccer/fifa-world-cup", "languages": ["en"], "note": "English broadcast — requires cable/streaming subscription" },
-        { "name": "Peacock", "type": "streaming", "tier": "paid", "url": "https://www.peacocktv.com/", "languages": ["es"], "note": "Spanish-language Telemundo simulcast" }
+        {
+          "name": "Telemundo (over-the-air)",
+          "type": "tv",
+          "tier": "free",
+          "url": "https://www.telemundo.com/deportes",
+          "languages": ["es"],
+          "note": "Free with antenna"
+        },
+        {
+          "name": "Tubi",
+          "type": "streaming",
+          "tier": "free",
+          "url": "https://tubitv.com/",
+          "languages": ["es"],
+          "note": "Free ad-supported, Spanish-language coverage"
+        },
+        {
+          "name": "FOX Sports",
+          "type": "tv",
+          "tier": "paid",
+          "url": "https://www.foxsports.com/soccer/fifa-world-cup",
+          "languages": ["en"],
+          "note": "English broadcast — requires cable/streaming subscription"
+        },
+        {
+          "name": "Peacock",
+          "type": "streaming",
+          "tier": "paid",
+          "url": "https://www.peacocktv.com/",
+          "languages": ["es"],
+          "note": "Spanish-language Telemundo simulcast"
+        }
       ]
     },
     "CA": {
@@ -28,10 +56,35 @@
       "name": "Canada",
       "flag": "🇨🇦",
       "broadcasters": [
-        { "name": "CBC Gem", "type": "streaming", "tier": "free", "url": "https://gem.cbc.ca/", "languages": ["en"], "note": "Free streaming for select matches" },
-        { "name": "ICI Tou.tv", "type": "streaming", "tier": "free", "url": "https://ici.tou.tv/", "languages": ["fr"] },
-        { "name": "TSN", "type": "tv", "tier": "paid", "url": "https://www.tsn.ca/soccer", "languages": ["en"] },
-        { "name": "RDS", "type": "tv", "tier": "paid", "url": "https://www.rds.ca/soccer", "languages": ["fr"] }
+        {
+          "name": "CBC Gem",
+          "type": "streaming",
+          "tier": "free",
+          "url": "https://gem.cbc.ca/",
+          "languages": ["en"],
+          "note": "Free streaming for select matches"
+        },
+        {
+          "name": "ICI Tou.tv",
+          "type": "streaming",
+          "tier": "free",
+          "url": "https://ici.tou.tv/",
+          "languages": ["fr"]
+        },
+        {
+          "name": "TSN",
+          "type": "tv",
+          "tier": "paid",
+          "url": "https://www.tsn.ca/soccer",
+          "languages": ["en"]
+        },
+        {
+          "name": "RDS",
+          "type": "tv",
+          "tier": "paid",
+          "url": "https://www.rds.ca/soccer",
+          "languages": ["fr"]
+        }
       ]
     },
     "MX": {
@@ -39,9 +92,29 @@
       "name": "Mexico",
       "flag": "🇲🇽",
       "broadcasters": [
-        { "name": "Canal 5 (Televisa)", "type": "tv", "tier": "free", "url": "https://www.televisa.com/", "languages": ["es"], "note": "Free over-the-air" },
-        { "name": "Azteca 7", "type": "tv", "tier": "free", "url": "https://www.tvazteca.com/", "languages": ["es"] },
-        { "name": "ViX", "type": "streaming", "tier": "free", "url": "https://www.vix.com/", "languages": ["es"], "note": "Free tier available" }
+        {
+          "name": "Canal 5 (Televisa)",
+          "type": "tv",
+          "tier": "free",
+          "url": "https://www.televisa.com/",
+          "languages": ["es"],
+          "note": "Free over-the-air"
+        },
+        {
+          "name": "Azteca 7",
+          "type": "tv",
+          "tier": "free",
+          "url": "https://www.tvazteca.com/",
+          "languages": ["es"]
+        },
+        {
+          "name": "ViX",
+          "type": "streaming",
+          "tier": "free",
+          "url": "https://www.vix.com/",
+          "languages": ["es"],
+          "note": "Free tier available"
+        }
       ]
     },
     "GB": {
@@ -49,10 +122,36 @@
       "name": "United Kingdom",
       "flag": "🇬🇧",
       "broadcasters": [
-        { "name": "BBC iPlayer", "type": "streaming", "tier": "free", "url": "https://www.bbc.co.uk/iplayer", "languages": ["en"], "note": "Free with TV licence" },
-        { "name": "ITVX", "type": "streaming", "tier": "free", "url": "https://www.itv.com/watch", "languages": ["en"], "note": "Free with ads" },
-        { "name": "BBC One", "type": "tv", "tier": "free", "url": "https://www.bbc.co.uk/sport/football", "languages": ["en"] },
-        { "name": "ITV", "type": "tv", "tier": "free", "url": "https://www.itv.com/", "languages": ["en"] }
+        {
+          "name": "BBC iPlayer",
+          "type": "streaming",
+          "tier": "free",
+          "url": "https://www.bbc.co.uk/iplayer",
+          "languages": ["en"],
+          "note": "Free with TV licence"
+        },
+        {
+          "name": "ITVX",
+          "type": "streaming",
+          "tier": "free",
+          "url": "https://www.itv.com/watch",
+          "languages": ["en"],
+          "note": "Free with ads"
+        },
+        {
+          "name": "BBC One",
+          "type": "tv",
+          "tier": "free",
+          "url": "https://www.bbc.co.uk/sport/football",
+          "languages": ["en"]
+        },
+        {
+          "name": "ITV",
+          "type": "tv",
+          "tier": "free",
+          "url": "https://www.itv.com/",
+          "languages": ["en"]
+        }
       ]
     },
     "IE": {
@@ -60,8 +159,20 @@
       "name": "Ireland",
       "flag": "🇮🇪",
       "broadcasters": [
-        { "name": "RTÉ Player", "type": "streaming", "tier": "free", "url": "https://www.rte.ie/player/", "languages": ["en", "ga"] },
-        { "name": "BBC iPlayer", "type": "streaming", "tier": "free", "url": "https://www.bbc.co.uk/iplayer", "languages": ["en"] }
+        {
+          "name": "RTÉ Player",
+          "type": "streaming",
+          "tier": "free",
+          "url": "https://www.rte.ie/player/",
+          "languages": ["en", "ga"]
+        },
+        {
+          "name": "BBC iPlayer",
+          "type": "streaming",
+          "tier": "free",
+          "url": "https://www.bbc.co.uk/iplayer",
+          "languages": ["en"]
+        }
       ]
     },
     "DE": {
@@ -69,8 +180,20 @@
       "name": "Germany",
       "flag": "🇩🇪",
       "broadcasters": [
-        { "name": "ARD Mediathek", "type": "streaming", "tier": "free", "url": "https://www.ardmediathek.de/sport", "languages": ["de"] },
-        { "name": "ZDF Mediathek", "type": "streaming", "tier": "free", "url": "https://www.zdf.de/sport", "languages": ["de"] }
+        {
+          "name": "ARD Mediathek",
+          "type": "streaming",
+          "tier": "free",
+          "url": "https://www.ardmediathek.de/sport",
+          "languages": ["de"]
+        },
+        {
+          "name": "ZDF Mediathek",
+          "type": "streaming",
+          "tier": "free",
+          "url": "https://www.zdf.de/sport",
+          "languages": ["de"]
+        }
       ]
     },
     "FR": {
@@ -78,10 +201,34 @@
       "name": "France",
       "flag": "🇫🇷",
       "broadcasters": [
-        { "name": "TF1", "type": "tv", "tier": "free", "url": "https://www.tf1.fr/", "languages": ["fr"] },
-        { "name": "TF1+", "type": "streaming", "tier": "free", "url": "https://www.tf1.fr/tf1/direct", "languages": ["fr"] },
-        { "name": "M6", "type": "tv", "tier": "free", "url": "https://www.6play.fr/", "languages": ["fr"] },
-        { "name": "beIN SPORTS", "type": "streaming", "tier": "paid", "url": "https://www.beinsports.com/fr-fr/", "languages": ["fr"] }
+        {
+          "name": "TF1",
+          "type": "tv",
+          "tier": "free",
+          "url": "https://www.tf1.fr/",
+          "languages": ["fr"]
+        },
+        {
+          "name": "TF1+",
+          "type": "streaming",
+          "tier": "free",
+          "url": "https://www.tf1.fr/tf1/direct",
+          "languages": ["fr"]
+        },
+        {
+          "name": "M6",
+          "type": "tv",
+          "tier": "free",
+          "url": "https://www.6play.fr/",
+          "languages": ["fr"]
+        },
+        {
+          "name": "beIN SPORTS",
+          "type": "streaming",
+          "tier": "paid",
+          "url": "https://www.beinsports.com/fr-fr/",
+          "languages": ["fr"]
+        }
       ]
     },
     "ES": {
@@ -89,9 +236,27 @@
       "name": "Spain",
       "flag": "🇪🇸",
       "broadcasters": [
-        { "name": "RTVE Play", "type": "streaming", "tier": "free", "url": "https://www.rtve.es/play/", "languages": ["es"] },
-        { "name": "La 1 (RTVE)", "type": "tv", "tier": "free", "url": "https://www.rtve.es/television/la-1/", "languages": ["es"] },
-        { "name": "Mitele", "type": "streaming", "tier": "free", "url": "https://www.mitele.es/", "languages": ["es"] }
+        {
+          "name": "RTVE Play",
+          "type": "streaming",
+          "tier": "free",
+          "url": "https://www.rtve.es/play/",
+          "languages": ["es"]
+        },
+        {
+          "name": "La 1 (RTVE)",
+          "type": "tv",
+          "tier": "free",
+          "url": "https://www.rtve.es/television/la-1/",
+          "languages": ["es"]
+        },
+        {
+          "name": "Mitele",
+          "type": "streaming",
+          "tier": "free",
+          "url": "https://www.mitele.es/",
+          "languages": ["es"]
+        }
       ]
     },
     "IT": {
@@ -99,8 +264,20 @@
       "name": "Italy",
       "flag": "🇮🇹",
       "broadcasters": [
-        { "name": "RaiPlay", "type": "streaming", "tier": "free", "url": "https://www.raiplay.it/", "languages": ["it"] },
-        { "name": "Rai 1", "type": "tv", "tier": "free", "url": "https://www.rai.it/", "languages": ["it"] }
+        {
+          "name": "RaiPlay",
+          "type": "streaming",
+          "tier": "free",
+          "url": "https://www.raiplay.it/",
+          "languages": ["it"]
+        },
+        {
+          "name": "Rai 1",
+          "type": "tv",
+          "tier": "free",
+          "url": "https://www.rai.it/",
+          "languages": ["it"]
+        }
       ]
     },
     "PT": {
@@ -108,8 +285,20 @@
       "name": "Portugal",
       "flag": "🇵🇹",
       "broadcasters": [
-        { "name": "RTP Play", "type": "streaming", "tier": "free", "url": "https://www.rtp.pt/play/", "languages": ["pt"] },
-        { "name": "RTP1", "type": "tv", "tier": "free", "url": "https://www.rtp.pt/programa/tv/", "languages": ["pt"] }
+        {
+          "name": "RTP Play",
+          "type": "streaming",
+          "tier": "free",
+          "url": "https://www.rtp.pt/play/",
+          "languages": ["pt"]
+        },
+        {
+          "name": "RTP1",
+          "type": "tv",
+          "tier": "free",
+          "url": "https://www.rtp.pt/programa/tv/",
+          "languages": ["pt"]
+        }
       ]
     },
     "NL": {
@@ -117,8 +306,20 @@
       "name": "Netherlands",
       "flag": "🇳🇱",
       "broadcasters": [
-        { "name": "NOS", "type": "streaming", "tier": "free", "url": "https://nos.nl/sport", "languages": ["nl"] },
-        { "name": "NPO Start", "type": "streaming", "tier": "free", "url": "https://npo.nl/start", "languages": ["nl"] }
+        {
+          "name": "NOS",
+          "type": "streaming",
+          "tier": "free",
+          "url": "https://nos.nl/sport",
+          "languages": ["nl"]
+        },
+        {
+          "name": "NPO Start",
+          "type": "streaming",
+          "tier": "free",
+          "url": "https://npo.nl/start",
+          "languages": ["nl"]
+        }
       ]
     },
     "BE": {
@@ -126,8 +327,20 @@
       "name": "Belgium",
       "flag": "🇧🇪",
       "broadcasters": [
-        { "name": "VRT MAX", "type": "streaming", "tier": "free", "url": "https://www.vrt.be/vrtmax/", "languages": ["nl"] },
-        { "name": "RTBF Auvio", "type": "streaming", "tier": "free", "url": "https://auvio.rtbf.be/", "languages": ["fr"] }
+        {
+          "name": "VRT MAX",
+          "type": "streaming",
+          "tier": "free",
+          "url": "https://www.vrt.be/vrtmax/",
+          "languages": ["nl"]
+        },
+        {
+          "name": "RTBF Auvio",
+          "type": "streaming",
+          "tier": "free",
+          "url": "https://auvio.rtbf.be/",
+          "languages": ["fr"]
+        }
       ]
     },
     "CH": {
@@ -135,8 +348,20 @@
       "name": "Switzerland",
       "flag": "🇨🇭",
       "broadcasters": [
-        { "name": "SRF (Play SRF)", "type": "streaming", "tier": "free", "url": "https://www.srf.ch/play/", "languages": ["de"] },
-        { "name": "RTS (Play RTS)", "type": "streaming", "tier": "free", "url": "https://www.rts.ch/play/", "languages": ["fr"] }
+        {
+          "name": "SRF (Play SRF)",
+          "type": "streaming",
+          "tier": "free",
+          "url": "https://www.srf.ch/play/",
+          "languages": ["de"]
+        },
+        {
+          "name": "RTS (Play RTS)",
+          "type": "streaming",
+          "tier": "free",
+          "url": "https://www.rts.ch/play/",
+          "languages": ["fr"]
+        }
       ]
     },
     "AT": {
@@ -144,7 +369,13 @@
       "name": "Austria",
       "flag": "🇦🇹",
       "broadcasters": [
-        { "name": "ORF ON", "type": "streaming", "tier": "free", "url": "https://on.orf.at/", "languages": ["de"] }
+        {
+          "name": "ORF ON",
+          "type": "streaming",
+          "tier": "free",
+          "url": "https://on.orf.at/",
+          "languages": ["de"]
+        }
       ]
     },
     "DK": {
@@ -152,8 +383,20 @@
       "name": "Denmark",
       "flag": "🇩🇰",
       "broadcasters": [
-        { "name": "DRTV", "type": "streaming", "tier": "free", "url": "https://www.dr.dk/drtv", "languages": ["da"] },
-        { "name": "TV 2 Play", "type": "streaming", "tier": "paid", "url": "https://play.tv2.dk/", "languages": ["da"] }
+        {
+          "name": "DRTV",
+          "type": "streaming",
+          "tier": "free",
+          "url": "https://www.dr.dk/drtv",
+          "languages": ["da"]
+        },
+        {
+          "name": "TV 2 Play",
+          "type": "streaming",
+          "tier": "paid",
+          "url": "https://play.tv2.dk/",
+          "languages": ["da"]
+        }
       ]
     },
     "NO": {
@@ -161,8 +404,20 @@
       "name": "Norway",
       "flag": "🇳🇴",
       "broadcasters": [
-        { "name": "NRK TV", "type": "streaming", "tier": "free", "url": "https://tv.nrk.no/", "languages": ["no"] },
-        { "name": "TV 2 Play", "type": "streaming", "tier": "paid", "url": "https://play.tv2.no/", "languages": ["no"] }
+        {
+          "name": "NRK TV",
+          "type": "streaming",
+          "tier": "free",
+          "url": "https://tv.nrk.no/",
+          "languages": ["no"]
+        },
+        {
+          "name": "TV 2 Play",
+          "type": "streaming",
+          "tier": "paid",
+          "url": "https://play.tv2.no/",
+          "languages": ["no"]
+        }
       ]
     },
     "SE": {
@@ -170,8 +425,20 @@
       "name": "Sweden",
       "flag": "🇸🇪",
       "broadcasters": [
-        { "name": "SVT Play", "type": "streaming", "tier": "free", "url": "https://www.svtplay.se/", "languages": ["sv"] },
-        { "name": "TV4 Play", "type": "streaming", "tier": "paid", "url": "https://www.tv4play.se/", "languages": ["sv"] }
+        {
+          "name": "SVT Play",
+          "type": "streaming",
+          "tier": "free",
+          "url": "https://www.svtplay.se/",
+          "languages": ["sv"]
+        },
+        {
+          "name": "TV4 Play",
+          "type": "streaming",
+          "tier": "paid",
+          "url": "https://www.tv4play.se/",
+          "languages": ["sv"]
+        }
       ]
     },
     "FI": {
@@ -179,7 +446,13 @@
       "name": "Finland",
       "flag": "🇫🇮",
       "broadcasters": [
-        { "name": "Yle Areena", "type": "streaming", "tier": "free", "url": "https://areena.yle.fi/", "languages": ["fi"] }
+        {
+          "name": "Yle Areena",
+          "type": "streaming",
+          "tier": "free",
+          "url": "https://areena.yle.fi/",
+          "languages": ["fi"]
+        }
       ]
     },
     "PL": {
@@ -187,8 +460,20 @@
       "name": "Poland",
       "flag": "🇵🇱",
       "broadcasters": [
-        { "name": "TVP Sport", "type": "streaming", "tier": "free", "url": "https://sport.tvp.pl/", "languages": ["pl"] },
-        { "name": "TVP1", "type": "tv", "tier": "free", "url": "https://www.tvp.pl/", "languages": ["pl"] }
+        {
+          "name": "TVP Sport",
+          "type": "streaming",
+          "tier": "free",
+          "url": "https://sport.tvp.pl/",
+          "languages": ["pl"]
+        },
+        {
+          "name": "TVP1",
+          "type": "tv",
+          "tier": "free",
+          "url": "https://www.tvp.pl/",
+          "languages": ["pl"]
+        }
       ]
     },
     "CZ": {
@@ -196,7 +481,13 @@
       "name": "Czech Republic",
       "flag": "🇨🇿",
       "broadcasters": [
-        { "name": "ČT sport (iVysílání)", "type": "streaming", "tier": "free", "url": "https://www.ceskatelevize.cz/sport/", "languages": ["cs"] }
+        {
+          "name": "ČT sport (iVysílání)",
+          "type": "streaming",
+          "tier": "free",
+          "url": "https://www.ceskatelevize.cz/sport/",
+          "languages": ["cs"]
+        }
       ]
     },
     "HU": {
@@ -204,8 +495,20 @@
       "name": "Hungary",
       "flag": "🇭🇺",
       "broadcasters": [
-        { "name": "M4 Sport", "type": "tv", "tier": "free", "url": "https://m4sport.hu/", "languages": ["hu"] },
-        { "name": "MediaKlikk", "type": "streaming", "tier": "free", "url": "https://mediaklikk.hu/", "languages": ["hu"] }
+        {
+          "name": "M4 Sport",
+          "type": "tv",
+          "tier": "free",
+          "url": "https://m4sport.hu/",
+          "languages": ["hu"]
+        },
+        {
+          "name": "MediaKlikk",
+          "type": "streaming",
+          "tier": "free",
+          "url": "https://mediaklikk.hu/",
+          "languages": ["hu"]
+        }
       ]
     },
     "RO": {
@@ -213,7 +516,13 @@
       "name": "Romania",
       "flag": "🇷🇴",
       "broadcasters": [
-        { "name": "TVR (TVR+)", "type": "streaming", "tier": "free", "url": "https://www.tvrplus.ro/", "languages": ["ro"] }
+        {
+          "name": "TVR (TVR+)",
+          "type": "streaming",
+          "tier": "free",
+          "url": "https://www.tvrplus.ro/",
+          "languages": ["ro"]
+        }
       ]
     },
     "GR": {
@@ -221,7 +530,13 @@
       "name": "Greece",
       "flag": "🇬🇷",
       "broadcasters": [
-        { "name": "ERTFLIX", "type": "streaming", "tier": "free", "url": "https://www.ertflix.gr/", "languages": ["el"] }
+        {
+          "name": "ERTFLIX",
+          "type": "streaming",
+          "tier": "free",
+          "url": "https://www.ertflix.gr/",
+          "languages": ["el"]
+        }
       ]
     },
     "HR": {
@@ -229,7 +544,13 @@
       "name": "Croatia",
       "flag": "🇭🇷",
       "broadcasters": [
-        { "name": "HRTi", "type": "streaming", "tier": "free", "url": "https://hrti.hrt.hr/", "languages": ["hr"] }
+        {
+          "name": "HRTi",
+          "type": "streaming",
+          "tier": "free",
+          "url": "https://hrti.hrt.hr/",
+          "languages": ["hr"]
+        }
       ]
     },
     "RS": {
@@ -237,7 +558,13 @@
       "name": "Serbia",
       "flag": "🇷🇸",
       "broadcasters": [
-        { "name": "RTS Planeta", "type": "streaming", "tier": "free", "url": "https://www.rts.rs/", "languages": ["sr"] }
+        {
+          "name": "RTS Planeta",
+          "type": "streaming",
+          "tier": "free",
+          "url": "https://www.rts.rs/",
+          "languages": ["sr"]
+        }
       ]
     },
     "TR": {
@@ -245,8 +572,20 @@
       "name": "Türkiye",
       "flag": "🇹🇷",
       "broadcasters": [
-        { "name": "TRT 1", "type": "tv", "tier": "free", "url": "https://www.trt1.com.tr/", "languages": ["tr"] },
-        { "name": "TRT izle", "type": "streaming", "tier": "free", "url": "https://www.trtizle.com/", "languages": ["tr"] }
+        {
+          "name": "TRT 1",
+          "type": "tv",
+          "tier": "free",
+          "url": "https://www.trt1.com.tr/",
+          "languages": ["tr"]
+        },
+        {
+          "name": "TRT izle",
+          "type": "streaming",
+          "tier": "free",
+          "url": "https://www.trtizle.com/",
+          "languages": ["tr"]
+        }
       ]
     },
     "UA": {
@@ -254,7 +593,13 @@
       "name": "Ukraine",
       "flag": "🇺🇦",
       "broadcasters": [
-        { "name": "Suspilne Sport", "type": "streaming", "tier": "free", "url": "https://suspilne.media/sport/", "languages": ["uk"] }
+        {
+          "name": "Suspilne Sport",
+          "type": "streaming",
+          "tier": "free",
+          "url": "https://suspilne.media/sport/",
+          "languages": ["uk"]
+        }
       ]
     },
     "BR": {
@@ -262,9 +607,28 @@
       "name": "Brazil",
       "flag": "🇧🇷",
       "broadcasters": [
-        { "name": "Globoplay", "type": "streaming", "tier": "free", "url": "https://globoplay.globo.com/", "languages": ["pt"], "note": "Free signal via TV Globo, ad-supported online" },
-        { "name": "TV Globo", "type": "tv", "tier": "free", "url": "https://redeglobo.globo.com/", "languages": ["pt"] },
-        { "name": "SporTV", "type": "tv", "tier": "paid", "url": "https://sportv.globo.com/", "languages": ["pt"] }
+        {
+          "name": "Globoplay",
+          "type": "streaming",
+          "tier": "free",
+          "url": "https://globoplay.globo.com/",
+          "languages": ["pt"],
+          "note": "Free signal via TV Globo, ad-supported online"
+        },
+        {
+          "name": "TV Globo",
+          "type": "tv",
+          "tier": "free",
+          "url": "https://redeglobo.globo.com/",
+          "languages": ["pt"]
+        },
+        {
+          "name": "SporTV",
+          "type": "tv",
+          "tier": "paid",
+          "url": "https://sportv.globo.com/",
+          "languages": ["pt"]
+        }
       ]
     },
     "AR": {
@@ -272,8 +636,20 @@
       "name": "Argentina",
       "flag": "🇦🇷",
       "broadcasters": [
-        { "name": "TV Pública", "type": "tv", "tier": "free", "url": "https://www.tvpublica.com.ar/", "languages": ["es"] },
-        { "name": "Telefe", "type": "tv", "tier": "free", "url": "https://www.telefe.com/", "languages": ["es"] }
+        {
+          "name": "TV Pública",
+          "type": "tv",
+          "tier": "free",
+          "url": "https://www.tvpublica.com.ar/",
+          "languages": ["es"]
+        },
+        {
+          "name": "Telefe",
+          "type": "tv",
+          "tier": "free",
+          "url": "https://www.telefe.com/",
+          "languages": ["es"]
+        }
       ]
     },
     "CO": {
@@ -281,8 +657,20 @@
       "name": "Colombia",
       "flag": "🇨🇴",
       "broadcasters": [
-        { "name": "Caracol TV", "type": "tv", "tier": "free", "url": "https://www.caracoltv.com/", "languages": ["es"] },
-        { "name": "RCN", "type": "tv", "tier": "free", "url": "https://www.canalrcn.com/", "languages": ["es"] }
+        {
+          "name": "Caracol TV",
+          "type": "tv",
+          "tier": "free",
+          "url": "https://www.caracoltv.com/",
+          "languages": ["es"]
+        },
+        {
+          "name": "RCN",
+          "type": "tv",
+          "tier": "free",
+          "url": "https://www.canalrcn.com/",
+          "languages": ["es"]
+        }
       ]
     },
     "CL": {
@@ -290,7 +678,13 @@
       "name": "Chile",
       "flag": "🇨🇱",
       "broadcasters": [
-        { "name": "Chilevisión", "type": "tv", "tier": "free", "url": "https://www.chilevision.cl/", "languages": ["es"] }
+        {
+          "name": "Chilevisión",
+          "type": "tv",
+          "tier": "free",
+          "url": "https://www.chilevision.cl/",
+          "languages": ["es"]
+        }
       ]
     },
     "PE": {
@@ -298,7 +692,13 @@
       "name": "Peru",
       "flag": "🇵🇪",
       "broadcasters": [
-        { "name": "Latina Televisión", "type": "tv", "tier": "free", "url": "https://www.latina.pe/", "languages": ["es"] }
+        {
+          "name": "Latina Televisión",
+          "type": "tv",
+          "tier": "free",
+          "url": "https://www.latina.pe/",
+          "languages": ["es"]
+        }
       ]
     },
     "UY": {
@@ -306,7 +706,13 @@
       "name": "Uruguay",
       "flag": "🇺🇾",
       "broadcasters": [
-        { "name": "Teledoce", "type": "tv", "tier": "free", "url": "https://www.teledoce.com/", "languages": ["es"] }
+        {
+          "name": "Teledoce",
+          "type": "tv",
+          "tier": "free",
+          "url": "https://www.teledoce.com/",
+          "languages": ["es"]
+        }
       ]
     },
     "EC": {
@@ -314,7 +720,13 @@
       "name": "Ecuador",
       "flag": "🇪🇨",
       "broadcasters": [
-        { "name": "Teleamazonas", "type": "tv", "tier": "free", "url": "https://www.teleamazonas.com/", "languages": ["es"] }
+        {
+          "name": "Teleamazonas",
+          "type": "tv",
+          "tier": "free",
+          "url": "https://www.teleamazonas.com/",
+          "languages": ["es"]
+        }
       ]
     },
     "SA": {
@@ -322,8 +734,21 @@
       "name": "Saudi Arabia",
       "flag": "🇸🇦",
       "broadcasters": [
-        { "name": "SSC (Saudi Sports Company)", "type": "tv", "tier": "free", "url": "https://www.ssc.sa/", "languages": ["ar"], "note": "Free-to-air on Saudi TV; streaming via SSC app" },
-        { "name": "beIN SPORTS MENA", "type": "streaming", "tier": "paid", "url": "https://www.beinsports.com/mena/", "languages": ["ar", "en"] }
+        {
+          "name": "SSC (Saudi Sports Company)",
+          "type": "tv",
+          "tier": "free",
+          "url": "https://www.ssc.sa/",
+          "languages": ["ar"],
+          "note": "Free-to-air on Saudi TV; streaming via SSC app"
+        },
+        {
+          "name": "beIN SPORTS MENA",
+          "type": "streaming",
+          "tier": "paid",
+          "url": "https://www.beinsports.com/mena/",
+          "languages": ["ar", "en"]
+        }
       ]
     },
     "AE": {
@@ -331,7 +756,13 @@
       "name": "United Arab Emirates",
       "flag": "🇦🇪",
       "broadcasters": [
-        { "name": "beIN SPORTS MENA", "type": "streaming", "tier": "paid", "url": "https://www.beinsports.com/mena/", "languages": ["ar", "en"] }
+        {
+          "name": "beIN SPORTS MENA",
+          "type": "streaming",
+          "tier": "paid",
+          "url": "https://www.beinsports.com/mena/",
+          "languages": ["ar", "en"]
+        }
       ]
     },
     "QA": {
@@ -339,7 +770,13 @@
       "name": "Qatar",
       "flag": "🇶🇦",
       "broadcasters": [
-        { "name": "beIN SPORTS", "type": "streaming", "tier": "paid", "url": "https://www.beinsports.com/mena/", "languages": ["ar", "en"] }
+        {
+          "name": "beIN SPORTS",
+          "type": "streaming",
+          "tier": "paid",
+          "url": "https://www.beinsports.com/mena/",
+          "languages": ["ar", "en"]
+        }
       ]
     },
     "KW": {
@@ -347,7 +784,13 @@
       "name": "Kuwait",
       "flag": "🇰🇼",
       "broadcasters": [
-        { "name": "beIN SPORTS MENA", "type": "streaming", "tier": "paid", "url": "https://www.beinsports.com/mena/", "languages": ["ar", "en"] }
+        {
+          "name": "beIN SPORTS MENA",
+          "type": "streaming",
+          "tier": "paid",
+          "url": "https://www.beinsports.com/mena/",
+          "languages": ["ar", "en"]
+        }
       ]
     },
     "EG": {
@@ -355,8 +798,20 @@
       "name": "Egypt",
       "flag": "🇪🇬",
       "broadcasters": [
-        { "name": "Egyptian TV (ERTU)", "type": "tv", "tier": "free", "url": "https://www.ertu.org/", "languages": ["ar"] },
-        { "name": "beIN SPORTS MENA", "type": "streaming", "tier": "paid", "url": "https://www.beinsports.com/mena/", "languages": ["ar"] }
+        {
+          "name": "Egyptian TV (ERTU)",
+          "type": "tv",
+          "tier": "free",
+          "url": "https://www.ertu.org/",
+          "languages": ["ar"]
+        },
+        {
+          "name": "beIN SPORTS MENA",
+          "type": "streaming",
+          "tier": "paid",
+          "url": "https://www.beinsports.com/mena/",
+          "languages": ["ar"]
+        }
       ]
     },
     "MA": {
@@ -364,8 +819,20 @@
       "name": "Morocco",
       "flag": "🇲🇦",
       "broadcasters": [
-        { "name": "Al Aoula (SNRT)", "type": "tv", "tier": "free", "url": "https://www.snrtlive.ma/", "languages": ["ar", "fr"] },
-        { "name": "Arryadia (SNRT)", "type": "tv", "tier": "free", "url": "https://www.snrtlive.ma/", "languages": ["ar"] }
+        {
+          "name": "Al Aoula (SNRT)",
+          "type": "tv",
+          "tier": "free",
+          "url": "https://www.snrtlive.ma/",
+          "languages": ["ar", "fr"]
+        },
+        {
+          "name": "Arryadia (SNRT)",
+          "type": "tv",
+          "tier": "free",
+          "url": "https://www.snrtlive.ma/",
+          "languages": ["ar"]
+        }
       ]
     },
     "DZ": {
@@ -373,7 +840,13 @@
       "name": "Algeria",
       "flag": "🇩🇿",
       "broadcasters": [
-        { "name": "EPTV (Algerian TV)", "type": "tv", "tier": "free", "url": "https://www.entv.dz/", "languages": ["ar", "fr"] }
+        {
+          "name": "EPTV (Algerian TV)",
+          "type": "tv",
+          "tier": "free",
+          "url": "https://www.entv.dz/",
+          "languages": ["ar", "fr"]
+        }
       ]
     },
     "TN": {
@@ -381,7 +854,13 @@
       "name": "Tunisia",
       "flag": "🇹🇳",
       "broadcasters": [
-        { "name": "Watania 1", "type": "tv", "tier": "free", "url": "https://www.watania.tn/", "languages": ["ar"] }
+        {
+          "name": "Watania 1",
+          "type": "tv",
+          "tier": "free",
+          "url": "https://www.watania.tn/",
+          "languages": ["ar"]
+        }
       ]
     },
     "ZA": {
@@ -389,8 +868,20 @@
       "name": "South Africa",
       "flag": "🇿🇦",
       "broadcasters": [
-        { "name": "SABC Sport", "type": "streaming", "tier": "free", "url": "https://www.sabcsport.com/", "languages": ["en"] },
-        { "name": "SuperSport", "type": "streaming", "tier": "paid", "url": "https://supersport.com/", "languages": ["en"] }
+        {
+          "name": "SABC Sport",
+          "type": "streaming",
+          "tier": "free",
+          "url": "https://www.sabcsport.com/",
+          "languages": ["en"]
+        },
+        {
+          "name": "SuperSport",
+          "type": "streaming",
+          "tier": "paid",
+          "url": "https://supersport.com/",
+          "languages": ["en"]
+        }
       ]
     },
     "NG": {
@@ -398,8 +889,20 @@
       "name": "Nigeria",
       "flag": "🇳🇬",
       "broadcasters": [
-        { "name": "NTA", "type": "tv", "tier": "free", "url": "https://www.nta.ng/", "languages": ["en"] },
-        { "name": "SuperSport", "type": "streaming", "tier": "paid", "url": "https://supersport.com/", "languages": ["en"] }
+        {
+          "name": "NTA",
+          "type": "tv",
+          "tier": "free",
+          "url": "https://www.nta.ng/",
+          "languages": ["en"]
+        },
+        {
+          "name": "SuperSport",
+          "type": "streaming",
+          "tier": "paid",
+          "url": "https://supersport.com/",
+          "languages": ["en"]
+        }
       ]
     },
     "KE": {
@@ -407,8 +910,20 @@
       "name": "Kenya",
       "flag": "🇰🇪",
       "broadcasters": [
-        { "name": "KBC Channel 1", "type": "tv", "tier": "free", "url": "https://www.kbc.co.ke/", "languages": ["en", "sw"] },
-        { "name": "SuperSport", "type": "streaming", "tier": "paid", "url": "https://supersport.com/", "languages": ["en"] }
+        {
+          "name": "KBC Channel 1",
+          "type": "tv",
+          "tier": "free",
+          "url": "https://www.kbc.co.ke/",
+          "languages": ["en", "sw"]
+        },
+        {
+          "name": "SuperSport",
+          "type": "streaming",
+          "tier": "paid",
+          "url": "https://supersport.com/",
+          "languages": ["en"]
+        }
       ]
     },
     "GH": {
@@ -416,7 +931,13 @@
       "name": "Ghana",
       "flag": "🇬🇭",
       "broadcasters": [
-        { "name": "GTV Sports+", "type": "tv", "tier": "free", "url": "https://www.gbcghanaonline.com/", "languages": ["en"] }
+        {
+          "name": "GTV Sports+",
+          "type": "tv",
+          "tier": "free",
+          "url": "https://www.gbcghanaonline.com/",
+          "languages": ["en"]
+        }
       ]
     },
     "SN": {
@@ -424,7 +945,13 @@
       "name": "Senegal",
       "flag": "🇸🇳",
       "broadcasters": [
-        { "name": "RTS (Radiodiffusion Télévision Sénégalaise)", "type": "tv", "tier": "free", "url": "https://www.rts.sn/", "languages": ["fr"] }
+        {
+          "name": "RTS (Radiodiffusion Télévision Sénégalaise)",
+          "type": "tv",
+          "tier": "free",
+          "url": "https://www.rts.sn/",
+          "languages": ["fr"]
+        }
       ]
     },
     "IN": {
@@ -432,9 +959,28 @@
       "name": "India",
       "flag": "🇮🇳",
       "broadcasters": [
-        { "name": "JioCinema", "type": "streaming", "tier": "free", "url": "https://www.jiocinema.com/", "languages": ["hi", "en"], "note": "Free tier may carry select matches" },
-        { "name": "Sony Sports Network", "type": "tv", "tier": "paid", "url": "https://www.sonyliv.com/sports/football", "languages": ["en", "hi"] },
-        { "name": "SonyLIV", "type": "streaming", "tier": "paid", "url": "https://www.sonyliv.com/", "languages": ["en", "hi"] }
+        {
+          "name": "JioCinema",
+          "type": "streaming",
+          "tier": "free",
+          "url": "https://www.jiocinema.com/",
+          "languages": ["hi", "en"],
+          "note": "Free tier may carry select matches"
+        },
+        {
+          "name": "Sony Sports Network",
+          "type": "tv",
+          "tier": "paid",
+          "url": "https://www.sonyliv.com/sports/football",
+          "languages": ["en", "hi"]
+        },
+        {
+          "name": "SonyLIV",
+          "type": "streaming",
+          "tier": "paid",
+          "url": "https://www.sonyliv.com/",
+          "languages": ["en", "hi"]
+        }
       ]
     },
     "BD": {
@@ -442,8 +988,22 @@
       "name": "Bangladesh",
       "flag": "🇧🇩",
       "broadcasters": [
-        { "name": "T Sports", "type": "tv", "tier": "free", "url": "https://www.tsports.com/", "languages": ["bn"], "note": "Free-to-air national broadcaster" },
-        { "name": "Toffee", "type": "streaming", "tier": "free", "url": "https://toffeelive.com/", "languages": ["bn"], "note": "Free with Robi connection" }
+        {
+          "name": "T Sports",
+          "type": "tv",
+          "tier": "free",
+          "url": "https://www.tsports.com/",
+          "languages": ["bn"],
+          "note": "Free-to-air national broadcaster"
+        },
+        {
+          "name": "Toffee",
+          "type": "streaming",
+          "tier": "free",
+          "url": "https://toffeelive.com/",
+          "languages": ["bn"],
+          "note": "Free with Robi connection"
+        }
       ]
     },
     "PK": {
@@ -451,7 +1011,13 @@
       "name": "Pakistan",
       "flag": "🇵🇰",
       "broadcasters": [
-        { "name": "PTV Sports", "type": "tv", "tier": "free", "url": "https://www.ptv.com.pk/", "languages": ["ur", "en"] }
+        {
+          "name": "PTV Sports",
+          "type": "tv",
+          "tier": "free",
+          "url": "https://www.ptv.com.pk/",
+          "languages": ["ur", "en"]
+        }
       ]
     },
     "LK": {
@@ -459,7 +1025,13 @@
       "name": "Sri Lanka",
       "flag": "🇱🇰",
       "broadcasters": [
-        { "name": "Sirasa TV", "type": "tv", "tier": "free", "url": "https://www.sirasatv.lk/", "languages": ["si"] }
+        {
+          "name": "Sirasa TV",
+          "type": "tv",
+          "tier": "free",
+          "url": "https://www.sirasatv.lk/",
+          "languages": ["si"]
+        }
       ]
     },
     "ID": {
@@ -467,8 +1039,21 @@
       "name": "Indonesia",
       "flag": "🇮🇩",
       "broadcasters": [
-        { "name": "Vidio (SCTV/Indosiar)", "type": "streaming", "tier": "free", "url": "https://www.vidio.com/", "languages": ["id"], "note": "Free tier with ads; premium for HD" },
-        { "name": "SCTV", "type": "tv", "tier": "free", "url": "https://www.sctv.co.id/", "languages": ["id"] }
+        {
+          "name": "Vidio (SCTV/Indosiar)",
+          "type": "streaming",
+          "tier": "free",
+          "url": "https://www.vidio.com/",
+          "languages": ["id"],
+          "note": "Free tier with ads; premium for HD"
+        },
+        {
+          "name": "SCTV",
+          "type": "tv",
+          "tier": "free",
+          "url": "https://www.sctv.co.id/",
+          "languages": ["id"]
+        }
       ]
     },
     "MY": {
@@ -476,8 +1061,20 @@
       "name": "Malaysia",
       "flag": "🇲🇾",
       "broadcasters": [
-        { "name": "RTM (TV1/TV2)", "type": "tv", "tier": "free", "url": "https://www.rtm.gov.my/", "languages": ["ms"] },
-        { "name": "Astro Sooka", "type": "streaming", "tier": "paid", "url": "https://sooka.my/", "languages": ["ms", "en"] }
+        {
+          "name": "RTM (TV1/TV2)",
+          "type": "tv",
+          "tier": "free",
+          "url": "https://www.rtm.gov.my/",
+          "languages": ["ms"]
+        },
+        {
+          "name": "Astro Sooka",
+          "type": "streaming",
+          "tier": "paid",
+          "url": "https://sooka.my/",
+          "languages": ["ms", "en"]
+        }
       ]
     },
     "SG": {
@@ -485,8 +1082,20 @@
       "name": "Singapore",
       "flag": "🇸🇬",
       "broadcasters": [
-        { "name": "meWATCH", "type": "streaming", "tier": "free", "url": "https://www.mewatch.sg/", "languages": ["en"] },
-        { "name": "Mediacorp Channel 5", "type": "tv", "tier": "free", "url": "https://www.mediacorp.sg/", "languages": ["en"] }
+        {
+          "name": "meWATCH",
+          "type": "streaming",
+          "tier": "free",
+          "url": "https://www.mewatch.sg/",
+          "languages": ["en"]
+        },
+        {
+          "name": "Mediacorp Channel 5",
+          "type": "tv",
+          "tier": "free",
+          "url": "https://www.mediacorp.sg/",
+          "languages": ["en"]
+        }
       ]
     },
     "TH": {
@@ -494,7 +1103,13 @@
       "name": "Thailand",
       "flag": "🇹🇭",
       "broadcasters": [
-        { "name": "Channel 7HD", "type": "tv", "tier": "free", "url": "https://www.ch7.com/", "languages": ["th"] }
+        {
+          "name": "Channel 7HD",
+          "type": "tv",
+          "tier": "free",
+          "url": "https://www.ch7.com/",
+          "languages": ["th"]
+        }
       ]
     },
     "VN": {
@@ -502,7 +1117,13 @@
       "name": "Vietnam",
       "flag": "🇻🇳",
       "broadcasters": [
-        { "name": "VTV (VTVgo)", "type": "streaming", "tier": "free", "url": "https://vtvgo.vn/", "languages": ["vi"] }
+        {
+          "name": "VTV (VTVgo)",
+          "type": "streaming",
+          "tier": "free",
+          "url": "https://vtvgo.vn/",
+          "languages": ["vi"]
+        }
       ]
     },
     "PH": {
@@ -510,7 +1131,13 @@
       "name": "Philippines",
       "flag": "🇵🇭",
       "broadcasters": [
-        { "name": "TV5 / A2Z", "type": "tv", "tier": "free", "url": "https://www.tv5.com.ph/", "languages": ["en", "tl"] }
+        {
+          "name": "TV5 / A2Z",
+          "type": "tv",
+          "tier": "free",
+          "url": "https://www.tv5.com.ph/",
+          "languages": ["en", "tl"]
+        }
       ]
     },
     "JP": {
@@ -518,8 +1145,20 @@
       "name": "Japan",
       "flag": "🇯🇵",
       "broadcasters": [
-        { "name": "NHK Plus", "type": "streaming", "tier": "free", "url": "https://plus.nhk.jp/", "languages": ["ja"] },
-        { "name": "TV Asahi", "type": "tv", "tier": "free", "url": "https://www.tv-asahi.co.jp/", "languages": ["ja"] }
+        {
+          "name": "NHK Plus",
+          "type": "streaming",
+          "tier": "free",
+          "url": "https://plus.nhk.jp/",
+          "languages": ["ja"]
+        },
+        {
+          "name": "TV Asahi",
+          "type": "tv",
+          "tier": "free",
+          "url": "https://www.tv-asahi.co.jp/",
+          "languages": ["ja"]
+        }
       ]
     },
     "KR": {
@@ -527,9 +1166,27 @@
       "name": "South Korea",
       "flag": "🇰🇷",
       "broadcasters": [
-        { "name": "KBS", "type": "tv", "tier": "free", "url": "https://www.kbs.co.kr/", "languages": ["ko"] },
-        { "name": "MBC", "type": "tv", "tier": "free", "url": "https://www.imbc.com/", "languages": ["ko"] },
-        { "name": "SBS", "type": "tv", "tier": "free", "url": "https://www.sbs.co.kr/", "languages": ["ko"] }
+        {
+          "name": "KBS",
+          "type": "tv",
+          "tier": "free",
+          "url": "https://www.kbs.co.kr/",
+          "languages": ["ko"]
+        },
+        {
+          "name": "MBC",
+          "type": "tv",
+          "tier": "free",
+          "url": "https://www.imbc.com/",
+          "languages": ["ko"]
+        },
+        {
+          "name": "SBS",
+          "type": "tv",
+          "tier": "free",
+          "url": "https://www.sbs.co.kr/",
+          "languages": ["ko"]
+        }
       ]
     },
     "CN": {
@@ -537,7 +1194,13 @@
       "name": "China",
       "flag": "🇨🇳",
       "broadcasters": [
-        { "name": "CCTV-5", "type": "tv", "tier": "free", "url": "https://tv.cctv.com/cctv5/", "languages": ["zh"] }
+        {
+          "name": "CCTV-5",
+          "type": "tv",
+          "tier": "free",
+          "url": "https://tv.cctv.com/cctv5/",
+          "languages": ["zh"]
+        }
       ]
     },
     "HK": {
@@ -545,7 +1208,13 @@
       "name": "Hong Kong",
       "flag": "🇭🇰",
       "broadcasters": [
-        { "name": "TVB", "type": "tv", "tier": "free", "url": "https://www.tvb.com/", "languages": ["zh"] }
+        {
+          "name": "TVB",
+          "type": "tv",
+          "tier": "free",
+          "url": "https://www.tvb.com/",
+          "languages": ["zh"]
+        }
       ]
     },
     "TW": {
@@ -553,7 +1222,13 @@
       "name": "Taiwan",
       "flag": "🇹🇼",
       "broadcasters": [
-        { "name": "ELTA TV", "type": "streaming", "tier": "paid", "url": "https://www.eltaott.tv/", "languages": ["zh"] }
+        {
+          "name": "ELTA TV",
+          "type": "streaming",
+          "tier": "paid",
+          "url": "https://www.eltaott.tv/",
+          "languages": ["zh"]
+        }
       ]
     },
     "AU": {
@@ -561,8 +1236,21 @@
       "name": "Australia",
       "flag": "🇦🇺",
       "broadcasters": [
-        { "name": "SBS On Demand", "type": "streaming", "tier": "free", "url": "https://www.sbs.com.au/ondemand", "languages": ["en"], "note": "Free streaming of all matches" },
-        { "name": "SBS", "type": "tv", "tier": "free", "url": "https://www.sbs.com.au/sport/football/", "languages": ["en"] }
+        {
+          "name": "SBS On Demand",
+          "type": "streaming",
+          "tier": "free",
+          "url": "https://www.sbs.com.au/ondemand",
+          "languages": ["en"],
+          "note": "Free streaming of all matches"
+        },
+        {
+          "name": "SBS",
+          "type": "tv",
+          "tier": "free",
+          "url": "https://www.sbs.com.au/sport/football/",
+          "languages": ["en"]
+        }
       ]
     },
     "NZ": {
@@ -570,7 +1258,13 @@
       "name": "New Zealand",
       "flag": "🇳🇿",
       "broadcasters": [
-        { "name": "Sky Sport Now", "type": "streaming", "tier": "paid", "url": "https://www.skysport.co.nz/", "languages": ["en"] }
+        {
+          "name": "Sky Sport Now",
+          "type": "streaming",
+          "tier": "paid",
+          "url": "https://www.skysport.co.nz/",
+          "languages": ["en"]
+        }
       ]
     }
   }

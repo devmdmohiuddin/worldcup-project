@@ -2,17 +2,20 @@
 
 import Link from "next/link";
 import type { LiveMatch, Match } from "@/lib/types";
+import type { PrayerConflict } from "@/lib/prayer";
 import { resolveSlot } from "@/lib/teams";
 import { formatLocalTime } from "@/lib/datetime";
 import { LiveBadge } from "./LiveBadge";
+import { PrayerConflictBadge } from "./PrayerConflictBadge";
 
 interface Props {
   match: Match;
   tz: string;
   live?: LiveMatch;
+  conflict?: PrayerConflict;
 }
 
-export function MatchCard({ match, tz, live }: Props) {
+export function MatchCard({ match, tz, live, conflict }: Props) {
   const home = resolveSlot(match.homeSlot);
   const away = resolveSlot(match.awaySlot);
   const showScore =
@@ -33,7 +36,7 @@ export function MatchCard({ match, tz, live }: Props) {
         ) : (
           <time
             dateTime={match.kickoffUTC}
-            className="font-medium text-ink-200 tabular-nums"
+            className="font-medium tabular-nums text-ink-200"
             suppressHydrationWarning
           >
             {formatLocalTime(match.kickoffUTC, tz)}
@@ -44,7 +47,7 @@ export function MatchCard({ match, tz, live }: Props) {
       <div className="flex items-center justify-between gap-3">
         <TeamLine name={home} slot={match.homeSlot} align="left" />
         {showScore ? (
-          <span className="shrink-0 font-mono text-lg font-semibold text-ink-100 tabular-nums">
+          <span className="shrink-0 font-mono text-lg font-semibold tabular-nums text-ink-100">
             {live?.homeScore ?? 0}–{live?.awayScore ?? 0}
           </span>
         ) : (
@@ -57,21 +60,16 @@ export function MatchCard({ match, tz, live }: Props) {
         <span className="truncate">
           {match.venue.stadium} · {match.venue.city}
         </span>
-        {live?.status === "finished" && <span className="shrink-0 text-ink-500">FT</span>}
+        <div className="flex shrink-0 items-center gap-2">
+          {conflict && <PrayerConflictBadge conflict={conflict} />}
+          {live?.status === "finished" && <span className="text-ink-500">FT</span>}
+        </div>
       </div>
     </Link>
   );
 }
 
-function TeamLine({
-  name,
-  slot,
-  align,
-}: {
-  name: string;
-  slot: string;
-  align: "left" | "right";
-}) {
+function TeamLine({ name, slot, align }: { name: string; slot: string; align: "left" | "right" }) {
   const placeholder = name.startsWith("TBD") || name === slot;
   return (
     <div

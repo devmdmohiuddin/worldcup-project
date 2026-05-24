@@ -76,7 +76,10 @@ TOGGLE_KEYS.forEach((k) => {
 });
 
 els.add.addEventListener("click", async () => {
-  const host = (els.host.value || "").trim().toLowerCase().replace(/^https?:\/\//, "");
+  const host = (els.host.value || "")
+    .trim()
+    .toLowerCase()
+    .replace(/^https?:\/\//, "");
   if (!host) return;
   settings.perSiteOverrides = settings.perSiteOverrides || {};
   settings.perSiteOverrides[host] = els.mode.value;

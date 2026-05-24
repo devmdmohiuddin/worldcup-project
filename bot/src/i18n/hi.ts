@@ -22,8 +22,7 @@ export const hi: Strings = {
   standingsTitle: "📊 ग्रुप स्टैंडिंग्स",
   standingsHeader: "ग्रुप {group}",
   teamPromptMissing:
-    "एक टीम का नाम दें। उदाहरण: /team Mexico\n" +
-    "पसंदीदा टीम हटाने के लिए: /team clear।",
+    "एक टीम का नाम दें। उदाहरण: /team Mexico\n" + "पसंदीदा टीम हटाने के लिए: /team clear।",
   teamNotFound: "वह टीम नहीं मिली। अंग्रेज़ी में पूरा नाम लिखें, जैसे /team Mexico।",
   teamSaved: "⭐ पसंदीदा टीम सेव हुई: {team}। उनके मैच के अलर्ट मिलेंगे।",
   teamCleared: "पसंदीदा टीम हटा दी गई।",

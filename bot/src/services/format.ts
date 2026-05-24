@@ -4,8 +4,10 @@ import type { Strings } from "../i18n/index.js";
 
 export function fmtTime(iso: string, tz = "UTC"): string {
   return new Intl.DateTimeFormat("en-GB", {
-    hour: "2-digit", minute: "2-digit",
-    timeZone: tz, hour12: false,
+    hour: "2-digit",
+    minute: "2-digit",
+    timeZone: tz,
+    hour12: false,
   }).format(new Date(iso));
 }
 

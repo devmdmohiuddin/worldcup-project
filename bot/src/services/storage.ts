@@ -50,9 +50,11 @@ export class UserStore {
   }
 
   private schedulePersist(): void {
-    this.writeQueue = this.writeQueue.then(() => this.persist()).catch((err) => {
-      console.error("[storage] persist failed:", err);
-    });
+    this.writeQueue = this.writeQueue
+      .then(() => this.persist())
+      .catch((err) => {
+        console.error("[storage] persist failed:", err);
+      });
   }
 
   async get(chatId: number): Promise<UserPrefs | null> {

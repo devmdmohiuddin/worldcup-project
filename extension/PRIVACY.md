@@ -55,6 +55,7 @@ No URLs, no page contents, no titles, no search queries.
 ## Halal compliance
 
 The extension is part of the FootballClean halal-friendly product family:
+
 - No gambling, betting, or sportsbook ads or affiliate codes are included
   or recommended.
 - No interest-bearing financial services are included.

@@ -1,18 +1,13 @@
-export type GroupLetter =
-  | "A"
-  | "B"
-  | "C"
-  | "D"
-  | "E"
-  | "F"
-  | "G"
-  | "H"
-  | "I"
-  | "J"
-  | "K"
-  | "L";
+export type GroupLetter = "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L";
 
-export type Stage = "group" | "round-of-32" | "round-of-16" | "quarter" | "semi" | "third" | "final";
+export type Stage =
+  | "group"
+  | "round-of-32"
+  | "round-of-16"
+  | "quarter"
+  | "semi"
+  | "third"
+  | "final";
 
 export type HostCountry = "USA" | "MEX" | "CAN";
 

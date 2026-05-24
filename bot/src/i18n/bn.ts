@@ -21,9 +21,7 @@ export const bn: Strings = {
   matchLine: "{time} · {home} বনাম {away} · {city}",
   standingsTitle: "📊 গ্রুপ পয়েন্ট তালিকা",
   standingsHeader: "গ্রুপ {group}",
-  teamPromptMissing:
-    "একটি দলের নাম দিন। উদাহরণ: /team Mexico\n" +
-    "প্রিয় দল মুছতে /team clear।",
+  teamPromptMissing: "একটি দলের নাম দিন। উদাহরণ: /team Mexico\n" + "প্রিয় দল মুছতে /team clear।",
   teamNotFound: "এই দলটি খুঁজে পাইনি। ইংরেজিতে পুরো নাম লিখুন, যেমন /team Mexico।",
   teamSaved: "⭐ প্রিয় দল সংরক্ষিত: {team}। তাদের ম্যাচের অ্যালার্ট পাবেন।",
   teamCleared: "প্রিয় দল মুছে ফেলা হয়েছে।",

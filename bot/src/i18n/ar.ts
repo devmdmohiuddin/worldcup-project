@@ -21,9 +21,7 @@ export const ar: Strings = {
   matchLine: "{time} · {home} ضد {away} · {city}",
   standingsTitle: "📊 ترتيب المجموعات",
   standingsHeader: "المجموعة {group}",
-  teamPromptMissing:
-    "اكتب اسم فريق. مثال: /team Mexico\n" +
-    "لحذف الفريق المفضل: /team clear.",
+  teamPromptMissing: "اكتب اسم فريق. مثال: /team Mexico\n" + "لحذف الفريق المفضل: /team clear.",
   teamNotFound: "لم أجد هذا الفريق. اكتب الاسم بالإنجليزية، مثل /team Mexico.",
   teamSaved: "⭐ تم حفظ الفريق المفضل: {team}. ستصلك تنبيهات مبارياتهم.",
   teamCleared: "تم حذف الفريق المفضل.",

@@ -23,7 +23,9 @@ export function resolveSlot(slot: string): string {
   return names[idx]!;
 }
 
-export function findTeamByName(query: string): { slot: string; team: string; group: GroupLetter } | null {
+export function findTeamByName(
+  query: string,
+): { slot: string; team: string; group: GroupLetter } | null {
   const norm = query.trim().toLowerCase();
   if (!norm) return null;
   for (const group of Object.keys(TEAMS) as GroupLetter[]) {

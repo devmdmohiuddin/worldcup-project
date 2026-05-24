@@ -58,7 +58,11 @@ export function startGoalAlerts(app: BotApp, deps: BotDeps): void {
       const prev = snapshots.get(m.id);
       const nextEventKeys = new Set(live.events.map(eventKey));
 
-      if (prev && prev.status === "scheduled" && (live.status === "live" || live.status === "half-time")) {
+      if (
+        prev &&
+        prev.status === "scheduled" &&
+        (live.status === "live" || live.status === "half-time")
+      ) {
         await notifyMatchStarted(app, m, users);
       }
 

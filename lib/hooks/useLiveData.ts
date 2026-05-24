@@ -36,7 +36,7 @@ export function useLiveData<T>({
         const res = await fetch(url, { cache: "no-store" });
         const json = (await res.json()) as unknown;
         if (aborted || !mountedRef.current) return;
-        const data = (select ? select(json) : (json as T));
+        const data = select ? select(json) : (json as T);
         setState({ data, error: null, loading: false });
       } catch (err) {
         if (aborted || !mountedRef.current) return;

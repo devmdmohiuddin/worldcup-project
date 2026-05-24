@@ -6,9 +6,11 @@ import type { LiveMatch, Match, MatchEvent } from "@/lib/types";
 import { resolveSlot } from "@/lib/teams";
 import { detectUserTimezone, formatLocalDateTime } from "@/lib/datetime";
 import { useLiveData } from "@/lib/hooks/useLiveData";
+import { useMatchConflicts } from "@/lib/hooks/useMatchConflicts";
 import { LiveBadge } from "./LiveBadge";
 import { WhereToWatch } from "./WhereToWatch";
 import { MatchHighlights } from "./MatchHighlights";
+import { PrayerConflictBadge } from "./PrayerConflictBadge";
 
 interface Props {
   match: Match;
@@ -19,14 +21,17 @@ export function MatchDetail({ match }: Props) {
   const home = resolveSlot(match.homeSlot);
   const away = resolveSlot(match.awaySlot);
 
+  const singleMatchList = useMemo(() => [match], [match]);
+  const conflicts = useMatchConflicts(singleMatchList);
+  const conflict = conflicts.get(match.id);
+
   const { data: live, loading } = useLiveData<LiveMatch>({
     url: `/api/live/${match.id}`,
     intervalMs: 30_000,
   });
 
   const status = live?.status ?? "scheduled";
-  const showScore =
-    status === "live" || status === "half-time" || status === "finished";
+  const showScore = status === "live" || status === "half-time" || status === "finished";
 
   return (
     <section className="container-page space-y-6 py-6">
@@ -54,15 +59,13 @@ export function MatchDetail({ match }: Props) {
           <TeamBig name={home} slot={match.homeSlot} align="right" />
           <div className="text-center">
             {showScore ? (
-              <div className="font-mono text-4xl font-bold text-ink-100 tabular-nums">
+              <div className="font-mono text-4xl font-bold tabular-nums text-ink-100">
                 {live?.homeScore ?? 0}
                 <span className="mx-2 text-ink-500">–</span>
                 {live?.awayScore ?? 0}
               </div>
             ) : (
-              <div className="text-sm font-semibold uppercase tracking-wider text-ink-400">
-                vs
-              </div>
+              <div className="text-sm font-semibold uppercase tracking-wider text-ink-400">vs</div>
             )}
             {status === "finished" && (
               <div className="mt-1 text-xs uppercase tracking-wider text-ink-500">Full time</div>
@@ -71,7 +74,7 @@ export function MatchDetail({ match }: Props) {
           <TeamBig name={away} slot={match.awaySlot} align="left" />
         </div>
 
-        <div className="mt-6 grid grid-cols-1 gap-3 text-sm text-ink-300 sm:grid-cols-2">
+        <div className="text-ink-300 mt-6 grid grid-cols-1 gap-3 text-sm sm:grid-cols-2">
           <div>
             <div className="text-xs uppercase tracking-wider text-ink-500">Kick-off</div>
             <div suppressHydrationWarning>{formatLocalDateTime(match.kickoffUTC, tz)}</div>
@@ -83,6 +86,12 @@ export function MatchDetail({ match }: Props) {
             </div>
           </div>
         </div>
+
+        {conflict && (
+          <div className="mt-4 flex items-center gap-2">
+            <PrayerConflictBadge conflict={conflict} />
+          </div>
+        )}
       </header>
 
       <WhereToWatch matchId={match.id} />
@@ -103,15 +112,7 @@ export function MatchDetail({ match }: Props) {
   );
 }
 
-function TeamBig({
-  name,
-  slot,
-  align,
-}: {
-  name: string;
-  slot: string;
-  align: "left" | "right";
-}) {
+function TeamBig({ name, slot, align }: { name: string; slot: string; align: "left" | "right" }) {
   const placeholder = name.startsWith("TBD") || name === slot;
   return (
     <div className={`min-w-0 ${align === "right" ? "text-right" : "text-left"}`}>
@@ -150,8 +151,11 @@ function EventsList({
       </div>
       <ul className="divide-y divide-ink-800">
         {events.map((e, i) => (
-          <li key={i} className="grid grid-cols-[3rem_1fr_auto] items-center gap-3 px-4 py-2 text-sm">
-            <span className="font-mono text-ink-400 tabular-nums">
+          <li
+            key={i}
+            className="grid grid-cols-[3rem_1fr_auto] items-center gap-3 px-4 py-2 text-sm"
+          >
+            <span className="font-mono tabular-nums text-ink-400">
               {e.minute != null ? `${e.minute}'` : "—"}
             </span>
             <span className="truncate">
@@ -203,7 +207,7 @@ function StatsPanel({ live }: { live: LiveMatch | null }) {
 function Stat({ label, value }: { label: string; value: number }) {
   return (
     <div className="rounded-xl border border-ink-800 bg-ink-900/40 p-4 text-center">
-      <div className="font-mono text-2xl font-bold text-ink-100 tabular-nums">{value}</div>
+      <div className="font-mono text-2xl font-bold tabular-nums text-ink-100">{value}</div>
       <div className="mt-1 text-xs uppercase tracking-wider text-ink-500">{label}</div>
     </div>
   );

@@ -30,12 +30,22 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="dark">
-      <body>
+    <html lang="en" dir="ltr" className="dark" suppressHydrationWarning>
+      <body suppressHydrationWarning>
         {children}
         <script
           dangerouslySetInnerHTML={{
             __html: `
+              (function () {
+                try {
+                  var m = document.cookie.match(/(?:^|;\\s*)fc_locale=([^;]+)/);
+                  if (m) {
+                    var code = decodeURIComponent(m[1]);
+                    document.documentElement.lang = code;
+                    document.documentElement.dir = (code === 'ar' || code === 'ur') ? 'rtl' : 'ltr';
+                  }
+                } catch (e) {}
+              })();
               if ('serviceWorker' in navigator) {
                 window.addEventListener('load', () => {
                   navigator.serviceWorker.register('/sw.js').catch(() => {});

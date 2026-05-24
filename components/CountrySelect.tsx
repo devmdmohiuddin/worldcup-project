@@ -1,11 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import {
-  COUNTRY_CHANGE_EVENT,
-  readCountryCookie,
-  writeCountryCookie,
-} from "@/lib/country";
+import { COUNTRY_CHANGE_EVENT, readCountryCookie, writeCountryCookie } from "@/lib/country";
 import { listSupportedCountries } from "@/lib/broadcasters";
 
 interface Props {
@@ -88,7 +84,7 @@ export function CountrySelect({
   }
 
   return (
-    <label className="flex items-center gap-2 text-sm text-ink-300">
+    <label className="text-ink-300 flex items-center gap-2 text-sm">
       <span>{label}:</span>
       <select
         aria-label={label}

@@ -47,18 +47,11 @@
   const host = location.hostname.toLowerCase();
   const path = location.pathname.toLowerCase();
 
-  const isLegit = LEGIT_BROADCASTERS.some(
-    (d) => host === d || host.endsWith("." + d),
-  );
+  const isLegit = LEGIT_BROADCASTERS.some((d) => host === d || host.endsWith("." + d));
 
   const looksLikeStream =
     STREAMING_KEYWORDS.some((k) => host.includes(k) || path.includes(k)) ||
-    document.querySelector?.('video, iframe[src*="embed"], iframe[src*="player"]') !=
-      null;
+    document.querySelector?.('video, iframe[src*="embed"], iframe[src*="player"]') != null;
 
-  window.__cleanStreamMode = isLegit
-    ? "light"
-    : looksLikeStream
-      ? "strict"
-      : "off";
+  window.__cleanStreamMode = isLegit ? "light" : looksLikeStream ? "strict" : "off";
 })();

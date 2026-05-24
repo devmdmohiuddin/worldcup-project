@@ -68,9 +68,7 @@ export async function getHighlightsForMatch(matchId: string): Promise<Highlight[
   const query = `${home} vs ${away} highlights`;
 
   const results = await Promise.all(
-    CHANNELS.map((c) =>
-      ytSearch({ channelId: c.channelId, query, publishedAfter, max: 3 }),
-    ),
+    CHANNELS.map((c) => ytSearch({ channelId: c.channelId, query, publishedAfter, max: 3 })),
   );
 
   const highlights: Highlight[] = [];
@@ -107,9 +105,7 @@ export async function listAllHighlights(): Promise<Highlight[]> {
   // in the future can't possibly have highlights yet. getHighlightsForMatch
   // further gates on live status === "finished".
   const now = Date.now();
-  const candidates = getGroupStageMatches().filter(
-    (m) => Date.parse(m.kickoffUTC) < now,
-  );
+  const candidates = getGroupStageMatches().filter((m) => Date.parse(m.kickoffUTC) < now);
 
   // Sequential to avoid bursting the YouTube quota — these are cache hits in
   // steady state, so latency is mostly local.

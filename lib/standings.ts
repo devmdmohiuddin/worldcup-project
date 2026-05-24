@@ -2,9 +2,7 @@ import { getGroupStageMatches } from "./fixtures";
 import { resolveSlot } from "./teams";
 import type { GroupLetter, GroupStanding, LiveMatch, StandingRow } from "./types";
 
-const GROUP_LETTERS: GroupLetter[] = [
-  "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L",
-];
+const GROUP_LETTERS: GroupLetter[] = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"];
 
 function emptyRow(slot: string): StandingRow {
   return {
