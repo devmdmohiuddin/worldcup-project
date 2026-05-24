@@ -8,6 +8,7 @@ import { detectUserTimezone, formatLocalDateTime } from "@/lib/datetime";
 import { useLiveData } from "@/lib/hooks/useLiveData";
 import { LiveBadge } from "./LiveBadge";
 import { WhereToWatch } from "./WhereToWatch";
+import { MatchHighlights } from "./MatchHighlights";
 
 interface Props {
   match: Match;
@@ -85,6 +86,8 @@ export function MatchDetail({ match }: Props) {
       </header>
 
       <WhereToWatch matchId={match.id} />
+
+      <MatchHighlights matchId={match.id} isFinished={status === "finished"} />
 
       <EventsList events={live?.events ?? []} homeName={home} awayName={away} />
 

@@ -1,0 +1,35 @@
+{
+  "_note": "Curated seed highlights shown until the YouTube fetcher pulls live data post-match. Each video is an actual upload from one of the channels in highlight_channels.json. 'Best goals of tournament' entries are placeholders until World Cup 2026 plays; they showcase prior FIFA-uploaded WC clips so the section is never empty.",
+  "bestGoals": [
+    {
+      "videoId": "QGc11oZb-RU",
+      "title": "TOP 10 GOALS | 2022 FIFA World Cup",
+      "channelId": "UCpcTrCXblq78GZrTUTLWeBw",
+      "channelName": "FIFA",
+      "publishedAt": "2022-12-19T18:00:00Z",
+      "thumbnail": "https://i.ytimg.com/vi/QGc11oZb-RU/hqdefault.jpg",
+      "tags": ["best-goals", "fifa", "world-cup"],
+      "kind": "best-goals"
+    },
+    {
+      "videoId": "Es5pf8eAn0E",
+      "title": "Richarlison's bicycle kick vs Serbia | 2022 FIFA World Cup",
+      "channelId": "UCpcTrCXblq78GZrTUTLWeBw",
+      "channelName": "FIFA",
+      "publishedAt": "2022-11-24T22:00:00Z",
+      "thumbnail": "https://i.ytimg.com/vi/Es5pf8eAn0E/hqdefault.jpg",
+      "tags": ["best-goals", "fifa", "world-cup"],
+      "kind": "best-goals"
+    },
+    {
+      "videoId": "Yzm46k3PrYU",
+      "title": "Cody Gakpo Goal vs Senegal | 2022 FIFA World Cup",
+      "channelId": "UCpcTrCXblq78GZrTUTLWeBw",
+      "channelName": "FIFA",
+      "publishedAt": "2022-11-21T19:00:00Z",
+      "thumbnail": "https://i.ytimg.com/vi/Yzm46k3PrYU/hqdefault.jpg",
+      "tags": ["best-goals", "fifa", "world-cup"],
+      "kind": "best-goals"
+    }
+  ]
+}

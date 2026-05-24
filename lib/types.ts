@@ -142,3 +142,35 @@ export interface BroadcastersData {
   fallback: Broadcaster[];
   countries: Record<string, CountryBroadcasters>;
 }
+
+export type HighlightKind = "match" | "best-goals" | "team" | "player";
+
+export interface HighlightChannel {
+  /** YouTube channel id, e.g. UCpcTrCXblq78GZrTUTLWeBw (FIFA). */
+  channelId: string;
+  /** Display name shown to users. */
+  name: string;
+  /** Country/region the channel is tied to (display only). */
+  region?: string;
+  /** Languages of the uploaded highlights (display only). */
+  languages?: string[];
+}
+
+export interface Highlight {
+  /** YouTube video id. */
+  videoId: string;
+  title: string;
+  description?: string;
+  /** Channel that uploaded it — always one of our trusted official channels. */
+  channelId: string;
+  channelName: string;
+  /** ISO 8601 timestamp of publish. */
+  publishedAt: string;
+  /** Best available thumbnail URL. */
+  thumbnail: string;
+  /** Optional: match id if this highlight is tied to a specific fixture. */
+  matchId?: string;
+  /** Free-form tags used by the filter UI (team names, "best-goals", etc). */
+  tags: string[];
+  kind: HighlightKind;
+}

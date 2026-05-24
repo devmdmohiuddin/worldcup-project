@@ -1,0 +1,41 @@
+{
+  "_note": "Allow-list of official broadcaster YouTube channels. We ONLY embed videos uploaded by these accounts to guarantee licensed, halal content (no gambling overlays, no pirated rips). Channel ids are stable; update display names if a brand rebrands.",
+  "channels": [
+    {
+      "channelId": "UCpcTrCXblq78GZrTUTLWeBw",
+      "name": "FIFA",
+      "region": "Global",
+      "languages": ["en"]
+    },
+    {
+      "channelId": "UCyGa1YEx9ST66rYrJTGIKOw",
+      "name": "FOX Soccer",
+      "region": "USA",
+      "languages": ["en"]
+    },
+    {
+      "channelId": "UCNAf1k0yIjyGu3k9BwAg3lg",
+      "name": "BBC Sport",
+      "region": "UK",
+      "languages": ["en"]
+    },
+    {
+      "channelId": "UCmzy72gDEtbK0amg6mTwHmw",
+      "name": "DAZN Football",
+      "region": "Global",
+      "languages": ["en", "es", "it", "de"]
+    },
+    {
+      "channelId": "UCOEZjMzgFpapV82DDoraQ-Q",
+      "name": "TSN",
+      "region": "Canada",
+      "languages": ["en"]
+    },
+    {
+      "channelId": "UCWV3obpZVGgJ3j9FVhEjF2Q",
+      "name": "Televisa Deportes",
+      "region": "Mexico",
+      "languages": ["es"]
+    }
+  ]
+}

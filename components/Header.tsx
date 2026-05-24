@@ -33,6 +33,12 @@ export function Header() {
             >
               Bracket
             </Link>
+            <Link
+              href="/highlights"
+              className="hidden rounded-md px-2 py-1 text-ink-300 hover:text-pitch-400 sm:inline"
+            >
+              Highlights
+            </Link>
           </nav>
           <CountrySelect variant="compact" />
         </div>
