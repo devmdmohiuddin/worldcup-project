@@ -27,7 +27,7 @@ export function LiveTicker() {
   return (
     <div className="border-b border-ink-800 bg-ink-900/40">
       <div className="container-page flex items-center gap-3 overflow-x-auto py-2 text-sm">
-        <span className="shrink-0 text-xs font-semibold uppercase tracking-wider text-red-300">
+        <span className="shrink-0 text-xs font-semibold uppercase tracking-wider text-red-700">
           Live now
         </span>
         <div className="flex items-center gap-2">

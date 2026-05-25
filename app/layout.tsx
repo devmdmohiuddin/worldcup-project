@@ -44,7 +44,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0f172a",
+  themeColor: "#ffffff",
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
@@ -52,7 +52,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" dir="ltr" className="dark" suppressHydrationWarning>
+    <html lang="en" dir="ltr" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://i.ytimg.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.youtube.com" crossOrigin="anonymous" />
