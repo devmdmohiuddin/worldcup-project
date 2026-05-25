@@ -5,7 +5,7 @@
 //   - Cache-first for static assets (Next.js hashes filenames, so this is safe).
 //   - Never cache API responses — live data must always hit the network.
 
-const VERSION = "v2";
+const VERSION = "v3";
 const SHELL_CACHE = `shell-${VERSION}`;
 const STATIC_CACHE = `static-${VERSION}`;
 
