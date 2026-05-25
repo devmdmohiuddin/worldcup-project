@@ -106,7 +106,7 @@ export function WhereToWatch({ matchId }: Props) {
       </div>
 
       <footer className="border-t border-ink-800 px-5 py-3 text-xs text-ink-500">
-        Listings curated for halal viewing — no betting partners. Some links may be affiliate links
+        Listings curated for clean viewing — no betting partners. Some links may be affiliate links
         that help fund the site at no cost to you.
       </footer>
     </section>

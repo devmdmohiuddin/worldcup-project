@@ -25,7 +25,7 @@ function eventKey(e: MatchEvent): string {
  *     they still get their team's goals (they explicitly opted in by setting a
  *     favourite)
  *
- * Halal note: we don't push betting odds, gambling promos, or third-party ads.
+ * Clean note: we don't push betting odds, gambling promos, or third-party ads.
  */
 export function startGoalAlerts(app: BotApp, deps: BotDeps): void {
   const { config, fdClient, store } = deps;

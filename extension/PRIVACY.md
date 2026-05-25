@@ -1,8 +1,8 @@
-# Privacy Policy — Clean Stream by FootballClean
+# Privacy Policy — Clean Stream by MatchHub
 
 _Last updated: 2026-05-24_
 
-Clean Stream is built and maintained by FootballClean (https://footballclean.com).
+Clean Stream is built and maintained by MatchHub (https://matchhub.live).
 This policy describes exactly what the extension does and does not do with your
 data. Plain English, no dark patterns.
 
@@ -45,16 +45,16 @@ No URLs, no page contents, no titles, no search queries.
 
 - It does not enable, link to, or facilitate piracy. Clean Stream only
   cleans up sites you have already chosen to visit.
-- It does not contact any FootballClean server. There is no telemetry
+- It does not contact any MatchHub server. There is no telemetry
   endpoint.
 - It does not inject ads, affiliate links, or paid content into pages.
 - It does not modify legitimate broadcasters (BBC, ITV, FOX, FIFA+, etc.)
   beyond removing third-party ad-network requests if you have them
   enabled.
 
-## Halal compliance
+## Content policy
 
-The extension is part of the FootballClean halal-friendly product family:
+The extension is part of the MatchHub family-friendly product family:
 
 - No gambling, betting, or sportsbook ads or affiliate codes are included
   or recommended.
@@ -76,4 +76,4 @@ The extension is part of the FootballClean halal-friendly product family:
 
 ## Contact
 
-Questions or concerns: support@footballclean.com
+Questions or concerns: support@matchhub.live

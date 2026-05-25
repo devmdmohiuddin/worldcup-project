@@ -13,15 +13,19 @@ export function Header() {
       className="sticky top-0 z-30 border-b border-ink-800/80 bg-ink-950/85 backdrop-blur"
     >
       <div className="container-page flex h-14 items-center justify-between gap-3">
-        <Link href="/" className="flex items-center gap-2" aria-label="FootballClean home">
-          <span
+        <Link href="/" className="flex items-center gap-2" aria-label="MatchHub home">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/icons/icon.svg"
+            alt=""
             aria-hidden
-            className="inline-flex h-7 w-7 items-center justify-center rounded-md bg-pitch-600 text-base font-bold text-white"
-          >
-            ⚽
-          </span>
+            width={28}
+            height={28}
+            className="h-7 w-7 rounded-md"
+          />
           <span className="text-base font-semibold tracking-tight">
-            Football<span className="text-pitch-400">Clean</span>
+            Match<span className="text-pitch-400">Hub</span>
+            <span className="ml-0.5 text-xs font-medium text-orange-400">.live</span>
           </span>
         </Link>
         <div className="flex items-center gap-2 sm:gap-3">

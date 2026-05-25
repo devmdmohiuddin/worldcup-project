@@ -15,7 +15,7 @@ export const ur: Strings = {
     "/language — زبان تبدیل کریں (EN, BN, UR, AR, HI)\n" +
     "/alerts — لائیو گول الرٹ آن/آف\n" +
     "/digest — روزانہ 9 بجے کا پیغام آن/آف\n" +
-    "/website — footballclean.com کھولیں",
+    "/website — matchhub.live کھولیں",
   todayHeader: "📅 آج کے میچز",
   todayEmpty: "آج کوئی میچ نہیں۔ مکمل شیڈول ویب سائٹ پر دیکھیں۔",
   matchLine: "{time} · {home} بمقابلہ {away} · {city}",
@@ -37,7 +37,7 @@ export const ur: Strings = {
   dailyDigestHeader: "🌅 آج ورلڈ کپ میں",
   goalAlertHeader: "⚽ گول!",
   matchStartedHeader: "⏱️ کک آف!",
-  whereToWatch: "📍 کہاں دیکھیں: footballclean.com/match/{matchId}",
-  websiteCta: "🌐 مکمل شیڈول اور لائیو سکور footballclean.com پر",
+  whereToWatch: "📍 کہاں دیکھیں: matchhub.live/match/{matchId}",
+  websiteCta: "🌐 مکمل شیڈول اور لائیو سکور matchhub.live پر",
   unknownCommand: "میں سمجھا نہیں۔ /help آزمائیں۔",
 };

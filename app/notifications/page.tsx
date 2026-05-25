@@ -5,7 +5,7 @@ import { NotificationPreferences } from "@/components/NotificationPreferences";
 export const metadata = {
   title: "Notifications",
   description:
-    "Choose what FootballClean tells you about: goals, match start reminders, and prayer-time pings around kick-off.",
+    "Choose what MatchHub tells you about: goal alerts for your favourite team and match start reminders.",
 };
 
 export default function NotificationsPage() {

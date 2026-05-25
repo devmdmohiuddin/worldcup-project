@@ -15,7 +15,7 @@ export const bn: Strings = {
     "/language — ভাষা পরিবর্তন (EN, BN, UR, AR, HI)\n" +
     "/alerts — গোল অ্যালার্ট চালু/বন্ধ\n" +
     "/digest — দৈনিক সকাল ৯টার বার্তা চালু/বন্ধ\n" +
-    "/website — footballclean.com খুলুন",
+    "/website — matchhub.live খুলুন",
   todayHeader: "📅 আজকের ম্যাচসমূহ",
   todayEmpty: "আজ কোনো ম্যাচ নেই। সম্পূর্ণ সূচি ওয়েবসাইটে দেখুন।",
   matchLine: "{time} · {home} বনাম {away} · {city}",
@@ -36,7 +36,7 @@ export const bn: Strings = {
   dailyDigestHeader: "🌅 আজকের বিশ্বকাপ",
   goalAlertHeader: "⚽ গোল!",
   matchStartedHeader: "⏱️ ম্যাচ শুরু!",
-  whereToWatch: "📍 কোথায় দেখবেন: footballclean.com/match/{matchId}",
-  websiteCta: "🌐 সম্পূর্ণ সূচি ও লাইভ স্কোর footballclean.com এ",
+  whereToWatch: "📍 কোথায় দেখবেন: matchhub.live/match/{matchId}",
+  websiteCta: "🌐 সম্পূর্ণ সূচি ও লাইভ স্কোর matchhub.live এ",
   unknownCommand: "বুঝতে পারিনি। /help চেষ্টা করুন।",
 };

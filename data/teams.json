@@ -1,7 +1,7 @@
 {
-  "_note": "Update team names per group once the FIFA draw is finalized. Slots A1-L4 stand in for the 48 qualified teams. Hosts: A1=Mexico, B1=Canada, D1=USA (per FIFA host placement).",
+  "_note": "Slot-to-team mapping for the FIFA World Cup 2026 group stage. Hosts are pinned by FIFA (A1=Mexico, B1=Canada, D1=USA). Replace remaining 'TBD' entries with the official FIFA draw results — keep slot order intact so fixtures.ts keeps pairing the right teams. The 2026-06-11 opener at Estadio Azteca is Mexico (A1) vs South Africa (A2), confirmed via FIFA.com.",
   "groups": {
-    "A": ["Mexico", "TBD A2", "TBD A3", "TBD A4"],
+    "A": ["Mexico", "South Africa", "TBD A3", "TBD A4"],
     "B": ["Canada", "TBD B2", "TBD B3", "TBD B4"],
     "C": ["TBD C1", "TBD C2", "TBD C3", "TBD C4"],
     "D": ["USA", "TBD D2", "TBD D3", "TBD D4"],

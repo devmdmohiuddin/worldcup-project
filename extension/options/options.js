@@ -96,7 +96,7 @@ els.reset.addEventListener("click", async () => {
 });
 
 els.learn.addEventListener("click", () => {
-  chrome.tabs.create({ url: "https://footballclean.com/premium" });
+  chrome.tabs.create({ url: "https://matchhub.live/premium" });
 });
 
 load();

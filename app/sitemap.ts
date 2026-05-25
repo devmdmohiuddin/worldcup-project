@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getGroupStageMatches } from "@/lib/fixtures";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://footballclean.app";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://matchhub.live";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();

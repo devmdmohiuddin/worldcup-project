@@ -1,6 +1,6 @@
-# FootballClean Telegram Bot 🤖⚽
+# MatchHub Telegram Bot 🤖⚽
 
-Daily World Cup 2026 digests and live goal alerts, in 5 languages. Halal by design — no betting, no piracy, no riba.
+Daily World Cup 2026 digests and live goal alerts, in 5 languages. Clean by design — no betting, no piracy, no tracking.
 
 ## Commands
 
@@ -14,7 +14,7 @@ Daily World Cup 2026 digests and live goal alerts, in 5 languages. Halal by desi
 | `/language`    | Pick language: English, বাংলা, اردو, العربية, हिन्दी             |
 | `/alerts`      | Toggle live goal alerts for every match                          |
 | `/digest`      | Toggle the daily 9am digest                                      |
-| `/website`     | Link to footballclean.com                                        |
+| `/website`     | Link to matchhub.live                                        |
 
 Users with `goalAlerts: false` still receive goals for their `/team` favourite — opting in to a team is itself an opt-in for that team's notifications.
 
@@ -51,20 +51,20 @@ For scale beyond a few thousand users, swap `services/storage.ts` for a Redis or
    - `TELEGRAM_BOT_TOKEN` — from @BotFather
    - `FOOTBALL_DATA_API_KEY` — from football-data.org (free tier)
    - `DIGEST_TIMEZONE` — IANA tz (e.g. `Asia/Dhaka`, `America/New_York`)
-   - `WEBSITE_URL` — `https://footballclean.com`
+   - `WEBSITE_URL` — `https://matchhub.live`
 5. **Settings → Volumes** → mount at `/app/data` and set `USERS_FILE=/app/data/users.json`.
 6. Deploy. The start command (`pnpm start`) is configured in `railway.toml`.
 
 Free tier ($5 monthly credit) easily covers a single always-on bot handling tens of thousands of users polling at 60s during the live window.
 
-## Halal compliance
+## Content policy
 
 - No betting/gambling promos in any message, ever.
 - No piracy links — Where-to-Watch only points to legal broadcasters.
 - No third-party ads in DMs.
-- Multi-language support prioritises Muslim-majority audiences (BN, UR, AR, HI).
+- Multi-language support prioritises South Asian & MENA audiences (BN, UR, AR, HI).
 
-See the parent project's `docs/roadmap.md` for full halal scope.
+See the parent project's `docs/roadmap.md` for full content policy.
 
 ## Architecture
 

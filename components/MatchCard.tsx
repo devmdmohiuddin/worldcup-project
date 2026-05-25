@@ -2,20 +2,17 @@
 
 import Link from "next/link";
 import type { LiveMatch, Match } from "@/lib/types";
-import type { PrayerConflict } from "@/lib/prayer";
 import { resolveSlot } from "@/lib/teams";
 import { formatLocalTime } from "@/lib/datetime";
 import { LiveBadge } from "./LiveBadge";
-import { PrayerConflictBadge } from "./PrayerConflictBadge";
 
 interface Props {
   match: Match;
   tz: string;
   live?: LiveMatch;
-  conflict?: PrayerConflict;
 }
 
-export function MatchCard({ match, tz, live, conflict }: Props) {
+export function MatchCard({ match, tz, live }: Props) {
   const home = resolveSlot(match.homeSlot);
   const away = resolveSlot(match.awaySlot);
   const showScore =
@@ -66,7 +63,6 @@ export function MatchCard({ match, tz, live, conflict }: Props) {
           {match.venue.stadium} · {match.venue.city}
         </span>
         <div className="flex shrink-0 items-center gap-2">
-          {conflict && <PrayerConflictBadge conflict={conflict} />}
           {live?.status === "finished" && <span className="text-ink-500">FT</span>}
         </div>
       </div>

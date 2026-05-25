@@ -99,7 +99,7 @@ export function logClientError(error: unknown, context: LogContext = {}): void {
   };
 
   if (typeof console !== "undefined") {
-    console.error("[FootballClean]", err, context);
+    console.error("[MatchHub]", err, context);
   }
 
   const sentry = postSentry(err, context);

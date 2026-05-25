@@ -3,10 +3,10 @@ import type { Strings } from "./index.js";
 export const hi: Strings = {
   langName: "हिन्दी",
   welcome:
-    "👋 FootballClean में स्वागत है — फीफा वर्ल्ड कप 2026 देखने का सबसे साफ तरीका।\n\n" +
+    "👋 MatchHub में स्वागत है — फीफा वर्ल्ड कप 2026 देखने का सबसे साफ तरीका।\n\n" +
     "मैं आपको रोज़ाना के मैच, लाइव गोल अलर्ट, और हर मैच कहाँ कानूनी रूप से देखें भेज सकता हूँ।\n\n" +
     "आज के मैच देखने के लिए /today लिखें, या सभी फीचर के लिए /help।",
-  helpTitle: "🤖 FootballClean बॉट — कमांड",
+  helpTitle: "🤖 MatchHub बॉट — कमांड",
   helpBody:
     "/today — आज के मैच और समय\n" +
     "/standings — ग्रुप पॉइंट टेबल (लाइव)\n" +
@@ -15,7 +15,7 @@ export const hi: Strings = {
     "/language — भाषा बदलें (EN, BN, UR, AR, HI)\n" +
     "/alerts — गोल अलर्ट चालू/बंद\n" +
     "/digest — सुबह 9 बजे का दैनिक संदेश चालू/बंद\n" +
-    "/website — footballclean.com खोलें",
+    "/website — matchhub.live खोलें",
   todayHeader: "📅 आज के मैच",
   todayEmpty: "आज कोई मैच नहीं। पूरा शेड्यूल वेबसाइट पर देखें।",
   matchLine: "{time} · {home} बनाम {away} · {city}",
@@ -37,7 +37,7 @@ export const hi: Strings = {
   dailyDigestHeader: "🌅 आज वर्ल्ड कप में",
   goalAlertHeader: "⚽ गोल!",
   matchStartedHeader: "⏱️ किकऑफ!",
-  whereToWatch: "📍 कहाँ देखें: footballclean.com/match/{matchId}",
-  websiteCta: "🌐 पूरा शेड्यूल और लाइव स्कोर footballclean.com पर",
+  whereToWatch: "📍 कहाँ देखें: matchhub.live/match/{matchId}",
+  websiteCta: "🌐 पूरा शेड्यूल और लाइव स्कोर matchhub.live पर",
   unknownCommand: "समझा नहीं। /help आज़माएँ।",
 };

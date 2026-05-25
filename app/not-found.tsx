@@ -5,7 +5,7 @@ import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Page not found",
-  description: "We couldn't find that page on FootballClean.",
+  description: "We couldn't find that page on MatchHub.",
   robots: { index: false, follow: false },
 };
 

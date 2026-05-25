@@ -19,7 +19,7 @@ export const LOCALES: { code: Locale; label: string; nativeLabel: string; dir: "
   { code: "hi", label: "Hindi", nativeLabel: "हिन्दी", dir: "ltr" },
 ];
 
-export const LOCALE_COOKIE = "fc_locale";
+export const LOCALE_COOKIE = "mh_locale";
 export const LOCALE_CHANGE_EVENT = "fc-locale-change";
 
 export type TranslationKey =
@@ -39,26 +39,12 @@ export type TranslationKey =
   | "schedule.stage"
   | "schedule.date"
   | "schedule.reset"
-  | "schedule.noConflictsOnly"
   | "schedule.noMatches"
   | "schedule.showing"
   | "match.vs"
   | "match.fullTime"
   | "match.kickoff"
   | "match.venue"
-  | "prayer.widgetTitle"
-  | "prayer.enableLocation"
-  | "prayer.denied"
-  | "prayer.method"
-  | "prayer.next"
-  | "prayer.conflict"
-  | "prayer.duringMatch"
-  | "prayer.fajr"
-  | "prayer.dhuhr"
-  | "prayer.asr"
-  | "prayer.maghrib"
-  | "prayer.isha"
-  | "prayer.sunrise"
   | "notifications.title"
   | "notifications.subtitle"
   | "notifications.enable"
@@ -66,7 +52,6 @@ export type TranslationKey =
   | "notifications.enabled"
   | "notifications.goalAlerts"
   | "notifications.matchStart"
-  | "notifications.prayerReminders"
   | "notifications.favoriteTeam"
   | "notifications.pickATeam"
   | "notifications.unsupported"
@@ -97,26 +82,12 @@ const en: Dictionary = {
   "schedule.stage": "Stage",
   "schedule.date": "Date",
   "schedule.reset": "Reset filters",
-  "schedule.noConflictsOnly": "Hide matches that overlap a prayer",
   "schedule.noMatches": "No matches match the current filters.",
   "schedule.showing": "Showing {n} of {total} matches",
   "match.vs": "vs",
   "match.fullTime": "Full time",
   "match.kickoff": "Kick-off",
   "match.venue": "Venue",
-  "prayer.widgetTitle": "Prayer times",
-  "prayer.enableLocation": "Use my location",
-  "prayer.denied": "Location blocked. Enable it in your browser, or set a city manually.",
-  "prayer.method": "Calculation method",
-  "prayer.next": "Next",
-  "prayer.conflict": "{prayer} at {time}",
-  "prayer.duringMatch": "during this match",
-  "prayer.fajr": "Fajr",
-  "prayer.dhuhr": "Dhuhr",
-  "prayer.asr": "Asr",
-  "prayer.maghrib": "Maghrib",
-  "prayer.isha": "Isha",
-  "prayer.sunrise": "Sunrise",
   "notifications.title": "Notification preferences",
   "notifications.subtitle":
     "We'll only send what you ask for. No ads, no tracking, no third parties.",
@@ -125,7 +96,6 @@ const en: Dictionary = {
   "notifications.enabled": "Notifications enabled in this browser.",
   "notifications.goalAlerts": "Goal alerts for my favorite team",
   "notifications.matchStart": "Match start reminders (15 min before kick-off)",
-  "notifications.prayerReminders": "Prayer reminders before & after kick-off",
   "notifications.favoriteTeam": "Favorite team",
   "notifications.pickATeam": "Pick a team…",
   "notifications.unsupported": "This browser does not support push notifications.",
@@ -156,27 +126,12 @@ const bn: Dictionary = {
   "schedule.stage": "পর্ব",
   "schedule.date": "তারিখ",
   "schedule.reset": "ফিল্টার রিসেট",
-  "schedule.noConflictsOnly": "নামাজের সাথে সাংঘর্ষিক ম্যাচ লুকান",
   "schedule.noMatches": "কোনো ম্যাচ ফিল্টারের সাথে মিলছে না।",
   "schedule.showing": "{total}-এর মধ্যে {n}টি ম্যাচ দেখানো হচ্ছে",
   "match.vs": "বনাম",
   "match.fullTime": "পূর্ণ সময়",
   "match.kickoff": "কিকঅফ",
   "match.venue": "ভেন্যু",
-  "prayer.widgetTitle": "নামাজের সময়",
-  "prayer.enableLocation": "আমার অবস্থান ব্যবহার করুন",
-  "prayer.denied":
-    "অবস্থান অনুমতি ব্লক হয়ে গেছে। ব্রাউজার সেটিংস থেকে চালু করুন বা শহর ম্যানুয়ালি বসান।",
-  "prayer.method": "হিসাবের পদ্ধতি",
-  "prayer.next": "পরবর্তী",
-  "prayer.conflict": "{prayer} {time}-এ",
-  "prayer.duringMatch": "এই ম্যাচ চলাকালীন",
-  "prayer.fajr": "ফজর",
-  "prayer.dhuhr": "যোহর",
-  "prayer.asr": "আসর",
-  "prayer.maghrib": "মাগরিব",
-  "prayer.isha": "এশা",
-  "prayer.sunrise": "সূর্যোদয়",
   "notifications.title": "নোটিফিকেশন সেটিংস",
   "notifications.subtitle": "আপনি যা চাইবেন কেবল সেটাই পাঠাব। কোনো বিজ্ঞাপন বা ট্র্যাকিং নেই।",
   "notifications.enable": "ব্রাউজার নোটিফিকেশন চালু করুন",
@@ -184,7 +139,6 @@ const bn: Dictionary = {
   "notifications.enabled": "এই ব্রাউজারে নোটিফিকেশন চালু আছে।",
   "notifications.goalAlerts": "আমার প্রিয় দলের গোলের নোটিফিকেশন",
   "notifications.matchStart": "ম্যাচ শুরুর ১৫ মিনিট আগে রিমাইন্ডার",
-  "notifications.prayerReminders": "ম্যাচের আগে ও পরে নামাজের রিমাইন্ডার",
   "notifications.favoriteTeam": "প্রিয় দল",
   "notifications.pickATeam": "একটি দল বেছে নিন…",
   "notifications.unsupported": "এই ব্রাউজার পুশ নোটিফিকেশন সাপোর্ট করে না।",
@@ -215,26 +169,12 @@ const ur: Dictionary = {
   "schedule.stage": "مرحلہ",
   "schedule.date": "تاریخ",
   "schedule.reset": "فلٹرز ری سیٹ کریں",
-  "schedule.noConflictsOnly": "نماز سے ٹکراؤ والے میچ چھپائیں",
   "schedule.noMatches": "موجودہ فلٹرز سے کوئی میچ نہیں ملا۔",
   "schedule.showing": "{total} میں سے {n} میچ دکھائے جا رہے ہیں",
   "match.vs": "بمقابلہ",
   "match.fullTime": "مکمل وقت",
   "match.kickoff": "کک آف",
   "match.venue": "مقام",
-  "prayer.widgetTitle": "نماز کے اوقات",
-  "prayer.enableLocation": "میری لوکیشن استعمال کریں",
-  "prayer.denied": "لوکیشن کی اجازت بلاک ہے۔ براؤزر سے آن کریں یا شہر دستی طور پر منتخب کریں۔",
-  "prayer.method": "حساب کا طریقہ",
-  "prayer.next": "اگلی",
-  "prayer.conflict": "{prayer} {time} پر",
-  "prayer.duringMatch": "اس میچ کے دوران",
-  "prayer.fajr": "فجر",
-  "prayer.dhuhr": "ظہر",
-  "prayer.asr": "عصر",
-  "prayer.maghrib": "مغرب",
-  "prayer.isha": "عشاء",
-  "prayer.sunrise": "طلوع آفتاب",
   "notifications.title": "اطلاعات کی ترجیحات",
   "notifications.subtitle":
     "ہم صرف وہی بھیجیں گے جس کی آپ نے درخواست کی۔ کوئی اشتہار یا ٹریکنگ نہیں۔",
@@ -243,7 +183,6 @@ const ur: Dictionary = {
   "notifications.enabled": "اس براؤزر میں اطلاعات فعال ہیں۔",
   "notifications.goalAlerts": "میری پسندیدہ ٹیم کے گول کی اطلاعات",
   "notifications.matchStart": "میچ شروع ہونے سے 15 منٹ پہلے یاد دہانی",
-  "notifications.prayerReminders": "کک آف سے پہلے اور بعد میں نماز کی یاد دہانی",
   "notifications.favoriteTeam": "پسندیدہ ٹیم",
   "notifications.pickATeam": "ایک ٹیم منتخب کریں…",
   "notifications.unsupported": "یہ براؤزر پش اطلاعات کو سپورٹ نہیں کرتا۔",
@@ -273,26 +212,12 @@ const ar: Dictionary = {
   "schedule.stage": "الدور",
   "schedule.date": "التاريخ",
   "schedule.reset": "إعادة ضبط الفلاتر",
-  "schedule.noConflictsOnly": "إخفاء المباريات المتعارضة مع الصلاة",
   "schedule.noMatches": "لا توجد مباريات تطابق الفلاتر الحالية.",
   "schedule.showing": "عرض {n} من أصل {total} مباراة",
   "match.vs": "ضد",
   "match.fullTime": "وقت كامل",
   "match.kickoff": "بداية المباراة",
   "match.venue": "الملعب",
-  "prayer.widgetTitle": "أوقات الصلاة",
-  "prayer.enableLocation": "استخدم موقعي",
-  "prayer.denied": "تم حظر إذن الموقع. فعّله من إعدادات المتصفح أو اختر مدينة يدويًا.",
-  "prayer.method": "طريقة الحساب",
-  "prayer.next": "التالية",
-  "prayer.conflict": "{prayer} عند {time}",
-  "prayer.duringMatch": "خلال هذه المباراة",
-  "prayer.fajr": "الفجر",
-  "prayer.dhuhr": "الظهر",
-  "prayer.asr": "العصر",
-  "prayer.maghrib": "المغرب",
-  "prayer.isha": "العشاء",
-  "prayer.sunrise": "الشروق",
   "notifications.title": "إعدادات الإشعارات",
   "notifications.subtitle": "نرسل فقط ما تطلبه. لا إعلانات ولا تتبع ولا أطراف خارجية.",
   "notifications.enable": "تفعيل إشعارات المتصفح",
@@ -300,7 +225,6 @@ const ar: Dictionary = {
   "notifications.enabled": "الإشعارات مفعلة في هذا المتصفح.",
   "notifications.goalAlerts": "تنبيهات الأهداف لفريقي المفضل",
   "notifications.matchStart": "تذكير ببداية المباراة (قبل 15 دقيقة)",
-  "notifications.prayerReminders": "تذكيرات الصلاة قبل وبعد بداية المباراة",
   "notifications.favoriteTeam": "الفريق المفضل",
   "notifications.pickATeam": "اختر فريقًا…",
   "notifications.unsupported": "هذا المتصفح لا يدعم إشعارات الدفع.",
@@ -330,27 +254,12 @@ const hi: Dictionary = {
   "schedule.stage": "चरण",
   "schedule.date": "तिथि",
   "schedule.reset": "फ़िल्टर रीसेट करें",
-  "schedule.noConflictsOnly": "नमाज़ से टकराने वाले मैच छिपाएँ",
   "schedule.noMatches": "मौजूदा फ़िल्टर से कोई मैच नहीं मिला।",
   "schedule.showing": "{total} में से {n} मैच दिखाए जा रहे हैं",
   "match.vs": "बनाम",
   "match.fullTime": "पूर्ण समय",
   "match.kickoff": "किक-ऑफ़",
   "match.venue": "स्थान",
-  "prayer.widgetTitle": "नमाज़ का समय",
-  "prayer.enableLocation": "मेरा स्थान उपयोग करें",
-  "prayer.denied":
-    "स्थान अनुमति अवरुद्ध है। ब्राउज़र सेटिंग से चालू करें या मैन्युअल रूप से शहर चुनें।",
-  "prayer.method": "गणना विधि",
-  "prayer.next": "अगली",
-  "prayer.conflict": "{prayer} {time} पर",
-  "prayer.duringMatch": "इस मैच के दौरान",
-  "prayer.fajr": "फ़ज्र",
-  "prayer.dhuhr": "ज़ुहर",
-  "prayer.asr": "अस्र",
-  "prayer.maghrib": "मग़रिब",
-  "prayer.isha": "ईशा",
-  "prayer.sunrise": "सूर्योदय",
   "notifications.title": "नोटिफिकेशन प्राथमिकताएँ",
   "notifications.subtitle": "हम केवल वही भेजेंगे जो आप माँगेंगे। कोई विज्ञापन या ट्रैकिंग नहीं।",
   "notifications.enable": "ब्राउज़र नोटिफिकेशन सक्षम करें",
@@ -358,7 +267,6 @@ const hi: Dictionary = {
   "notifications.enabled": "इस ब्राउज़र में नोटिफिकेशन सक्षम हैं।",
   "notifications.goalAlerts": "मेरी पसंदीदा टीम के गोल का अलर्ट",
   "notifications.matchStart": "मैच शुरू होने से 15 मिनट पहले रिमाइंडर",
-  "notifications.prayerReminders": "किक-ऑफ़ से पहले और बाद में नमाज़ रिमाइंडर",
   "notifications.favoriteTeam": "पसंदीदा टीम",
   "notifications.pickATeam": "एक टीम चुनें…",
   "notifications.unsupported": "यह ब्राउज़र पुश नोटिफिकेशन का समर्थन नहीं करता।",

@@ -15,7 +15,7 @@ export const ar: Strings = {
     "/language — تغيير اللغة (EN, BN, UR, AR, HI)\n" +
     "/alerts — تشغيل/إيقاف تنبيهات الأهداف\n" +
     "/digest — تشغيل/إيقاف رسالة 9 صباحاً اليومية\n" +
-    "/website — افتح footballclean.com",
+    "/website — افتح matchhub.live",
   todayHeader: "📅 مباريات اليوم",
   todayEmpty: "لا مباريات اليوم. شاهد الجدول الكامل على الموقع.",
   matchLine: "{time} · {home} ضد {away} · {city}",
@@ -36,7 +36,7 @@ export const ar: Strings = {
   dailyDigestHeader: "🌅 اليوم في كأس العالم",
   goalAlertHeader: "⚽ هدف!",
   matchStartedHeader: "⏱️ بدأت المباراة!",
-  whereToWatch: "📍 أين تشاهد: footballclean.com/match/{matchId}",
-  websiteCta: "🌐 الجدول الكامل والنتائج المباشرة على footballclean.com",
+  whereToWatch: "📍 أين تشاهد: matchhub.live/match/{matchId}",
+  websiteCta: "🌐 الجدول الكامل والنتائج المباشرة على matchhub.live",
   unknownCommand: "لم أفهم. جرب /help.",
 };

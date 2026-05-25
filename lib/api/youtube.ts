@@ -6,7 +6,7 @@
  * is missing — callers fall back to the curated seed list.
  *
  * We only ever surface videos uploaded by channels in `highlight_channels.json`
- * (the "official broadcaster allow-list"). This keeps the experience halal:
+ * (the "official broadcaster allow-list"). This keeps the experience clean:
  * no pirated rips, no betting-sponsor overlays, no random fan uploads.
  */
 import { getCache } from "@/lib/cache";

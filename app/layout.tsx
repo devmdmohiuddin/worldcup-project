@@ -2,22 +2,22 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { ClientObservability } from "@/components/ClientObservability";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://footballclean.app";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://matchhub.live";
 const PLAUSIBLE_DOMAIN = process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN || "";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "FootballClean — World Cup 2026, the clean way",
-    template: "%s · FootballClean",
+    default: "MatchHub — World Cup 2026, the clean way",
+    template: "%s · MatchHub",
   },
   description:
     "The cleanest way to follow the FIFA World Cup 2026 — full schedule, live scores, and where to watch every match legally in your country. No gambling, no piracy.",
-  applicationName: "FootballClean",
+  applicationName: "MatchHub",
   manifest: "/manifest.webmanifest",
   appleWebApp: {
     capable: true,
-    title: "FootballClean",
+    title: "MatchHub",
     statusBarStyle: "black-translucent",
   },
   icons: {
@@ -26,16 +26,16 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    siteName: "FootballClean",
+    siteName: "MatchHub",
     url: SITE_URL,
-    title: "FootballClean — World Cup 2026, the clean way",
+    title: "MatchHub — World Cup 2026, the clean way",
     description:
       "Full schedule, live scores, and legal streams for every World Cup 2026 match. No gambling, no piracy.",
     images: ["/og.svg"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "FootballClean — World Cup 2026, the clean way",
+    title: "MatchHub — World Cup 2026, the clean way",
     description:
       "Full schedule, live scores, and legal streams for every World Cup 2026 match.",
     images: ["/og.svg"],
@@ -56,7 +56,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <link rel="preconnect" href="https://i.ytimg.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.youtube.com" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="https://api.aladhan.com" />
         {PLAUSIBLE_DOMAIN && (
           <script
             defer
@@ -76,7 +75,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             __html: `
               (function () {
                 try {
-                  var m = document.cookie.match(/(?:^|;\\s*)fc_locale=([^;]+)/);
+                  var m = document.cookie.match(/(?:^|;\\s*)mh_locale=([^;]+)/);
                   if (m) {
                     var code = decodeURIComponent(m[1]);
                     document.documentElement.lang = code;

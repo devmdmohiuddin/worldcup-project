@@ -1,4 +1,4 @@
-# FootballClean Launch Checklist
+# MatchHub Launch Checklist
 
 Last reviewed: Sprint 8 (June 2026). Use this list to gate the public launch
 on **11 June 2026** — the day the World Cup kicks off.
@@ -59,10 +59,10 @@ See [`a11y.md`](./a11y.md) for the detailed audit log.
       card).
 - [ ] No untranslated `t("...")` keys appear in the DOM (greppable check).
 
-## 6. Halal & policy
+## 6. Policy
 
 - [ ] No gambling or betting partner ever appears in the broadcaster list.
-- [ ] No alcohol / riba / haram product anywhere in the UI.
+- [ ] No gambling / adult / alcohol products anywhere in the UI.
 - [ ] All highlight videos come from the curated official channel list.
 - [ ] Footer reaffirms "no streams hosted here".
 

@@ -6,9 +6,7 @@ import { allTeams } from "@/lib/teams";
 import { detectUserTimezone, formatLocalDate, localDayKey } from "@/lib/datetime";
 import { useLiveData } from "@/lib/hooks/useLiveData";
 import { useLocale } from "@/lib/hooks/useLocale";
-import { useMatchConflicts } from "@/lib/hooks/useMatchConflicts";
 import { MatchCard } from "./MatchCard";
-import { PrayerTimesWidget } from "./PrayerTimesWidget";
 
 interface Props {
   matches: Match[];
@@ -40,7 +38,6 @@ export function ScheduleView({ matches }: Props) {
   const [group, setGroup] = useState<GroupLetter | "all">("all");
   const [team, setTeam] = useState<string>("all");
   const [date, setDate] = useState<string>("all");
-  const [hideConflicts, setHideConflicts] = useState(false);
 
   useEffect(() => {
     setTz(detectUserTimezone());
@@ -56,7 +53,6 @@ export function ScheduleView({ matches }: Props) {
     for (const lm of liveData?.matches ?? []) m.set(lm.matchId, lm);
     return m;
   }, [liveData]);
-  const conflictByMatchId = useMatchConflicts(matches);
 
   const teams = useMemo(() => {
     const seen = new Set<string>();
@@ -81,10 +77,9 @@ export function ScheduleView({ matches }: Props) {
       if (group !== "all" && m.group !== group) return false;
       if (team !== "all" && m.homeSlot !== team && m.awaySlot !== team) return false;
       if (date !== "all" && localDayKey(m.kickoffUTC, tz) !== date) return false;
-      if (hideConflicts && conflictByMatchId.has(m.id)) return false;
       return true;
     });
-  }, [matches, stage, group, team, date, tz, hideConflicts, conflictByMatchId]);
+  }, [matches, stage, group, team, date, tz]);
 
   const grouped = useMemo(() => {
     const buckets = new Map<string, Match[]>();
@@ -107,11 +102,10 @@ export function ScheduleView({ matches }: Props) {
     setGroup("all");
     setTeam("all");
     setDate("all");
-    setHideConflicts(false);
   };
 
   const hasActiveFilter =
-    stage !== "all" || group !== "all" || team !== "all" || date !== "all" || hideConflicts;
+    stage !== "all" || group !== "all" || team !== "all" || date !== "all";
 
   return (
     <section className="container-page py-6">
@@ -121,10 +115,6 @@ export function ScheduleView({ matches }: Props) {
           {t("schedule.timesIn", { count: matches.length })}{" "}
           <span className="font-medium text-ink-200">{mounted ? tz : "your local time"}</span>
         </p>
-      </div>
-
-      <div className="mb-6">
-        <PrayerTimesWidget />
       </div>
 
       <div className="mb-6 rounded-xl border border-ink-800 bg-ink-900/40 p-3">
@@ -169,20 +159,6 @@ export function ScheduleView({ matches }: Props) {
             ]}
           />
         </div>
-        <label className="text-ink-300 mt-3 flex cursor-pointer items-center gap-2 text-xs">
-          <input
-            type="checkbox"
-            checked={hideConflicts}
-            onChange={(e) => setHideConflicts(e.target.checked)}
-            className="h-4 w-4 rounded border-ink-700 bg-ink-950 text-pitch-500 focus:ring-pitch-500"
-          />
-          <span>{t("schedule.noConflictsOnly")}</span>
-          {conflictByMatchId.size > 0 && (
-            <span className="text-ink-500">
-              ({conflictByMatchId.size} {conflictByMatchId.size === 1 ? "match" : "matches"})
-            </span>
-          )}
-        </label>
         {hasActiveFilter && (
           <div className="mt-3 flex items-center justify-between text-xs text-ink-400">
             <span>{t("schedule.showing", { n: filtered.length, total: matches.length })}</span>
@@ -226,7 +202,6 @@ export function ScheduleView({ matches }: Props) {
                     match={m}
                     tz={tz}
                     live={liveByMatchId.get(m.id)}
-                    conflict={conflictByMatchId.get(m.id)}
                   />
                 ))}
               </div>

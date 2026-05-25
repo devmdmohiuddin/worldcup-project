@@ -1,4 +1,4 @@
-// FootballClean basic service worker.
+// MatchHub basic service worker.
 // Strategy:
 //   - Pre-cache the app shell on install.
 //   - Network-first for HTML navigation (so updates roll out quickly).
@@ -78,10 +78,10 @@ self.addEventListener("push", (event) => {
   try {
     payload = event.data ? event.data.json() : {};
   } catch {
-    payload = { title: "FootballClean", body: event.data ? event.data.text() : "" };
+    payload = { title: "MatchHub", body: event.data ? event.data.text() : "" };
   }
 
-  const title = payload.title || "FootballClean";
+  const title = payload.title || "MatchHub";
   const options = {
     body: payload.body || "",
     icon: payload.icon || "/icons/icon.svg",

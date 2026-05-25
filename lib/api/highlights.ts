@@ -9,7 +9,7 @@
  *      match clips; used by the /highlights page.
  *   3. `getBestGoals()` — static curated reel (the "best of the tournament").
  *
- * Halal posture: every video that reaches the UI originates from a channel id
+ * Content policy: every video that reaches the UI originates from a channel id
  * present in `highlight_channels.json`. We do not search across YouTube at
  * large — that's what keeps gambling overlays and pirated rips out.
  */

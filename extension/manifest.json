@@ -1,11 +1,11 @@
 {
   "manifest_version": 3,
-  "name": "Clean Stream by FootballClean",
+  "name": "Clean Stream by MatchHub",
   "short_name": "Clean Stream",
   "version": "0.1.0",
-  "description": "Block popup ads, fake play buttons, malware overlays, and adult/gambling ads on football streaming sites. Halal-friendly.",
-  "author": "FootballClean",
-  "homepage_url": "https://footballclean.com",
+  "description": "Block popup ads, fake play buttons, malware overlays, and adult/gambling ads on football streaming sites. Family-friendly.",
+  "author": "MatchHub",
+  "homepage_url": "https://matchhub.live",
   "minimum_chrome_version": "108",
   "icons": {
     "16": "icons/icon-16.png",

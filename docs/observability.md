@@ -1,6 +1,6 @@
 # Observability
 
-FootballClean intentionally avoids heavyweight SDKs (Sentry browser, Datadog
+MatchHub intentionally avoids heavyweight SDKs (Sentry browser, Datadog
 RUM, etc.) so the critical-path bundle stays under control. Instead we use
 two lightweight layers:
 

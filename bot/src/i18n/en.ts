@@ -3,10 +3,10 @@ import type { Strings } from "./index.js";
 export const en: Strings = {
   langName: "English",
   welcome:
-    "👋 Welcome to FootballClean — the cleanest way to follow the FIFA World Cup 2026.\n\n" +
+    "👋 Welcome to MatchHub — the cleanest way to follow the FIFA World Cup 2026.\n\n" +
     "I can send you daily match digests, live goal alerts, and tell you where to watch every match legally.\n\n" +
     "Try /today to see today's fixtures, or /help to see everything I can do.",
-  helpTitle: "🤖 FootballClean Bot — Commands",
+  helpTitle: "🤖 MatchHub Bot — Commands",
   helpBody:
     "/today — Today's matches with kickoff times\n" +
     "/standings — Group standings (live)\n" +
@@ -15,7 +15,7 @@ export const en: Strings = {
     "/language — Change language (EN, BN, UR, AR, HI)\n" +
     "/alerts — Toggle live goal alerts\n" +
     "/digest — Toggle daily 9am digest\n" +
-    "/website — Open footballclean.com",
+    "/website — Open matchhub.live",
   todayHeader: "📅 Today's matches",
   todayEmpty: "No matches today. Check /tomorrow or visit the website for the full schedule.",
   matchLine: "{time} · {home} vs {away} · {city}",
@@ -37,7 +37,7 @@ export const en: Strings = {
   dailyDigestHeader: "🌅 Today at the World Cup",
   goalAlertHeader: "⚽ GOAL!",
   matchStartedHeader: "⏱️ Kickoff!",
-  whereToWatch: "📍 Where to watch: footballclean.com/match/{matchId}",
-  websiteCta: "🌐 Full schedule, live scores, and Where-to-Watch on footballclean.com",
+  whereToWatch: "📍 Where to watch: matchhub.live/match/{matchId}",
+  websiteCta: "🌐 Full schedule, live scores, and Where-to-Watch on matchhub.live",
   unknownCommand: "I didn't catch that. Try /help.",
 };

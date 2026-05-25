@@ -24,9 +24,9 @@ export interface PushSubscriptionRecord {
   updatedAt: string;
 }
 
-export type PushTopic = "goals" | "match-start" | "prayer-reminders";
+export type PushTopic = "goals" | "match-start";
 
-export const PUSH_TOPICS: PushTopic[] = ["goals", "match-start", "prayer-reminders"];
+export const PUSH_TOPICS: PushTopic[] = ["goals", "match-start"];
 
 export interface PushStore {
   upsert(record: PushSubscriptionRecord): Promise<void>;

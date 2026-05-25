@@ -1,14 +1,14 @@
-# Chrome Web Store Listing — Clean Stream by FootballClean
+# Chrome Web Store Listing — Clean Stream by MatchHub
 
 ## Short description (132 char max)
 
-Block popups, fake play buttons, and adult/gambling ads on football streaming sites. Halal-friendly. No tracking. No piracy.
+Block popups, fake play buttons, and adult/gambling ads on football streaming sites. Family-friendly. No tracking. No piracy.
 
 ## Detailed description
 
 **Watch football in peace. Skip the dangerous ads.**
 
-Clean Stream is the companion extension to FootballClean.com — built for fans
+Clean Stream is the companion extension to MatchHub.com — built for fans
 who just want to watch the match without dodging popups, fake "PLAY" buttons,
 gambling banners, and adult ads that have no business on a sports site.
 
@@ -25,7 +25,7 @@ gambling banners, and adult ads that have no business on a sports site.
 
 Most "ad blockers" leave streaming-site garbage untouched, and many actually
 whitelist gambling and adult networks for revenue. Clean Stream is built by
-Muslim football fans for a halal-friendly experience: zero gambling
+Football fans who want a family-friendly experience: zero gambling
 partnerships, zero adult-network exceptions, zero affiliate dark patterns.
 
 ### Privacy
@@ -40,11 +40,11 @@ All current features are **free, forever**. Premium (launching later in 2026)
 will add prayer-aware muting, custom filter lists, and multi-device dashboards
 — purely additive. Free users keep every feature you see today.
 
-### About FootballClean
+### About MatchHub
 
-FootballClean is a halal-first World Cup 2026 companion: free legal streaming
+MatchHub is a clean-first World Cup 2026 companion: free legal streaming
 guide for 60+ countries, live scores, prayer-aware schedules, and a Telegram
-bot. Visit footballclean.com.
+bot. Visit matchhub.live.
 
 ## Single purpose
 

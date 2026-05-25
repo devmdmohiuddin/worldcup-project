@@ -294,7 +294,7 @@ Launch-ready: 5 languages, PWA, performance, accessibility, zero bugs.
 - [ ] Set up Sentry error tracking
 - [ ] Set up Plausible analytics
 - [ ] SEO: meta tags, OpenGraph, sitemap
-- [ ] Apply for Google AdSense + halal category filters
+- [ ] Apply for Google AdSense + ad category filters
 - [ ] Submit sitemap to Google Search Console
 
 ### Deliverable

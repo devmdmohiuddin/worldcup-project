@@ -1,8 +1,8 @@
 {
-  "name": "footballclean-bot",
+  "name": "matchhub-bot",
   "version": "0.1.0",
   "private": true,
-  "description": "FootballClean Telegram bot — daily World Cup 2026 digests and live goal alerts.",
+  "description": "MatchHub Telegram bot — daily World Cup 2026 digests and live goal alerts.",
   "type": "module",
   "main": "src/index.ts",
   "scripts": {

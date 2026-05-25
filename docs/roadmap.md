@@ -207,7 +207,7 @@ Each section:
 | Hosting | Vercel + Railway | Free tiers |
 | Analytics | Plausible | Privacy-friendly |
 
-## ⚖️ Legal & Halal Boundaries
+## ⚖️ Legal & Clean Boundaries
 
 ### What We DO
 
@@ -229,7 +229,7 @@ Each section:
 
 | Stream | Monthly Estimate |
 |---|---|
-| Google AdSense (halal-filtered) | $150 – $700 |
+| Google AdSense (category-filtered) | $150 – $700 |
 | Affiliate (FIFA+, DAZN, ESPN+, VPN) | $100 – $600 |
 | YouTube embed revenue share | $20 – $100 |
 | Browser extension Premium ($2/mo) | $50 – $2,000 |
@@ -277,7 +277,7 @@ Beyond World Cup 2026:
 
 ## ✊ Guiding Principles
 
-1. **Halal first** — Every feature, every ad, every partnership
+1. **Clean first** — Every feature, every ad, every partnership
 2. **Authentic sources only** — News, scores, streams, highlights
 3. **Speed matters** — Sub-second loads on slow networks
 4. **Beautiful UI** — On par with FIFA.com or better

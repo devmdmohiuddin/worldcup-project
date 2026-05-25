@@ -10,7 +10,6 @@ import type { TranslationKey } from "@/lib/i18n";
 const TOPIC_LABELS: Record<PushTopic, TranslationKey> = {
   goals: "notifications.goalAlerts",
   "match-start": "notifications.matchStart",
-  "prayer-reminders": "notifications.prayerReminders",
 };
 
 export function NotificationPreferences() {

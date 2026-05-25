@@ -1,5 +1,5 @@
 {
-  "_note": "Allow-list of official broadcaster YouTube channels. We ONLY embed videos uploaded by these accounts to guarantee licensed, halal content (no gambling overlays, no pirated rips). Channel ids are stable; update display names if a brand rebrands.",
+  "_note": "Allow-list of official broadcaster YouTube channels. We ONLY embed videos uploaded by these accounts to guarantee licensed, licensed content (no gambling overlays, no pirated rips). Channel ids are stable; update display names if a brand rebrands.",
   "channels": [
     {
       "channelId": "UCpcTrCXblq78GZrTUTLWeBw",

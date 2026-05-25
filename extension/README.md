@@ -1,6 +1,6 @@
 # Clean Stream (Chrome extension)
 
-Halal-friendly companion extension to [FootballClean](https://footballclean.com).
+Family-friendly companion extension to [MatchHub](https://matchhub.live).
 Blocks popup ads, fake play buttons, malicious overlays, and adult/gambling ad
 networks on football streaming sites.
 
@@ -58,5 +58,5 @@ missed ads.
 2. Zip the contents of `extension/` (not the folder itself).
 3. Upload via the [Chrome Web Store developer dashboard](https://chrome.google.com/webstore/devconsole).
 4. Paste content from [`LISTING.md`](LISTING.md) into the listing fields.
-5. Link [`PRIVACY.md`](PRIVACY.md) hosted at https://footballclean.com/extension/privacy.
+5. Link [`PRIVACY.md`](PRIVACY.md) hosted at https://matchhub.live/extension/privacy.
 6. Submit for review — expect 1–7 days.

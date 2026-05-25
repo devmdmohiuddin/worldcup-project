@@ -65,11 +65,11 @@ MatchHub is the cleanest, most complete World Cup 2026 destination. Inspired by 
 ## Why MatchHub
 
 Current options are broken:
-- **Pirate sites** = popups, malware, haram, illegal
+- **Pirate sites** = popups, malware, copyright violations
 - **ESPN/FIFA.com** = bloated, slow, English-only, paywalls
 - **LiveSoccerTV** = links only, no real experience
 
-**MatchHub gives you everything FIFA.com offers — faster, cleaner, free, multilingual, and 100% halal.**
+**MatchHub gives you everything FIFA.com offers — faster, cleaner, free, multilingual, and 100% clean.**
 
 ## Legal & Ethics
 
@@ -77,4 +77,4 @@ Current options are broken:
 - ✅ All highlights are **embedded official YouTube videos** (FIFA's own channel)
 - ✅ All news is from **authenticated official sources** only
 - ❌ We do NOT host streams or downloads (copyright protection)
-- ❌ No gambling, no betting, no adult ads (halal-only AdSense filters)
+- ❌ No gambling, no betting, no adult ads (curated AdSense filters)

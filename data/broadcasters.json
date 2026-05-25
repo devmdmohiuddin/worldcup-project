@@ -1,6 +1,6 @@
 {
   "updatedAt": "2026-05-24",
-  "note": "Official broadcast rights for FIFA World Cup 2026. Free-to-air options listed first per country. URLs link to canonical broadcaster homepages — verify deep links before launch. Affiliate codes are configured via env (NEXT_PUBLIC_AFFILIATE_*). No betting/gambling partners — halal only.",
+  "note": "Official broadcast rights for FIFA World Cup 2026. Free-to-air options listed first per country. URLs link to canonical broadcaster homepages — verify deep links before launch. Affiliate codes are configured via env (NEXT_PUBLIC_AFFILIATE_*). No betting/gambling partners — clean only.",
   "fallback": [
     {
       "name": "FIFA+",

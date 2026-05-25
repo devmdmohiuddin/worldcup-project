@@ -51,7 +51,7 @@ export default function GlobalError({
             ⚠️
           </div>
           <h1 style={{ marginTop: "0.5rem", fontSize: "1.5rem", fontWeight: 700 }}>
-            FootballClean hit a snag.
+            MatchHub hit a snag.
           </h1>
           <p style={{ marginTop: "0.5rem", color: "#94a3b8", fontSize: "0.875rem" }}>
             Something broke at the application root. Refresh to recover.

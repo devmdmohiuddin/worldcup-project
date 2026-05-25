@@ -61,10 +61,10 @@ function renderPremiumCard(isPremium) {
   if (!row) return;
   if (isPremium) {
     row.innerHTML =
-      '<span class="cs-premium-badge">PREMIUM</span><span>Active — custom filters and prayer-aware silence enabled.</span>';
+      '<span class="cs-premium-badge">PREMIUM</span><span>Active — custom filter lists and priority updates enabled.</span>';
   } else {
     row.innerHTML =
-      '<span class="cs-premium-badge">PREMIUM</span><span>Coming soon — custom filter lists, prayer-aware silence, multi-device sync.</span>';
+      '<span class="cs-premium-badge">PREMIUM</span><span>Coming soon — custom filter lists, multi-device sync, priority updates.</span>';
   }
 }
 

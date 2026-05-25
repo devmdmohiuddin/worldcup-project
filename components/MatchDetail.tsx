@@ -6,11 +6,9 @@ import type { LiveMatch, Match, MatchEvent } from "@/lib/types";
 import { resolveSlot } from "@/lib/teams";
 import { detectUserTimezone, formatLocalDateTime } from "@/lib/datetime";
 import { useLiveData } from "@/lib/hooks/useLiveData";
-import { useMatchConflicts } from "@/lib/hooks/useMatchConflicts";
 import { LiveBadge } from "./LiveBadge";
 import { WhereToWatch } from "./WhereToWatch";
 import { MatchHighlights } from "./MatchHighlights";
-import { PrayerConflictBadge } from "./PrayerConflictBadge";
 
 interface Props {
   match: Match;
@@ -20,10 +18,6 @@ export function MatchDetail({ match }: Props) {
   const tz = useMemo(() => detectUserTimezone(), []);
   const home = resolveSlot(match.homeSlot);
   const away = resolveSlot(match.awaySlot);
-
-  const singleMatchList = useMemo(() => [match], [match]);
-  const conflicts = useMatchConflicts(singleMatchList);
-  const conflict = conflicts.get(match.id);
 
   const { data: live, loading } = useLiveData<LiveMatch>({
     url: `/api/live/${match.id}`,
@@ -87,11 +81,6 @@ export function MatchDetail({ match }: Props) {
           </div>
         </div>
 
-        {conflict && (
-          <div className="mt-4 flex items-center gap-2">
-            <PrayerConflictBadge conflict={conflict} />
-          </div>
-        )}
       </header>
 
       <WhereToWatch matchId={match.id} />
