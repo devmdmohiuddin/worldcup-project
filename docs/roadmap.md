@@ -1,192 +1,285 @@
-# 🗺️ FootballClean — Roadmap
+# 🗺️ MatchHub — Roadmap
 
 ## 🎯 Vision
 
-To become the **most trusted, distraction-free destination** for football fans worldwide to discover where to watch matches legally, follow live scores, and enjoy highlights — without ads, popups, or haram content.
+Become the **most complete, beautiful, and trusted** World Cup 2026 destination on the web — combining the comprehensiveness of FIFA.com with the speed, multilingual support, and clean experience that users actually want.
 
 ## 🌟 Mission
 
-Solve the broken football streaming experience by:
+When a fan opens MatchHub, they get **everything** in one place:
+- Live streams (via legal embeds)
+- Live scores
+- Highlights organized by year
+- Fixtures with real teams + flags
+- Standings + bracket
+- Player rosters per country
+- Authentic news
+- Man of the Match for every game
 
-1. Guiding users to **legal streams** (free + paid) instead of pirate sites
-2. **Cleaning up** the ad mess on existing legitimate sites via browser extension
-3. Providing **clean, fast, multilingual** match info, scores, and highlights
+No piracy. No popups. No 12 different sites. Just **one beautiful hub**.
 
 ## 👥 Target Audience
 
-| Audience                             | Why They Need Us                                                     |
-| ------------------------------------ | -------------------------------------------------------------------- |
-| 🕌 **Muslim football fans**          | Prayer time conflict alerts, no haram ads, halal-friendly            |
-| 🌏 **South Asian fans** (BD, IN, PK) | Bangla/Urdu/Hindi support, free legal stream guides for their region |
-| 💼 **Office workers**                | Quick scores, Telegram bot for updates while at work                 |
-| 📱 **Mobile-first users**            | Lightweight PWA, works on 2G internet                                |
-| 🎓 **Young fans**                    | Free, clean, mobile-friendly, no credit card needed                  |
+| Audience | Why They Need Us |
+|---|---|
+| 🌍 **Global football fans** | One place for everything — FIFA.com depth, faster + cleaner |
+| 🌏 **South Asian fans** (BD, IN, PK) | Bangla/Urdu/Hindi support, free stream guides for their region |
+| 💼 **Office workers** | Telegram bot for updates while at work |
+| 📱 **Mobile-first users** | Lightweight PWA, sub-second loads on slow internet |
+| 🎓 **Casual fans** | Beautiful UI, easy to follow without prior knowledge |
 
-## 🚨 Problem Statement
-
-Today, when a user wants to watch a football match:
+## 🚨 Problem We Solve
 
 ```
-User → Google → 50 pirate sites → Popups → Fake play buttons →
-Malware risk → Adult ads → Stream breaks → Frustration 😡
+Today:
+User opens Google → searches "Argentina vs Brazil"
+   ↓
+Goes to 5 different sites for: stream, score, lineup, news, highlights
+   ↓
+Each site = slow, ad-heavy, broken, or paywalled
+   ↓
+Frustration 😡
+
+With MatchHub:
+User opens matchhub.live
+   ↓
+ONE page shows: stream, live score, lineup, MOTM, news, highlights
+   ↓
+Done in 2 seconds ✅
 ```
 
-Even if they find a legal stream, they don't know **which one is free in their country**.
+## 📦 Complete Feature List
 
-## ✅ Our Solution
+### 🏠 Homepage (The Hub)
 
-```
-User → FootballClean → Instantly shown:
-  ✅ Free legal streams in their country
-  ✅ Live score
-  ✅ Highlights after match
-  ✅ Browser extension cleans any streaming site
-  ✅ Telegram bot for daily updates
-```
+The homepage is the centerpiece — inspired by FIFA.com but **better organized**.
 
-## 📦 Core Features
+- [ ] 🔴 **Live Match Section** — When match is live, show:
+  - Embedded official YouTube stream (if available in user's region)
+  - Live score with auto-refresh
+  - "Watch on official broadcaster" button (links to user's country's legal stream)
+- [ ] 📅 **Today's Matches** — All matches happening today with countdown
+- [ ] 🎬 **Latest Highlights** — Most recent match highlights (FIFA YouTube embeds)
+- [ ] 🏆 **Standings Snapshot** — Top of each group
+- [ ] 📰 **Top News** — 3 latest authentic news cards
+- [ ] 🪜 **Bracket Snapshot** — Mini interactive bracket
 
-### 🌐 Website Features
+### ⚽ Match Cards (Used Everywhere)
 
-#### MVP (Launch Day)
+Every match card shows:
+- [ ] 🏳️ **Both country flags** (large, prominent)
+- [ ] Country names (in user's language)
+- [ ] Match score (or kickoff time if not started)
+- [ ] Group label (Group A, B, C... or Round of 16, etc.)
+- [ ] Stadium + city
+- [ ] Match status (LIVE / HT / FT / Upcoming)
+- [ ] 🏅 **Man of the Match** badge (after match ends)
+- [ ] Quick actions: Watch, Highlights, Stats
 
-- [ ] Full match schedule (104 matches, all 32 teams)
+### 📅 Schedule Page
+
+- [ ] All 104 real fixtures (e.g. *Mexico vs South Africa, Jun 11, Group A, Mexico City*)
 - [ ] Timezone auto-conversion
-- [ ] Live scores (real-time via API)
-- [ ] "Where to watch" by country (free + paid options)
-- [ ] Group standings (auto-updating)
-- [ ] Knockout bracket visualizer
-- [ ] Mobile-first responsive design (PWA installable)
-- [ ] Dark mode default
-- [ ] No login required
+- [ ] Filters: by date, team, group, stage
+- [ ] List + Calendar views
+- [ ] Each fixture clickable → match detail page
 
-#### Phase 2 (Week 1 after launch)
+### 🎥 Match Detail Page
 
-- [ ] Team pages (squad, history, stats)
-- [ ] Player pages (stats, goals, cards)
-- [ ] Highlights hub (embedded FIFA YouTube)
-- [ ] Prayer time integration with match conflict warnings
-- [ ] Multi-language support (EN, BN, UR, AR, HI)
-- [ ] Browser push notifications
+When user clicks any match:
+- [ ] Big banner with both flags
+- [ ] Live score (if live) or final score
+- [ ] **Embedded official live stream** (when legally available)
+- [ ] "Watch on official broadcaster" buttons by country
+- [ ] Live commentary (text updates)
+- [ ] Lineups (starting XI for both teams)
+- [ ] Match stats (possession, shots, cards)
+- [ ] Man of the Match (after FT)
+- [ ] Goal scorers + minute
+- [ ] **Embedded highlights** (after FT, from official YouTube)
+- [ ] "Watch full replay" → links to FIFA+ official replay (we don't host)
 
-#### Phase 3 (Bonus)
+### 🏆 Standings Page
 
-- [ ] Halal prediction league (friends, no money, no betting)
-- [ ] Match discussion rooms (moderated)
-- [ ] AI match insights / summaries
-- [ ] Watch party finder (halal cafes nearby)
-- [ ] Email digest subscription
+- [ ] **Beautiful, interactive** group tables
+- [ ] Live updating
+- [ ] Color-coded: qualified (green), at risk (yellow), eliminated (red)
+- [ ] Hover/tap each team → expand stats
+- [ ] Goal difference, goals scored/conceded
+- [ ] Last 5 results visualization
+
+### 🪜 Knockout Bracket
+
+- [ ] **Interactive animated bracket**
+- [ ] Updates live as teams advance
+- [ ] Click team → see their journey through tournament
+- [ ] Shareable bracket image (social media)
+
+### 🎬 Highlights Hub (FIFA.com Style)
+
+Organized by World Cup year, descending:
+
+- [ ] **2026 (Current)** — Latest match highlights
+- [ ] **2022 (Qatar)** — Classic moments
+- [ ] **2018 (Russia)**
+- [ ] **2014 (Brazil)**
+- [ ] **2010 (South Africa)**
+- [ ] **Older archives**
+
+Each section:
+- [ ] Shows top 6 videos initially
+- [ ] "See More" button → expand to full archive
+- [ ] Filter by team, player, goal type
+- [ ] All videos are **embedded YouTube** (FIFA official channel — we don't upload)
+- [ ] **Working playback** (proper iframe embeds, not broken thumbnails)
+
+### 👥 Teams & Players
+
+- [ ] **Country pages** — One for each of 48 nations
+- [ ] Full **squad list** with player photos
+- [ ] Player profiles: stats, position, club, age
+- [ ] Manager info
+- [ ] Previous World Cup history for that country
+- [ ] All matches that team plays in WC 2026
+
+### 📰 News Section
+
+- [ ] Aggregated from **authentic official sources only**:
+  - FIFA.com (official RSS)
+  - BBC Sport (official RSS)
+  - ESPN FC (official RSS)
+  - The Athletic (where allowed)
+- [ ] Each article links to original source (we don't republish content)
+- [ ] Categories: General, Team-specific, Player news, Match previews
+- [ ] No fake news, no clickbait, no rumor mills
+
+### 🌍 Internationalization
+
+- [ ] 🇬🇧 English (default)
+- [ ] 🇧🇩 Bangla
+- [ ] 🇵🇰 Urdu
+- [ ] 🇸🇦 Arabic
+- [ ] 🇮🇳 Hindi
+
+### 🎨 UI/UX Standards
+
+- [ ] **Light mode default**, dark mode toggle in header
+- [ ] User preference saved (localStorage)
+- [ ] Smooth Framer Motion animations
+- [ ] Skeleton loaders (no blank screens)
+- [ ] Micro-interactions on hover/tap
+- [ ] Mobile-first responsive
+- [ ] PWA installable
+- [ ] Lighthouse score 95+
 
 ### 🧩 Browser Extension Features
 
 - [ ] Block popup ads on all streaming sites
-- [ ] Hide fake "Play" buttons and overlay tricks
-- [ ] Remove redirects
-- [ ] Filter out adult/gambling ads
-- [ ] Auto-dismiss fake virus warnings
-- [ ] Free tier (basic blocking)
-- [ ] Premium tier — $2/month (advanced features, priority updates)
+- [ ] Hide fake "Play" buttons
+- [ ] Remove redirects + malicious overlays
+- [ ] Filter adult/gambling ads
+- [ ] Free tier + Premium ($2/month)
 
 ### 🤖 Telegram Bot Features
 
-- [ ] Daily message: "Today's matches + where to watch"
+- [ ] Daily "Today's matches" message at 9 AM
 - [ ] Live goal alerts (per favorite team)
-- [ ] Pre-match reminder (15 min before)
+- [ ] Match start reminders (15 min before)
 - [ ] Highlights link after full-time
-- [ ] Group standings on command
 - [ ] Multi-language replies
 
 ## 🛠️ Tech Stack
 
-| Layer        | Technology                | Reason                              |
-| ------------ | ------------------------- | ----------------------------------- |
-| Frontend     | Next.js 15 + Tailwind CSS | Fast SSR, great SEO, easy styling   |
-| State        | React Query               | Cache live score data efficiently   |
-| Backend      | Next.js API Routes        | No separate backend needed          |
-| Database     | Supabase (Postgres)       | Free tier, auth-ready               |
-| Cache        | Redis (Upstash free)      | Cache live scores, reduce API calls |
-| Live Scores  | football-data.org API     | Free, reliable, World Cup support   |
-| Highlights   | YouTube embed API         | Free, legal                         |
-| Prayer Times | Aladhan API               | Free, accurate                      |
-| Extension    | Chrome Manifest V3        | Modern standard                     |
-| Bot          | Node.js + Telegraf        | Industry standard                   |
-| Web Hosting  | Vercel                    | Free tier, auto-deploy              |
-| Bot Hosting  | Railway                   | Free tier, easy cron                |
-| Analytics    | Plausible / Umami         | Privacy-friendly, halal             |
+| Layer | Technology | Reason |
+|---|---|---|
+| Frontend | Next.js 15 + Tailwind CSS | Fast SSR, great SEO |
+| Animations | Framer Motion | Smooth, interactive UI |
+| State | React Query | Live data caching |
+| Backend | Next.js API Routes | Unified |
+| Database | Supabase (Postgres) | Free tier, auth-ready |
+| Cache | Upstash Redis | Live scores cache |
+| Live Scores | football-data.org | Free API |
+| Highlights/Live | YouTube Data API v3 | Official embeds only |
+| News | RSS Parser (FIFA, BBC, ESPN) | Authentic sources |
+| i18n | next-intl | Multi-language |
+| Extension | Chrome Manifest V3 | Modern standard |
+| Bot | Node.js + Telegraf | Industry standard |
+| Hosting | Vercel + Railway | Free tiers |
+| Analytics | Plausible | Privacy-friendly |
+
+## ⚖️ Legal & Halal Boundaries
+
+### What We DO
+
+- ✅ Embed official YouTube videos (FIFA channel, broadcaster channels) — fully allowed by YouTube
+- ✅ Embed live streams when broadcasters publish them publicly (e.g., FIFA YouTube live during free-to-air matches)
+- ✅ Use free public APIs for scores/data
+- ✅ Aggregate news with source links (fair use)
+- ✅ Link users to legal broadcasters in their country
+
+### What We Do NOT
+
+- ❌ Host or re-stream any video content ourselves
+- ❌ Provide downloads of any match
+- ❌ Scrape pirate streams
+- ❌ Show gambling/adult/alcohol ads (AdSense category filters enforced)
+- ❌ Republish news article content (only headlines + link)
 
 ## 💰 Monetization Strategy
 
-| Stream                                     | Type        | Estimated Monthly    |
-| ------------------------------------------ | ----------- | -------------------- |
-| Google AdSense (filtered halal categories) | Display ads | $100 – $500          |
-| Affiliate (DAZN, ESPN+, VPN services)      | Commission  | $100 – $500          |
-| YouTube embed revenue share                | Passive     | $20 – $100           |
-| Browser extension Premium ($2/mo)          | SaaS        | $50 – $2,000         |
-| Telegram bot Premium tier                  | SaaS        | $30 – $200           |
-| **Total Potential**                        | —           | **$300 – $3,300/mo** |
-
-### Halal Filters
-
-- ❌ No gambling/betting ads
-- ❌ No adult content ads
-- ❌ No interest-based (riba) financial product ads
-- ✅ Only sports merchandise, halal food delivery, VPN, education
+| Stream | Monthly Estimate |
+|---|---|
+| Google AdSense (halal-filtered) | $150 – $700 |
+| Affiliate (FIFA+, DAZN, ESPN+, VPN) | $100 – $600 |
+| YouTube embed revenue share | $20 – $100 |
+| Browser extension Premium ($2/mo) | $50 – $2,000 |
+| Telegram bot Premium tier | $30 – $200 |
+| **Total Potential** | **$350 – $3,600/mo** |
 
 ## 📊 Success Metrics
 
-### Launch Month Targets (June 11 – July 19, 2026)
+### Launch Month (Jun 11 – Jul 19, 2026)
 
-| Metric                   | Target  |
-| ------------------------ | ------- |
-| Total visitors           | 50,000+ |
-| Returning users          | 30%+    |
-| Extension installs       | 1,000+  |
-| Telegram bot subscribers | 500+    |
-| Page load speed          | < 1.5s  |
-| Total earnings           | $300+   |
+| Metric | Target |
+|---|---|
+| Total visitors | 75,000+ |
+| Returning users | 35%+ |
+| Avg session time | 4+ minutes |
+| Extension installs | 1,500+ |
+| Telegram bot subs | 800+ |
+| Lighthouse score | 95+ |
+| Total earnings | $400+ |
 
-### 6-Month Targets
+## 🎯 Competitive Positioning
 
-| Metric                    | Target  |
-| ------------------------- | ------- |
-| Monthly active users      | 20,000+ |
-| Premium extension users   | 200+    |
-| Monthly recurring revenue | $500+   |
+| | FIFA.com | ESPN | LiveSoccerTV | **MatchHub** |
+|---|---|---|---|---|
+| Real fixtures + flags | ✅ | ✅ | ✅ | ✅ |
+| Embedded live streams | ⚠️ (paywall) | ⚠️ (paywall) | ❌ | ✅ (free, legal) |
+| Highlights by year | ✅ | ❌ | ❌ | ✅ |
+| Standings | ✅ | ✅ | ❌ | ✅ (more beautiful) |
+| Bracket | ✅ | ✅ | ❌ | ✅ (interactive) |
+| Player rosters | ✅ | ⚠️ | ❌ | ✅ |
+| Authentic news | ✅ | ✅ | ❌ | ✅ (aggregated) |
+| Man of the Match | ✅ | ✅ | ❌ | ✅ |
+| Bangla/Urdu/Hindi | ❌ | ❌ | ❌ | ✅ |
+| Sub-second load | ❌ | ❌ | ⚠️ | ✅ |
+| Browser ad blocker | ❌ | ❌ | ❌ | ✅ |
+| Telegram bot | ❌ | ❌ | ❌ | ✅ |
 
 ## 🚀 Long-Term Vision
 
-FootballClean isn't just for World Cup 2026 — it's the foundation for a **year-round football platform**:
-
-- ⚽ **Euro 2028, Copa America, AFCON** — reuse for every tournament
-- 🏆 **Domestic leagues** — EPL, La Liga, Bundesliga, Champions League
-- 🌍 **Cricket version** — same model for World Cup, IPL (huge South Asian market)
-- 📱 **Native mobile app** — iOS + Android (Phase 4)
-- 🤝 **Sponsorships** — Direct deals with halal brands
-
-## 🎯 Competitive Edge
-
-| Competitor   | They Do                             | We Do                                              |
-| ------------ | ----------------------------------- | -------------------------------------------------- |
-| LiveSoccerTV | Schedule + stream links             | + Browser ad blocker + Telegram bot + Prayer times |
-| ESPN         | Scores + news                       | + Multilingual + Mobile-first + Halal-friendly     |
-| FlashScore   | Live scores only                    | + Stream finder + Highlights + Community           |
-| Pirate sites | Free streams (illegal, full of ads) | Clean experience around LEGAL streams              |
-
-## 📅 Roadmap Phases
-
-```
-Phase 1: BUILD       (May 24 – Jun 6, 2026)  → See sprint.md
-Phase 2: POLISH      (Jun 7 – Jun 10, 2026)  → Bug fixes, performance, marketing
-Phase 3: LAUNCH      (Jun 11, 2026)          → World Cup opening day 🚀
-Phase 4: GROWTH      (Jun – Jul 2026)        → User feedback, viral features
-Phase 5: RETENTION   (Aug 2026 onwards)      → Convert to year-round platform
-```
+Beyond World Cup 2026:
+- 🏆 **Euro 2028, Copa America, AFCON** — reuse platform
+- ⚽ **Domestic leagues** — EPL, La Liga, Bundesliga, Champions League
+- 🌍 **Cricket version** — same model for cricket World Cup, IPL
+- 📱 **Native mobile apps** — iOS + Android (Phase 4)
 
 ## ✊ Guiding Principles
 
-1. **Halal first** — Every feature, every ad, every partnership must be halal
-2. **Speed matters** — Sub-second loading on slow networks
-3. **Mobile-first** — 80% of users will be on phones
-4. **Privacy-respecting** — No invasive tracking, GDPR-friendly
-5. **User trust** — No popups, no dark patterns, no shady tactics
-6. **Honest marketing** — Real numbers, real value, no fake hype
+1. **Halal first** — Every feature, every ad, every partnership
+2. **Authentic sources only** — News, scores, streams, highlights
+3. **Speed matters** — Sub-second loads on slow networks
+4. **Beautiful UI** — On par with FIFA.com or better
+5. **Mobile-first** — 80% of users on phones
+6. **User trust** — No piracy, no dark patterns, no fake content

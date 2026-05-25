@@ -1,408 +1,448 @@
-# 🏃 FootballClean — Sprint Tracker
+# 🏃 MatchHub — Sprint Tracker
 
 > Track every feature, every task, every sprint. Update statuses as you complete work.
 
 ## 📊 Sprint Overview
 
-| Sprint    | Dates            | Focus                            | Status                                                             |
-| --------- | ---------------- | -------------------------------- | ------------------------------------------------------------------ |
-| Sprint 1  | May 24 – May 25  | Project Foundation & Schedule    | 🟡 In Progress                                                     |
-| Sprint 2  | May 26 – May 27  | Live Scores Integration          | 🟡 In Progress (code complete, key+Redis pending)                  |
-| Sprint 3  | May 28 – May 29  | Stream Finder ("Where to Watch") | 🟡 In Progress (code complete; affiliate IDs + deploy pending)     |
-| Sprint 4  | May 30           | Highlights Hub                   | ⏳ Not Started                                                     |
-| Sprint 5  | May 31 – Jun 1   | Browser Extension                | 🟡 In Progress (code complete; CWS submission pending)             |
-| Sprint 6  | Jun 2            | Telegram Bot                     | 🟡 In Progress (code complete; BotFather + Railway deploy pending) |
-| Sprint 7  | Jun 3 – Jun 4    | Prayer Times & Notifications     | ⏳ Not Started                                                     |
-| Sprint 8  | Jun 5            | Testing & Polish                 | 🟡 In Progress (code complete; manual device/Lighthouse pass pending) |
-| Sprint 9  | Jun 6            | Pre-Launch Setup                 | ⏳ Not Started                                                     |
-| 🚀 Launch | **Jun 11, 2026** | **World Cup Opening Day**        | 🎯 Target                                                          |
+| Sprint | Dates | Focus | Status |
+|---|---|---|---|
+| Sprint 1 | May 24 – May 25 | Foundation, real fixtures, light/dark theme | ⏳ Not Started |
+| Sprint 2 | May 26 – May 27 | Match cards with flags, interactive UI, schedule page | ⏳ Not Started |
+| Sprint 3 | May 28 – May 29 | Live scores + match detail page + MOTM | ⏳ Not Started |
+| Sprint 4 | May 30 – May 31 | Standings + bracket (beautiful & interactive) | ⏳ Not Started |
+| Sprint 5 | Jun 1 – Jun 2 | Highlights hub (FIFA.com style, by year) | ⏳ Not Started |
+| Sprint 6 | Jun 3 | Embedded live stream + "Watch on broadcaster" buttons | ⏳ Not Started |
+| Sprint 7 | Jun 4 | Teams, players, news section | ⏳ Not Started |
+| Sprint 8 | Jun 5 | Browser extension + Telegram bot | ⏳ Not Started |
+| Sprint 9 | Jun 6 | i18n, PWA, polish, testing | ⏳ Not Started |
+| 🚀 Launch | **Jun 11, 2026** | **World Cup Opening Day** | 🎯 Target |
 
 **Status Legend:** ⏳ Not Started · 🟡 In Progress · ✅ Done · 🔴 Blocked
 
 ---
 
-## 🏁 Sprint 1 — Project Foundation & Schedule
-
-**Dates:** May 24 – May 25, 2026 · **Status:** 🟡 In Progress (code complete, deploy pending)
+## 🏁 Sprint 1 — Foundation, Real Fixtures, Theme
+**Dates:** May 24 – May 25, 2026 · **Status:** ⏳ Not Started
 
 ### Goal
-
-Set up the full project skeleton and build the static match schedule page.
+Project skeleton + light/dark theme + ALL real World Cup 2026 fixtures as seed data.
 
 ### Tasks
-
-- [x] Initialize Next.js 15 project with TypeScript
-- [x] Set up Tailwind CSS + dark mode default
-- [x] Configure ESLint, Prettier, .gitignore
-- [x] Create folder structure: `/app`, `/components`, `/lib`, `/public`
-- [ ] Deploy "Hello World" to Vercel _(owner: you — run `vercel` after `pnpm install`)_
-- [ ] Buy domain (e.g. footballclean.com) _(owner: you)_
-- [ ] Connect domain to Vercel _(owner: you)_
-- [x] Add World Cup 2026 fixtures data (JSON seed) — group stage (72 matches); knockouts deferred until draw seeds resolve in Sprint 2
-- [x] Build match schedule page (all 72 group-stage matches; knockouts to come)
-- [x] Add filters: by date, by team, by group, by stage
-- [x] Implement auto timezone conversion for user
-- [x] Build responsive mobile-first layout
-- [x] Add PWA manifest + service worker (basic)
+- [ ] Initialize Next.js 15 project with TypeScript + App Router
+- [ ] Set up Tailwind CSS + Framer Motion
+- [ ] Configure ESLint, Prettier
+- [ ] Folder structure: `/app`, `/components`, `/lib`, `/data`, `/public`, `/assets`
+- [ ] Add SVG logo + favicon (from `/assets`)
+- [ ] Implement **light mode default** + dark mode toggle (next-themes)
+- [ ] Save theme preference in localStorage
+- [ ] Set up base layout with header (logo + theme toggle + nav)
+- [ ] **Seed `/data/fixtures.ts`** with ALL 104 real World Cup 2026 matches:
+  - Real teams (Mexico, South Africa, Argentina, etc. — NOT "A2", "B1")
+  - Real dates, kickoff times
+  - Real stadiums + cities
+  - Real groups (A-L) and rounds
+- [ ] Seed `/data/teams.ts` with all 48 qualified nations (name, flag code, group)
+- [ ] Deploy "Hello MatchHub" to Vercel
+- [ ] Buy `matchhub.live` domain + connect to Vercel
 
 ### Deliverable
-
-A live URL showing the full World Cup schedule in the user's timezone, mobile-friendly.
-
-### Local verification
-
-```
-pnpm install
-pnpm dev      # http://localhost:3000
-pnpm build    # production build (passes)
-pnpm lint     # passes
-pnpm typecheck
-```
-
-### Notes
-
-- Team names in `data/teams.json` are placeholders (A1–L4) outside the three hosts. Update once the FIFA draw is finalized — no code changes needed, the resolver picks up the JSON.
-- Group stage venue/date layout in `lib/fixtures.ts` is a balanced approximation; re-check against the published FIFA chart before launch.
+Live site at matchhub.live showing header (logo + theme toggle) with light/dark working.
 
 ---
 
-## ⚽ Sprint 2 — Live Scores Integration
-
-**Dates:** May 26 – May 27, 2026 · **Status:** 🟡 In Progress (code complete; key + Redis pending)
+## ⚽ Sprint 2 — Match Cards + Schedule
+**Dates:** May 26 – May 27, 2026 · **Status:** ⏳ Not Started
 
 ### Goal
-
-Wire up real-time live scores from football-data.org API.
+Beautiful, interactive match cards everywhere — with real country flags + real fixture data.
 
 ### Tasks
-
-- [ ] Sign up for football-data.org API key (free tier) _(owner: you — drop into `.env.local` as `FOOTBALL_DATA_API_KEY`)_
-- [x] Create `/lib/api/footballData.ts` wrapper
-- [x] Set up cache layer — pluggable `Cache` interface in `lib/cache.ts`, in-memory default. Swap to Upstash by implementing the interface against `@upstash/redis` and calling `setCache()` at boot. _(owner: you — provision Upstash project + swap impl when ready)_
-- [x] Build live score ticker component (top of homepage)
-- [x] Build individual match detail page
-- [x] Show: live score, minute, goal scorers, cards, stats
-- [x] Add auto-refresh (every 30s during live matches; throttles to 120s when tab hidden)
-- [x] Build group standings page (live updating)
-- [x] Build knockout bracket visualizer
-- [x] Add "LIVE" badge with pulsing animation
-- [x] Handle API rate limits gracefully (cache + 10-min stale fallback on 429/5xx)
+- [ ] Build `<MatchCard>` component showing:
+  - Both **country flags** (use `flag-icons` library or country code SVGs)
+  - Country names (real names: Mexico, South Africa, etc.)
+  - Kickoff time in user timezone
+  - Group label (Group A, etc.)
+  - Stadium + city
+  - Match status badge (Upcoming / LIVE / FT)
+  - Score (if available)
+  - Man of the Match badge slot (empty for upcoming)
+- [ ] Add hover/tap animations (Framer Motion)
+- [ ] Click card → navigate to match detail page (placeholder)
+- [ ] Build `/schedule` page with all 104 matches
+- [ ] Add filters: by date, by team, by group, by stage
+- [ ] List view + Calendar view toggle
+- [ ] Auto-detect user timezone + convert all times
+- [ ] Mobile-first responsive
+- [ ] Add loading skeletons
 
 ### Deliverable
-
-Real-time scores visible on homepage and each match page, updating automatically.
-
-### Local verification
-
-```
-pnpm install
-cp .env.example .env.local   # add FOOTBALL_DATA_API_KEY when you have one
-pnpm dev                      # / , /standings, /bracket, /match/m1 all render
-pnpm typecheck && pnpm lint && pnpm build
-```
-
-### Notes
-
-- The football-data.org wrapper is cache-first: every endpoint hit goes through `lib/cache.ts` with a 30s TTL for live data and a 10-minute stale fallback used on rate-limit (429) or upstream errors. With no key configured, the wrapper returns `null` and the UI falls back to scheduled-only placeholders — pages still render.
-- The API key never reaches the browser. The home/match/standings/bracket pages call `/api/live*` and `/api/standings` Next routes, which call upstream server-side.
-- `lib/bracket.ts` builds the full Round of 32 → Final structure with placeholders; once all 72 group-stage results are in, the top-2 slots resolve to real team names. The 8 best-third-placed seeds need post-group-stage logic and are tracked as a follow-up.
+`/schedule` page shows every match with real teams, real flags, real times — beautifully animated.
 
 ---
 
-## 📍 Sprint 3 — Stream Finder ("Where to Watch")
-
-**Dates:** May 28 – May 29, 2026 · **Status:** 🟡 In Progress (code complete; affiliate IDs + deploy pending)
+## 🔴 Sprint 3 — Live Scores + Match Detail + MOTM
+**Dates:** May 28 – May 29, 2026 · **Status:** ⏳ Not Started
 
 ### Goal
-
-The killer feature: tell users exactly where to watch each match LEGALLY in their country.
+Wire up real-time data + full match detail page including Man of the Match.
 
 ### Tasks
-
-- [x] Research free legal broadcasters per country (60+ countries seeded in `data/broadcasters.json`)
-- [x] Build broadcaster database (JSON): country → broadcaster → free/paid
-- [x] Auto-detect user country (IP geolocation via Vercel — `x-vercel-ip-country` + cookie override)
-- [x] Add "Change country" dropdown for manual selection (header + widget)
-- [x] Build "Where to Watch" widget on every match page
-- [x] Show free options first (BBC iPlayer, Toffee, ARD, TF1, CBC Gem, SBS, T Sports, etc.)
-- [x] Show paid options second (FOX Sports, beIN, Sony, SuperSport, etc.)
-- [x] One-click external link to official broadcaster (`rel="noopener noreferrer nofollow"`)
-- [x] Affiliate links wired via env (`NEXT_PUBLIC_AFFILIATE_*`) — no betting partners; VPN affiliate intentionally omitted for halal compliance _(owner: you — supply codes when programs are approved)_
-- [x] Add "Report broken link" feature → `/api/report-link` POST endpoint
+- [ ] Sign up for football-data.org API key (free tier)
+- [ ] Sign up for API-Football backup key
+- [ ] Set up Upstash Redis cache (reduce API calls)
+- [ ] Create `/lib/api/footballData.ts` wrapper
+- [ ] Add live score auto-refresh (every 30s for live matches)
+- [ ] Add "LIVE" pulsing badge
+- [ ] Build `/match/[id]` detail page:
+  - Hero with both flags + names + score
+  - Live commentary feed
+  - Lineups (starting XI for both teams)
+  - Match stats (possession, shots, fouls, corners)
+  - Goal scorers + minute
+  - Cards (yellow/red)
+  - **Man of the Match section** (after FT)
+- [ ] Add MOTM badge on match cards everywhere (after FT)
+- [ ] Handle API rate limits gracefully
 
 ### Deliverable
-
-Every match page shows exactly where to watch legally, filtered by user's country.
-
-### Local verification
-
-```
-pnpm install
-pnpm dev                      # /match/m1 shows Where-to-Watch widget
-pnpm typecheck && pnpm lint && pnpm build
-```
-
-### Notes
-
-- Country detection priority: `fc_country` cookie → `x-vercel-ip-country` → `cf-ipcountry` → null (widget falls back to FIFA+ global option).
-- All broadcaster URLs are canonical homepage URLs; verify deep links before launch. Updates only require editing `data/broadcasters.json` — no code changes.
-- Halal constraint: zero betting/gambling partners included. VPN affiliate programs deliberately omitted because most have ambiguous halal status.
+Click any match → see full detail page with live data + MOTM after game ends.
 
 ---
 
-## 🎬 Sprint 4 — Highlights Hub
-
-**Dates:** May 30, 2026 · **Status:** ⏳ Not Started
+## 🏆 Sprint 4 — Standings + Bracket
+**Dates:** May 30 – May 31, 2026 · **Status:** ⏳ Not Started
 
 ### Goal
-
-Embed official YouTube highlights from FIFA/broadcasters for every completed match.
+Beautiful, interactive standings tables + animated knockout bracket.
 
 ### Tasks
 
+**Standings:**
+- [ ] Build `/standings` page
+- [ ] Beautiful card per group (12 groups: A-L)
+- [ ] Live updating points table
+- [ ] Color-coded rows: qualified (green), at risk (yellow), eliminated (red)
+- [ ] Show: W, D, L, GF, GA, GD, Points
+- [ ] Hover/tap row → expand with last 5 results
+- [ ] Animated row updates (Framer Motion)
+- [ ] Add team flag + name on each row
+
+**Bracket:**
+- [ ] Build `/bracket` page
+- [ ] Visual interactive knockout bracket (Round of 32 → Final)
+- [ ] Updates live as teams advance
+- [ ] Click team → modal with team's tournament journey
+- [ ] "Share my bracket prediction" feature (no money, just fun)
+- [ ] Mobile: vertical stacked layout
+- [ ] Desktop: horizontal tree layout
+
+### Deliverable
+`/standings` and `/bracket` both look professional and update in real-time.
+
+---
+
+## 🎬 Sprint 5 — Highlights Hub (FIFA.com Style)
+**Dates:** Jun 1 – Jun 2, 2026 · **Status:** ⏳ Not Started
+
+### Goal
+A proper highlights archive organized by year — with WORKING video playback.
+
+### Tasks
 - [ ] Set up YouTube Data API v3 key
-- [ ] Identify official channels (FIFA, FOX Soccer, BBC Sport, DAZN)
-- [ ] Build automated fetcher: post-match, search for highlight video
-- [ ] Build highlights page (all videos, filterable)
-- [ ] Add highlights section on each match page (post full-time)
-- [ ] Lazy-load YouTube iframes (performance)
-- [ ] Add filters: by team, by player, by date
-- [ ] "Best goals of tournament" curated section
+- [ ] Identify official channels:
+  - FIFA official YouTube
+  - FOX Soccer YouTube
+  - BBC Sport YouTube
+- [ ] Build `/highlights` page with sections by year:
+  - **2026 (Current)** — show top 6, "See More" expands to all
+  - **2022 (Qatar)** — top 6 + See More
+  - **2018 (Russia)** — top 6 + See More
+  - **2014 (Brazil)** — top 6 + See More
+  - **2010 (South Africa)** — top 6 + See More
+  - **Older archives** — collapsed by default
+- [ ] **Proper YouTube iframe embeds** (videos must actually play, not be broken)
+- [ ] Lazy-load videos (performance — only load when visible)
+- [ ] Add filters: by team, by player, by goal type
+- [ ] Show video title, date, duration, source channel
+- [ ] Auto-fetch new 2026 highlights as matches finish
+- [ ] Cache results in Supabase (avoid hitting API limits)
 
 ### Deliverable
-
-Users can watch official highlights on the site immediately after each match ends.
+Beautiful highlights hub with all years, working video playback, FIFA.com-style organization.
 
 ---
 
-## 🧩 Sprint 5 — Browser Extension
-
-**Dates:** May 31 – Jun 1, 2026 · **Status:** 🟡 In Progress (code complete; CWS submission pending)
+## 📺 Sprint 6 — Embedded Live Stream + Watch Buttons
+**Dates:** Jun 3, 2026 · **Status:** ⏳ Not Started
 
 ### Goal
+Show official live stream on homepage when match is live — fully legal embeds only.
 
-Build the "Clean Stream" Chrome extension to block ads on streaming sites.
+### Tasks
+- [ ] Build `<LiveStreamEmbed>` component
+- [ ] Detect live FIFA YouTube broadcasts via YouTube API
+- [ ] Embed FIFA's official live YouTube stream when available
+- [ ] Build broadcaster database (`/data/broadcasters.ts`):
+  - Per country → free + paid broadcaster
+  - Examples: Toffee (BD), BBC iPlayer (UK), Foot.com (FR), CBC Gem (CA)
+- [ ] Auto-detect user country (Vercel geolocation headers)
+- [ ] "Change country" dropdown for manual override
+- [ ] Big **"WATCH LIVE"** button on homepage when match live
+  - Shows embed if FIFA YouTube is broadcasting
+  - Else shows broadcaster options for user's country
+- [ ] Add affiliate links to FIFA+, DAZN, ESPN+ where applicable
+- [ ] **No piracy. No re-streaming. Only legal embeds + redirects.**
+
+### Deliverable
+Homepage shows live match stream when available, with country-specific watch buttons.
+
+---
+
+## 👥 Sprint 7 — Teams, Players, News
+**Dates:** Jun 4, 2026 · **Status:** ⏳ Not Started
+
+### Goal
+Country pages with full squads + authentic FIFA news section.
 
 ### Tasks
 
-- [x] Set up Chrome extension project (Manifest V3) — see `extension/manifest.json`
-- [x] Build content script: detect streaming sites — `extension/content/detector.js` (off / light / strict heuristic)
-- [x] Block popup ads (window.open overrides) — page-world hook in `extension/content/injected.js`
-- [x] Hide fake play buttons (CSS heuristics) — `extension/content/blocker.js`
-- [x] Remove malicious overlays — fixed-position + ad-anchor scrub in `extension/content/blocker.js`
-- [x] Block adult/gambling ad domains (filter list) — `extension/rules/adult_gambling.json`, `malware.json`, `popup_trackers.json`
-- [x] Build extension popup UI (toggle, stats, settings) — `extension/popup/`
-- [x] Add "blocked count" badge on icon — `extension/background/service-worker.js`
-- [ ] Pay Chrome Web Store fee ($5) _(owner: you)_
-- [ ] Submit extension for review _(owner: you — zip `extension/`, upload via dashboard)_
-- [x] Write privacy policy + listing description — `extension/PRIVACY.md`, `extension/LISTING.md`
-- [x] Add free vs Premium tier logic (Premium = future) — `tier` field + `isPremium()` in `extension/background/settings.js`; popup card adapts
+**Teams & Players:**
+- [ ] Build `/team/[country]` page for each of 48 nations
+- [ ] Show country flag, name, manager, FIFA ranking
+- [ ] **Full squad list** with player photos (use API-Football)
+- [ ] Player info: name, position, club, age, jersey #
+- [ ] Click player → `/player/[id]` page with stats
+- [ ] Show all matches that country plays in WC 2026
+- [ ] Previous World Cup history for the country
+
+**News:**
+- [ ] Build `/news` page
+- [ ] Integrate RSS feeds from:
+  - FIFA.com official RSS
+  - BBC Sport (football)
+  - ESPN FC
+- [ ] News cards: headline + image + source + date
+- [ ] Categories: General, Team-specific, Match previews, Player news
+- [ ] **Each card links to original source** (we don't republish content)
+- [ ] Top 3 news on homepage
+- [ ] Auto-refresh every 30 minutes
 
 ### Deliverable
-
-Extension live on Chrome Web Store, blocking popups and fake buttons on streaming sites.
-
-### Local verification
-
-```
-# Open chrome://extensions → enable Developer mode → Load unpacked → select extension/
-# Visit a streaming aggregator → toolbar badge ticks; popups/fake buttons removed.
-```
-
-### Notes
-
-- Halal scope: extension cleans up sites the user already chose to visit. It does **not** enable piracy, does **not** include any gambling/betting affiliate codes, and does **not** whitelist adult ad networks. See `extension/PRIVACY.md`.
-- Static rule IDs are namespaced: `1xxx` adult/gambling, `2xxx` malware/popup networks, `3xxx` popup trackers. Expand the JSON lists without code changes.
-- Sensitive hosts (Google, GitHub, banks, PayPal, Stripe) are excluded via `exclude_matches` in `manifest.json` to prevent collateral damage.
-- Premium tier currently gates UI affordances only (popup card copy). Real Premium features (prayer-aware muting, custom filter lists, multi-device dashboards) land in a later sprint.
+Every country has a team page with full squad. News section pulls authentic articles from FIFA/BBC/ESPN.
 
 ---
 
-## 🤖 Sprint 6 — Telegram Bot
-
-**Dates:** Jun 2, 2026 · **Status:** 🟡 In Progress (code complete; BotFather + Railway deploy pending)
+## 🧩 Sprint 8 — Browser Extension + Telegram Bot
+**Dates:** Jun 5, 2026 · **Status:** ⏳ Not Started
 
 ### Goal
-
-Launch a Telegram bot for daily match updates and live alerts.
+Ship the two companion products: Chrome extension + Telegram bot.
 
 ### Tasks
 
-- [ ] Create bot via @BotFather _(owner: you — register handle, drop token into `bot/.env`)_
-- [x] Set up Node.js + Telegraf project — `bot/` (TypeScript + Telegraf 4 + node-cron, runs via `tsx`)
-- [ ] Deploy to Railway (free tier) _(owner: you — see `bot/README.md` for the step-by-step; `bot/railway.toml` already wired)_
-- [x] Implement `/start` and `/help` commands — `bot/src/commands/{start,help}.ts`
-- [x] Implement `/today` — today's matches + where to watch — `bot/src/commands/today.ts`
-- [x] Implement `/standings` — group tables — `bot/src/commands/standings.ts` (live via football-data.org when key present)
-- [x] Implement `/team <name>` — favorite team setup — `bot/src/commands/team.ts` (+ `/team clear`)
-- [x] Set up cron job: daily 9am message — `bot/src/jobs/dailyDigest.ts` (timezone-configurable; skips matchless days)
-- [x] Set up live goal alerts (poll API during live matches) — `bot/src/jobs/goalAlerts.ts` (60s poll over ±3h live window)
-- [x] Add language selector (EN, BN, UR, AR, HI) — `bot/src/i18n/`, picker via `/language`
-- [x] Promote bot link on website — Footer CTA, env-driven via `NEXT_PUBLIC_TELEGRAM_BOT_URL`
+**Browser Extension:**
+- [ ] Chrome extension project (Manifest V3)
+- [ ] Content script: block popup ads on streaming sites
+- [ ] Hide fake "Play" buttons (CSS heuristics)
+- [ ] Block adult/gambling ad domains (filter list)
+- [ ] Extension popup UI: toggle, stats, settings
+- [ ] Pay Chrome Web Store fee ($5)
+- [ ] Submit for review
+- [ ] Privacy policy + listing page
+
+**Telegram Bot:**
+- [ ] Create bot via @BotFather
+- [ ] Set up Node.js + Telegraf project
+- [ ] Deploy to Railway
+- [ ] Commands: `/start`, `/today`, `/standings`, `/team <name>`
+- [ ] Cron: daily 9 AM "Today's matches" message
+- [ ] Live goal alerts (poll API during live matches)
+- [ ] Multi-language replies
 
 ### Deliverable
-
-Working Telegram bot with daily updates and live goal alerts.
-
-### Local verification
-
-```
-cd bot
-pnpm install
-cp .env.example .env          # add TELEGRAM_BOT_TOKEN; optional FOOTBALL_DATA_API_KEY
-pnpm typecheck                # passes
-pnpm dev                      # long-polling; message the bot on Telegram
-```
-
-### Notes
-
-- Halal scope: zero betting/gambling content in any message, no third-party ads in DMs, Where-to-Watch links only point to legal broadcasters. Multi-language prioritises Muslim-majority audiences (BN, UR, AR, HI).
-- User prefs persist to a JSON file (`bot/data/users.json`) by default — on Railway, mount a volume at `/app/data` for cross-restart persistence. The store is interface-shaped so a Redis/Postgres backend can drop in later without touching command code.
-- Goal-alert recipients: everyone with `goalAlerts` on gets all goals; users with a `/team` favourite get their team's goals even if `goalAlerts` is off (the favourite is itself an explicit opt-in).
-- Without a football-data.org key, the bot still answers `/today` and `/standings` from the static schedule; the goal poller logs a one-time warning and stays idle.
-- `bot/src/data/{fixtures,teams}.ts` mirrors the web app's `lib/fixtures.ts` and `data/teams.json` — if you update one, sync the other.
+Chrome extension submitted to store. Telegram bot live and serving updates.
 
 ---
 
-## 🕌 Sprint 7 — Prayer Times & Notifications
-
-**Dates:** Jun 3 – Jun 4, 2026 · **Status:** ⏳ Not Started
-
-### Goal
-
-Add the unique Muslim-friendly features that set us apart from all competitors.
-
-### Tasks
-
-- [ ] Integrate Aladhan prayer times API
-- [ ] Detect user location for accurate prayer times
-- [ ] Show prayer times widget on homepage
-- [ ] Add prayer conflict badge on match cards ("⚠️ Maghrib at 6:45")
-- [ ] Suggest "best matches without prayer conflict"
-- [ ] Build notification preferences page
-- [ ] Implement browser push notifications (web-push)
-- [ ] Goal alerts for favorite team
-- [ ] Match start reminders (15 min before)
-- [ ] Prayer time reminders before/after match
-- [ ] Add multi-language support (i18n setup): EN, BN, UR, AR, HI
-
-### Deliverable
-
-Prayer times integrated into every match page. Push notifications working. Site available in 5 languages.
-
----
-
-## 🧪 Sprint 8 — Testing & Polish
-
-**Dates:** Jun 5, 2026 · **Status:** 🟡 In Progress (code complete; manual passes pending)
-
-### Goal
-
-Find and fix every bug. Make it fast, beautiful, and ready for thousands of users.
-
-### Tasks
-
-- [ ] Lighthouse audit — target 95+ score _(manual: see [`launch-checklist.md`](./launch-checklist.md))_
-- [ ] Test on real phones (cheap Android, iPhone) _(manual)_
-- [ ] Test on slow 2G/3G connection _(manual)_
-- [ ] Cross-browser test (Chrome, Firefox, Safari, Edge) _(manual)_
-- [x] Fix all responsive breakpoints (covered by skeletons + audit pass)
-- [x] Add loading skeletons (no blank screens) — `components/Skeleton.tsx` + `app/**/loading.tsx`
-- [x] Add error boundaries + fallback UI — `app/error.tsx`, `app/global-error.tsx`, `app/not-found.tsx`
-- [ ] Verify all external links work _(manual)_
-- [ ] Test PWA install flow _(manual; manifest hardened, shortcuts added)_
-- [x] Set up error logging (Sentry-compatible) — `lib/observability.ts` + `/api/log`
-- [x] Set up analytics (Plausible) — `lib/analytics.ts`, wired in layout
-- [x] Write accessibility audit fixes (a11y) — skip link, focus ring, ARIA labels, reduced-motion. See [`a11y.md`](./a11y.md)
-- [x] Add `sitemap.xml`, `robots.txt`, OpenGraph image, PWA shortcuts, security headers
-
-### Deliverable
-
-Fast, accessible, bug-free site ready for launch. Lighthouse 95+.
-
----
-
-## 🚀 Sprint 9 — Pre-Launch Setup
-
+## 🌍 Sprint 9 — i18n, PWA, Polish, Testing
 **Dates:** Jun 6, 2026 · **Status:** ⏳ Not Started
 
 ### Goal
-
-Marketing, SEO, monetization wiring, and final launch prep.
+Launch-ready: 5 languages, PWA, performance, accessibility, zero bugs.
 
 ### Tasks
 
-- [ ] Apply for Google AdSense
-- [ ] Set up halal ad category filters
-- [ ] Add affiliate links (DAZN, ESPN+, VPN)
-- [ ] Write SEO meta tags for every page
+**Internationalization (next-intl):**
+- [ ] Add language toggle in header
+- [ ] Translate UI: English, Bangla, Urdu, Arabic, Hindi
+- [ ] RTL support for Arabic/Urdu
+- [ ] Save language preference
+
+**PWA:**
+- [ ] Add manifest.json + service worker
+- [ ] Cache static assets + fixtures offline
+- [ ] "Install app" prompt
+- [ ] App icons for all sizes
+
+**Polish & Testing:**
+- [ ] Lighthouse audit → target 95+ all metrics
+- [ ] Test on real Android + iPhone
+- [ ] Test on slow 2G/3G
+- [ ] Cross-browser (Chrome, Firefox, Safari, Edge)
+- [ ] Fix all responsive breakpoints
+- [ ] Accessibility audit (ARIA labels, keyboard nav, contrast)
+- [ ] Set up Sentry error tracking
+- [ ] Set up Plausible analytics
+- [ ] SEO: meta tags, OpenGraph, sitemap
+- [ ] Apply for Google AdSense + halal category filters
 - [ ] Submit sitemap to Google Search Console
-- [ ] Create social media accounts (Twitter, Instagram, TikTok)
-- [ ] Prepare 7 launch-day social media posts
-- [ ] Write Reddit launch posts (r/soccer, r/worldcup)
-- [ ] Prepare WhatsApp share message
-- [ ] Add "Share" buttons on all pages
-- [ ] Set up backup + monitoring
-- [ ] Final security review
 
 ### Deliverable
-
-Everything ready. Domain live. Ads approved. Social posts queued.
+Lighthouse 95+. Site available in 5 languages. PWA installable. Ready to handle launch traffic.
 
 ---
 
-## 🎯 Launch Day — June 11, 2026
+## 🚀 Launch Day — June 11, 2026
 
 ### Launch Tasks
-
-- [ ] Final smoke test: all features working
-- [ ] Post launch on Reddit (r/soccer, r/worldcup, r/bangladesh)
+- [ ] Final smoke test of all features
+- [ ] Post on Reddit (r/soccer, r/worldcup, r/bangladesh, r/india, r/pakistan)
 - [ ] Post on Twitter/X with hashtags
 - [ ] Share in Facebook football groups
-- [ ] Send to friends/family WhatsApp groups
+- [ ] WhatsApp share to friends/family
 - [ ] Submit to Product Hunt
-- [ ] Monitor analytics in real-time
-- [ ] Respond to user feedback fast
+- [ ] Monitor analytics + errors in real-time
+- [ ] Respond to user feedback within 1 hour
 
-### Success Criteria for Launch Day
-
+### Success Criteria
 - ✅ Site stays up under load
 - ✅ Live scores update in real-time
-- ✅ At least 1,000 visitors
-- ✅ At least 50 extension installs
-- ✅ At least 20 Telegram bot users
+- ✅ 1,500+ visitors on Day 1
+- ✅ 75+ extension installs
+- ✅ 30+ Telegram bot users
 
 ---
 
 ## 📈 Post-Launch (Jun 11 – Jul 19, 2026)
 
-### Daily Tasks During World Cup
-
-- [ ] Monitor uptime and errors
+### Daily Tasks
+- [ ] Monitor uptime + errors
 - [ ] Respond to user feedback
-- [ ] Post one social media update per match day
+- [ ] Post on social media each match day
 - [ ] Update broken stream links as users report
-- [ ] Fix bugs as found
-- [ ] Track earnings + analytics
+- [ ] Push small fixes daily
 
-### Weekly Reviews
+### Weekly Retrospectives
+- [ ] Week 1 review (Jun 18)
+- [ ] Week 2 review (Jun 25)
+- [ ] Week 3 review (Jul 2)
+- [ ] Week 4 review (Jul 9)
+- [ ] Final review (Jul 20 — day after Final)
 
-- [ ] Week 1 retrospective (Jun 18)
-- [ ] Week 2 retrospective (Jun 25)
-- [ ] Week 3 retrospective (Jul 2)
-- [ ] Week 4 retrospective (Jul 9)
-- [ ] Final review (Jul 20 — day after final)
+---
+
+## 📂 Recommended Project Structure
+
+```
+matchhub/
+├── README.md
+├── package.json
+├── next.config.js
+├── tailwind.config.ts
+├── tsconfig.json
+├── .gitignore
+│
+├── assets/                  # Logo, brand assets (source SVGs)
+│   ├── logo.svg
+│   └── icon.svg
+│
+├── docs/                    # Project documentation
+│   ├── roadmap.md
+│   └── sprint.md
+│
+├── public/                  # Static files served to browser
+│   ├── logo.svg
+│   ├── favicon.ico
+│   ├── manifest.json
+│   └── flags/               # Country flag SVGs
+│
+├── data/                    # Seed data
+│   ├── fixtures.ts          # All 104 real matches
+│   ├── teams.ts             # 48 nations
+│   └── broadcasters.ts      # Country → legal stream sources
+│
+├── app/                     # Next.js App Router pages
+│   ├── layout.tsx
+│   ├── page.tsx             # Homepage
+│   ├── schedule/page.tsx
+│   ├── match/[id]/page.tsx
+│   ├── standings/page.tsx
+│   ├── bracket/page.tsx
+│   ├── highlights/page.tsx
+│   ├── team/[country]/page.tsx
+│   ├── player/[id]/page.tsx
+│   ├── news/page.tsx
+│   └── api/                 # API routes
+│       ├── scores/route.ts
+│       ├── news/route.ts
+│       └── youtube/route.ts
+│
+├── components/              # React components
+│   ├── layout/
+│   │   ├── Header.tsx       # Logo, nav, theme toggle, lang
+│   │   └── Footer.tsx
+│   ├── match/
+│   │   ├── MatchCard.tsx
+│   │   ├── LiveScoreTicker.tsx
+│   │   ├── MOTMBadge.tsx
+│   │   └── LiveStreamEmbed.tsx
+│   ├── standings/
+│   │   └── GroupTable.tsx
+│   ├── bracket/
+│   │   └── KnockoutBracket.tsx
+│   ├── highlights/
+│   │   ├── HighlightVideo.tsx
+│   │   └── YearSection.tsx
+│   ├── news/
+│   │   └── NewsCard.tsx
+│   └── ui/                  # Buttons, badges, etc.
+│
+├── lib/                     # Utilities & API wrappers
+│   ├── api/
+│   │   ├── footballData.ts
+│   │   ├── youtube.ts
+│   │   └── rssNews.ts
+│   ├── i18n.ts
+│   └── utils.ts
+│
+├── messages/                # i18n translations
+│   ├── en.json
+│   ├── bn.json
+│   ├── ur.json
+│   ├── ar.json
+│   └── hi.json
+│
+├── extension/               # Chrome extension (separate workspace)
+│   ├── manifest.json
+│   ├── content.js
+│   ├── popup.html
+│   └── popup.js
+│
+└── bot/                     # Telegram bot (separate workspace)
+    ├── index.js
+    └── handlers/
+```
 
 ---
 
 ## 📝 Daily Update Template
 
-Copy this for daily standups (use in commit messages too):
+Copy this for daily standups & commit messages:
 
 ```
 Date: YYYY-MM-DD
 Sprint: X
-Done: [list of completed tasks]
+Done: [completed tasks]
 Doing: [in-progress tasks]
 Blocked: [any blockers]
 Next: [next 1-2 tasks]
@@ -410,12 +450,11 @@ Next: [next 1-2 tasks]
 
 ---
 
-## 🎉 Definition of Done
+## ✅ Definition of Done
 
-A sprint task is **DONE** when:
-
-1. ✅ Code is written and works locally
+A task is **DONE** when:
+1. ✅ Code works locally
 2. ✅ Deployed to production (Vercel)
 3. ✅ Tested on real mobile device
-4. ✅ Committed and pushed to git
+4. ✅ Committed using **Conventional Commits** format (`feat:`, `fix:`, `docs:`, etc.)
 5. ✅ Checkbox above is checked
