@@ -29,7 +29,7 @@ export default function RouteError({
       <h1 className="text-2xl font-bold tracking-tight">Something went off-side.</h1>
       <p className="max-w-md text-sm text-ink-400">
         An unexpected error happened while loading this page. The team has been notified — try
-        again, or head back to the schedule.
+        again, or head back to fixtures.
       </p>
       {error.digest && (
         <p className="text-xs text-ink-500">
@@ -41,7 +41,7 @@ export default function RouteError({
           Try again
         </button>
         <Link href="/" className="btn">
-          Back to schedule
+          Back to fixtures
         </Link>
       </div>
     </main>

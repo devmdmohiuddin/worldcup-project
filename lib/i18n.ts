@@ -66,12 +66,12 @@ export type TranslationKey =
 type Dictionary = Record<TranslationKey, string>;
 
 const en: Dictionary = {
-  "nav.schedule": "Schedule",
+  "nav.schedule": "Fixtures",
   "nav.standings": "Standings",
   "nav.bracket": "Bracket",
   "nav.highlights": "Highlights",
   "nav.notifications": "Notifications",
-  "schedule.title": "World Cup 2026 Schedule",
+  "schedule.title": "Scores & Fixtures",
   "schedule.timesIn": "All {count} group-stage matches · times shown in",
   "schedule.allDates": "All dates",
   "schedule.allGroups": "All groups",

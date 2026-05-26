@@ -20,8 +20,9 @@ import { VENUES, type VenueKey } from "./venues";
 const GROUP_STAGE_SPEC: ReadonlyArray<
   readonly [GroupLetter, 1 | 2 | 3 | 4 | 5 | 6, string, string, VenueKey]
 > = [
-  // June 11 — Opening day
-  ["A", 1, "2026-06-11", "12:00", "mexico_city"],
+  // June 11 — Opening day. 13:00 local Mexico City = 19:00 UTC, matching
+  // FIFA's published opener time for Mexico vs South Africa at Estadio Azteca.
+  ["A", 1, "2026-06-11", "13:00", "mexico_city"],
 
   // June 12
   ["B", 1, "2026-06-12", "15:00", "toronto"],

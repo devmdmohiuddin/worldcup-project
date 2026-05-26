@@ -56,6 +56,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <link rel="preconnect" href="https://i.ytimg.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.youtube.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://flagcdn.com" crossOrigin="anonymous" />
         {PLAUSIBLE_DOMAIN && (
           <script
             defer

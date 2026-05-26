@@ -33,6 +33,16 @@ export interface Match {
   homeSlot: string;
   awaySlot: string;
   venue: Venue;
+  /**
+   * Resolved-name overrides from an upstream data source. When set, UI prefers
+   * these over the static slot resolution (used to show real team names once
+   * the draw is final and a live feed is connected).
+   */
+  homeName?: string;
+  awayName?: string;
+  /** ISO 3166-1 alpha-2 country codes for the resolved teams, if known. */
+  homeCC?: string;
+  awayCC?: string;
 }
 
 export interface TeamsData {

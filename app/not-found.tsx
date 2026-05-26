@@ -25,7 +25,7 @@ export default function NotFound() {
         </p>
         <div className="flex gap-2">
           <Link href="/" className="btn-primary">
-            Back to schedule
+            Back to fixtures
           </Link>
           <Link href="/highlights" className="btn">
             Browse highlights
